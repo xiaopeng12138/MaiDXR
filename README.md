@@ -5,13 +5,13 @@ This is a VR Arcade Simulator
 - This project is a update of https://github.com/xiaopeng12138/MaiMai-VR. 
 
 ## Inspired by
-https://github.com/derole1/MaiMai-VR
-https://github.com/HelloKS/MaiMai-VR
+- https://github.com/derole1/MaiMai-VR
+- https://github.com/HelloKS/MaiMai-VR
 
 ## Used repository
-https://github.com/HelloKS/MaiMai-VR
-https://github.com/hecomi/uWindowCapture
-https://github.com/Sucareto/Mai2Touch
+- https://github.com/HelloKS/MaiMai-VR
+- https://github.com/hecomi/uWindowCapture
+- https://github.com/Sucareto/Mai2Touch
 
 ## Supported plattform
 - SteamVR
