@@ -14,17 +14,17 @@ public class TouchToSerial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Serial.SendTouch();
+        Serial.SendTouch();
     }
 
     public int Area;
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         Serial.ChangeTouch((int)Area, true);
         Serial.SendTouch();
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
         Serial.ChangeTouch((int)Area, false);
         Serial.SendTouch();

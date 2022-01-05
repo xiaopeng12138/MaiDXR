@@ -26,7 +26,7 @@ public class Serial : MonoBehaviour
         ReadPack();
         if (!failed)
             TouchSetUp();
-        SendTouch();     
+        //SendTouch();     
     }
 
     private void SerialStartUp()
