@@ -1,5 +1,5 @@
 # MaiDXR
-This is a VR Arcade Simulator
+Open Source VR Arcade Simulator
 
 # About this fork
 - This project is a update of https://github.com/xiaopeng12138/MaiMai-VR. 
