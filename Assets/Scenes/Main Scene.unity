@@ -270,9 +270,9 @@ MonoBehaviour:
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
   m_ControllerNode: 4
-  m_SelectUsage: 3
-  m_ActivateUsage: 2
-  m_UIPressUsage: 2
+  m_SelectUsage: 0
+  m_ActivateUsage: 0
+  m_UIPressUsage: 0
   m_AxisToPressThreshold: 0.1
   m_RotateAnchorLeft: 16
   m_RotateAnchorRight: 17
@@ -457,9 +457,9 @@ MonoBehaviour:
   m_ModelSelectTransition: 
   m_ModelDeSelectTransition: 
   m_ControllerNode: 5
-  m_SelectUsage: 3
-  m_ActivateUsage: 2
-  m_UIPressUsage: 2
+  m_SelectUsage: 0
+  m_ActivateUsage: 0
+  m_UIPressUsage: 0
   m_AxisToPressThreshold: 0.1
   m_RotateAnchorLeft: 16
   m_RotateAnchorRight: 17
@@ -870,6 +870,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8258196058206172477, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: -8258196058206172477, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: -8258196058206172477, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1075,11 +1083,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018638153358675470, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30.5
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 1018638153358675470, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30.5
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 1018638153358675470, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalScale.z
@@ -2336,7 +2344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c150c011a6544b4b8054bba7ee5e5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchTiming_: 2
+  searchTiming_: 1
   type_: 0
   altTabWindow_: 0
   createChildWindows_: 0
@@ -2347,7 +2355,7 @@ MonoBehaviour:
   captureMode: 1
   capturePriority: 0
   captureRequestTiming: 0
-  captureFrameRate: 120
+  captureFrameRate: 60
   drawCursor: 0
   updateTitle: 1
   searchAnotherWindowWhenInvalid: 0
@@ -2487,6 +2495,7 @@ GameObject:
   - component: {fileID: 995594088}
   - component: {fileID: 995594090}
   - component: {fileID: 995594087}
+  - component: {fileID: 995594091}
   m_Layer: 0
   m_Name: RHand
   m_TagString: Untagged
@@ -2503,7 +2512,7 @@ Transform:
   m_GameObject: {fileID: 995594085}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.01, y: -0.02, z: 0.05}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 367081678}
   m_RootOrder: 0
@@ -2530,7 +2539,7 @@ MeshRenderer:
   m_GameObject: {fileID: 995594085}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -2586,6 +2595,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &995594091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995594085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ef9c214e7bbfb428a17f25d6f8a44c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hand: 3
+  duration: 0.05
+  amplitude: 1
 --- !u!1 &1146353685 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7257406874482555907, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
@@ -2669,6 +2693,7 @@ GameObject:
   - component: {fileID: 1213452597}
   - component: {fileID: 1213452599}
   - component: {fileID: 1213452596}
+  - component: {fileID: 1213452600}
   m_Layer: 0
   m_Name: LHand
   m_TagString: Untagged
@@ -2685,7 +2710,7 @@ Transform:
   m_GameObject: {fileID: 1213452594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.01, y: -0.02, z: 0.05}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 141732346}
   m_RootOrder: 0
@@ -2712,7 +2737,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1213452594}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -2768,6 +2793,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1213452600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213452594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ef9c214e7bbfb428a17f25d6f8a44c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hand: 2
+  duration: 0.05
+  amplitude: 1
 --- !u!1 &1278537032 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1936309250871818275, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
