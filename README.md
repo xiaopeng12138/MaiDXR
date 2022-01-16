@@ -39,6 +39,6 @@ Please see Changes.md
 - Add user-adjustable settings (controller position etc.)
 - Add non-VR window and camera smooth
 - Add button light
-- Add button vibration
+- √ Add button vibration 
 
 Huge thanks to HelloKS and derole1
