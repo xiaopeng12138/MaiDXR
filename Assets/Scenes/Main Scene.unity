@@ -731,9 +731,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyToPress: 65
-  lightTarget: {fileID: 0}
-  frequency: 0
-  amplitude: 0
 --- !u!64 &447007548
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -766,9 +763,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyToPress: 90
-  lightTarget: {fileID: 0}
-  frequency: 0
-  amplitude: 0
 --- !u!64 &520658418
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2790,9 +2784,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyToPress: 67
-  lightTarget: {fileID: 0}
-  frequency: 0
-  amplitude: 0
 --- !u!64 &1146353688
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2825,9 +2816,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyToPress: 87
-  lightTarget: {fileID: 0}
-  frequency: 0
-  amplitude: 0
 --- !u!64 &1153578992
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2988,9 +2976,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyToPress: 69
-  lightTarget: {fileID: 0}
-  frequency: 0
-  amplitude: 0
 --- !u!64 &1278537035
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3023,9 +3008,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyToPress: 88
-  lightTarget: {fileID: 0}
-  frequency: 0
-  amplitude: 0
 --- !u!64 &1353751958
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3251,9 +3233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyToPress: 81
-  lightTarget: {fileID: 0}
-  frequency: 0
-  amplitude: 0
 --- !u!64 &1522911144
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3380,9 +3359,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyToPress: 68
-  lightTarget: {fileID: 0}
-  frequency: 0
-  amplitude: 0
 --- !u!64 &2000481169
 MeshCollider:
   m_ObjectHideFlags: 0
