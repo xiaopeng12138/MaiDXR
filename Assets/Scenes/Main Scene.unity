@@ -963,15 +963,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8258196058206172477, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8258196058206172477, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1633
+      value: 1.1685
       objectReference: {fileID: 0}
     - target: {fileID: -8258196058206172477, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.02
+      value: 0.0343
       objectReference: {fileID: 0}
     - target: {fileID: -8066801168910908481, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_Enabled
@@ -1155,11 +1155,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 795547410136657018, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.402
+      value: 1.4005
       objectReference: {fileID: 0}
     - target: {fileID: 795547410136657018, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.077
+      value: 0.0735
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_Name
@@ -1176,6 +1176,18 @@ PrefabInstance:
     - target: {fileID: 1018638153358675470, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalScale.z
       value: 30.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018638153358675470, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018638153358675470, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1631
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018638153358675470, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0197
       objectReference: {fileID: 0}
     - target: {fileID: 1121748732791834861, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_Enabled
@@ -2446,6 +2458,38 @@ MonoBehaviour:
   scaleControlType: 3
   scalePer1000Pixel: 1
   updateScaleForcely: 0
+--- !u!1 &856927131 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3300913674446824185, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
+  m_PrefabInstance: {fileID: 856927026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &856927132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856927131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959162235c603d347af0fd284c7d339d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyToPress: 13
+--- !u!64 &856927133
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856927131}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7726249702934650104, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
 --- !u!1001 &903004875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2596,7 +2640,7 @@ Transform:
   m_GameObject: {fileID: 995594085}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.01, y: -0.02, z: 0.06}
-  m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
+  m_LocalScale: {x: 0.085, y: 0.085, z: 0.085}
   m_Children: []
   m_Father: {fileID: 367081678}
   m_RootOrder: 0
@@ -2692,7 +2736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hand: 3
-  duration: 0.05
+  duration: 0.07
   amplitude: 1
 --- !u!1 &1079558957
 GameObject:
@@ -2860,7 +2904,7 @@ Transform:
   m_GameObject: {fileID: 1213452594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.01, y: -0.02, z: 0.06}
-  m_LocalScale: {x: 0.09, y: 0.09, z: 0.09}
+  m_LocalScale: {x: 0.085, y: 0.085, z: 0.085}
   m_Children: []
   m_Father: {fileID: 141732346}
   m_RootOrder: 0
@@ -2956,7 +3000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hand: 2
-  duration: 0.05
+  duration: 0.07
   amplitude: 1
 --- !u!1 &1278537032 stripped
 GameObject:

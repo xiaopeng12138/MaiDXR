@@ -11,7 +11,7 @@ public class Serial : MonoBehaviour
     static byte[] touchPacket = new byte[9];
     static byte[] touchPacketReset = new byte[9];
     
-    static bool startUp = false;
+    static bool startUp = true; //use ture for default start up state to prevent restart game
     float timer = 0; 
     bool failed = false;
     byte recivData;
@@ -92,12 +92,6 @@ public class Serial : MonoBehaviour
     {
         if (startUp)
             ByteArrayExt.SetBit(touchPacket, Area+8, State);
-    }
-
-    public static void ResetTouch()
-    {
-        if (startUp)
-            p1Serial.Write(touchPacketReset, 0, 9);
     }
 }
 
