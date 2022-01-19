@@ -23,10 +23,10 @@ Open Source VR Arcade Simulator
 - Do not use this in commercial/profitable scenarios!
 - Please support your local arcade if you can!
 
-# Changelog
+## Changelog
 Please see Changes.md
 
-# How to use
+## How to use
 - Download [latest version of MaiDXR](https://github.com/xiaopeng12138/MaiDXR/releases)
 - Download and install [com0com](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/powersdr-iq/setup_com0com_W7_x64_signed.exe)
 - Configure com0com to bind COM3 and COM5 (it must be these two ports)
