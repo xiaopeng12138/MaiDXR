@@ -2451,7 +2451,7 @@ MonoBehaviour:
   captureMode: 1
   capturePriority: 0
   captureRequestTiming: 0
-  captureFrameRate: 90
+  captureFrameRate: 120
   drawCursor: 0
   updateTitle: 1
   searchAnotherWindowWhenInvalid: 0
