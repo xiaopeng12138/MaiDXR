@@ -1151,15 +1151,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 795547410136657018, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 795547410136657018, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4005
+      value: 1.397
       objectReference: {fileID: 0}
     - target: {fileID: 795547410136657018, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0735
+      value: 0.065
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_Name
@@ -1179,15 +1179,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1018638153358675470, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1018638153358675470, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1631
+      value: 1.163
       objectReference: {fileID: 0}
     - target: {fileID: 1018638153358675470, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0197
+      value: 0.019
       objectReference: {fileID: 0}
     - target: {fileID: 1121748732791834861, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_Enabled
@@ -2440,7 +2440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c150c011a6544b4b8054bba7ee5e5ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchTiming_: 1
+  searchTiming_: 0
   type_: 0
   altTabWindow_: 0
   createChildWindows_: 0
@@ -2451,7 +2451,7 @@ MonoBehaviour:
   captureMode: 1
   capturePriority: 0
   captureRequestTiming: 0
-  captureFrameRate: 60
+  captureFrameRate: 90
   drawCursor: 0
   updateTitle: 1
   searchAnotherWindowWhenInvalid: 0
