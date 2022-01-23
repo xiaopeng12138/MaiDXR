@@ -14,7 +14,7 @@ public class TouchToSerial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Serial.SendTouch();
+        //Serial.SendTouch();
     }
 
     public int Area;

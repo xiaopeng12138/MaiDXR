@@ -28,7 +28,10 @@ public class Serial : MonoBehaviour
             TouchSetUp();
         //SendTouch();     
     }
-
+    void FixedUpdate()
+    {
+        SendTouch();
+    }
     private void SerialStartUp()
     {
         settingPacket[0] = 40;

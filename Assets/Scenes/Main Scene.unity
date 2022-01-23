@@ -694,8 +694,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 100
-  field of view: 90
+  far clip plane: 50
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -707,7 +707,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -3324,7 +3324,7 @@ MonoBehaviour:
   m_OriginBaseGameObject: {fileID: 1647048262}
   m_CameraFloorOffsetObject: {fileID: 281366679}
   m_RequestedTrackingOriginMode: 2
-  m_CameraYOffset: 1.8
+  m_CameraYOffset: 1.7
 --- !u!4 &1647048264
 Transform:
   m_ObjectHideFlags: 0
