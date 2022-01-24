@@ -27,8 +27,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Cap
+    second: {fileID: 2100000, guid: f83599e5aa8bfec46990e5b79169c72e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Display
     second: {fileID: 2100000, guid: 3a717c980ea72d04585cd76bd3d943f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Headphone
+    second: {fileID: 2100000, guid: 0e97210d1dcd9724aabaea6c32bbb6bc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -39,6 +49,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Ring
     second: {fileID: 2100000, guid: 90a43bf58bb96bb4ab247755a04e9a26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TopHandel
+    second: {fileID: 2100000, guid: a908b14c5caa1be4483e5779a60236d8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
