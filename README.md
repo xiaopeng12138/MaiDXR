@@ -14,9 +14,9 @@ Open Source VR Arcade Simulator
 - https://github.com/Sucareto/Mai2Touch
 
 ## Supported plattform
-- SteamVR
-- Oculus
-- Tested on Quest 2 through Oculus link (Native and via SteamVR). The Hand Balls position is currently only adjusted for the Quest 2 controller. Other controllers may have a bad experience. This will be fixed in the future
+- All SteamVR device
+- All Oculus device
+- Only tested on Quest 2 through Oculus link (Native and via SteamVR). The Hand Balls position is currently only adjusted for the Quest 2 controller. Other controllers may have a bad experience. This will be fixed in the future
 
 ## Declaimer
 - This project is non-profit and some resources came from Internet!
