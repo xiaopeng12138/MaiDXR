@@ -38,7 +38,7 @@ Please see Changes.md
 ## Configuration
 Edit Settings.json file under the root directory. Press F5 in unity window or defocus then focus window again to update settings.
 
-HandSize, HandPosition, PlayerHigh: in centimeters
+HandSize, HandPosition, PlayerHigh: in CM
 
 CaptureFrameRate, TouchRefreshRate: in FPS
 
