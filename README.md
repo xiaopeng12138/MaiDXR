@@ -35,6 +35,19 @@ Please see Changes.md
 - Start MaiDXR
 - Enable somehow Test mod then exit Test mode.
 
+## Configuration
+Edit Settings.json file under the root directory. Press F5 in unity window or defocus then focus window again to update settings.
+
+HandSize, HandPosition, PlayerHigh: in centimeters
+
+CaptureFrameRate, TouchRefreshRate: in FPS
+
+CameraSmooth: 0.0 - 1.0, 1.0 = no smoothing
+
+HapticDuration: in second
+
+HapticAmplitude: 0.0 - 1.0, 1.0 = max vibration
+
 # ToDo
 - Add user-adjustable settings (controller position etc.)
 - √ Add non-VR window and camera smooth
