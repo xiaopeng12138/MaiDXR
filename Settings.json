@@ -1,6 +1,9 @@
 {
   "HandSize": 8.5,
-  "PlayerHigh": 1.7,
+  "HandPositionX": 1,
+  "HandPositionY": -2,
+  "HandPositionZ": 6,
+  "PlayerHigh": 170,
   "CaptureFrameRate": 90,
   "TouchRefreshRate": 120.0,
   "CameraSmooth": 0.1,
