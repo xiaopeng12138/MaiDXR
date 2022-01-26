@@ -4,6 +4,8 @@ Open Source VR Arcade Simulator
 # About this project
 - This project is a update of https://github.com/xiaopeng12138/MaiMai-VR. 
 
+![Image Capture](https://github.com/xiaopeng12138/MaiDXR/blob/main/PreviewImage/MaiDXR_PreviewImage.png?raw=true)
+
 ## Inspired by
 - https://github.com/derole1/MaiMai-VR
 - https://github.com/HelloKS/MaiMai-VR
