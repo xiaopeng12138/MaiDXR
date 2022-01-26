@@ -16,7 +16,7 @@ Open Source VR Arcade Simulator
 ## Supported plattform
 - All SteamVR device
 - All Oculus device
-- Only tested on Quest 2 through Oculus link (Native and via SteamVR). The Hand Balls position is currently only adjusted for the Quest 2 controller. Other controllers may have a bad experience. This will be fixed in the future
+- Only tested on Quest 2 through Oculus link (Native and via SteamVR). The Hand Balls position is by default adjusted for the Quest 2 controller.
 
 ## Declaimer
 - This project is non-profit and some resources came from Internet!
