@@ -16,15 +16,15 @@ public class SettingsManager : MonoBehaviour
         {
             Settings Setting = new Settings()
             {
-                HandSize = 8.5f,
-                HandPositionX = 1f,
+                HandSize = 8f,
+                HandPositionX = 2f,
                 HandPositionY = -2f,
-                HandPositionZ = 6f,
-                PlayerHigh = 170f,
+                HandPositionZ = 7f,
+                PlayerHigh = 180f,
                 CaptureFrameRate = 90,
-                TouchRefreshRate = 120,
+                TouchRefreshRate = 90,
                 CameraSmooth = 0.1f,
-                HapticDuration = 0.1f,
+                HapticDuration = 0.15f,
                 HapticAmplitude = 1
             };
             JsonStr = JsonConvert.SerializeObject(Setting, Formatting.Indented);
@@ -36,6 +36,7 @@ public class SettingsManager : MonoBehaviour
             JsonStr = File.ReadAllText(JsonPath);
             Setting = JsonConvert.DeserializeObject<Settings>(JsonStr);
         }
+        UpdateFromFile();
     }
     bool FocusChecked = true;
     void Update()
