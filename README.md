@@ -20,7 +20,7 @@ Open Source VR Arcade Simulator
 
 ## Declaimer
 - This project is non-profit and some resources came from Internet!
-- Do not use this in commercial/profitable scenarios!
+- Although this is under the MIT license, do not use this in commercial/profitable scenarios!
 - Please support your local arcade if you can!
 
 ## Changelog
