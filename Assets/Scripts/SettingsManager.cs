@@ -24,6 +24,7 @@ public class SettingsManager : MonoBehaviour
                 CaptureFrameRate = 90,
                 TouchRefreshRate = 90,
                 CameraSmooth = 0.1f,
+                CameraFOV = 85f,
                 HapticDuration = 0.15f,
                 HapticAmplitude = 1
             };
@@ -59,6 +60,7 @@ public class SettingsManager : MonoBehaviour
     public GameObject RHandObj;
     public GameObject ScreenObj;
     public GameObject SmoothCameraObj;
+    public Camera SmoothCamera;
     public GameObject XROriginObj;
 
     void UpdateFromFile()
@@ -73,6 +75,7 @@ public class SettingsManager : MonoBehaviour
         ScreenScp.captureFrameRate = Setting.CaptureFrameRate;
         CameraSmooth CameraSmoothScp = SmoothCameraObj.GetComponent<CameraSmooth>();
         CameraSmoothScp.smoothSpeed = Setting.CameraSmooth;
+        SmoothCamera.fieldOfView = Setting.CameraFOV;
         Controller LHandScp = LHandObj.GetComponent<Controller>();
         LHandScp.amplitude = Setting.HapticAmplitude;
         Controller RHandScp = RHandObj.GetComponent<Controller>();
@@ -94,6 +97,7 @@ public class Settings
     public int CaptureFrameRate { get; set; }
     public float TouchRefreshRate { get; set; }
     public float CameraSmooth { get; set; }
+    public float CameraFOV { get; set; }
     public float HapticDuration { get; set; }
     public float HapticAmplitude { get; set; }
 }

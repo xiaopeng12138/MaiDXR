@@ -3242,6 +3242,7 @@ MonoBehaviour:
   RHandObj: {fileID: 995594085}
   ScreenObj: {fileID: 856927129}
   SmoothCameraObj: {fileID: 366364277}
+  SmoothCamera: {fileID: 366364279}
   XROriginObj: {fileID: 1647048262}
 --- !u!4 &1419342723
 Transform:
