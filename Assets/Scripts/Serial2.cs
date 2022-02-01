@@ -2,9 +2,9 @@ using System.Collections;
 using UnityEngine;
 using System.IO.Ports;
 using System;
-public class Serial : MonoBehaviour
+public class Serial2 : MonoBehaviour
 {
-    static SerialPort p1Serial = new SerialPort ("COM5", 9600);
+    static SerialPort p1Serial = new SerialPort ("COM6", 9600);
     int packleng = 0;
     byte[] incomPacket = new byte[6];
     byte[] settingPacket = new byte[6];
@@ -13,7 +13,6 @@ public class Serial : MonoBehaviour
     float timer = 0; 
     bool failed = false;
     byte recivData;
-    
     void Start()
     {
         settingPacket[0] = 40;
@@ -21,7 +20,7 @@ public class Serial : MonoBehaviour
         touchPacket[0] = 40;
         touchPacket[8] = 41;
         p1Serial.Open();
-        Debug.Log("Serial Started");
+        Debug.Log("Serial2 Started");
     }
 
     void Update()
@@ -30,10 +29,9 @@ public class Serial : MonoBehaviour
         if (!failed)
             TouchSetUp(); 
     }
-    
     void FixedUpdate()
     {
-        SendTouch();
+        //SendTouch(); //Not send touch to p2 port
     }
 
     private void TouchSetUp()
@@ -77,26 +75,15 @@ public class Serial : MonoBehaviour
         }
     }
 
-    public static void SendTouch()
+    static void SendTouch()
     {
         if (startUp)
             p1Serial.Write(touchPacket, 0, 9);
     }
 
-    public static void ChangeTouch(int Area, bool State)
+    static void ChangeTouch(int Area, bool State)
     {
         if (startUp)
             ByteArrayExt.SetBit(touchPacket, Area+8, State);
-    }
-}
-
-public static class ByteArrayExt
-{
-    public static byte[] SetBit(this byte[] self, int index, bool value)
-    { 
-        var bitArray = new BitArray(self);
-        bitArray.Set(index, value);
-        bitArray.CopyTo(self, 0);
-        return self;
     }
 }
