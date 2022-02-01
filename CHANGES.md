@@ -2,10 +2,15 @@
 
 # Latest
 
-## v0.4.1
-Fix Settings to load on start
+## v0.5
+Add local motion
 
-Update default config
+Add none-VR camera FOV configuration
+
+Add Serial2 (2p touch)
+
+Some small framework update/fix
+
 
 # Old version
 
@@ -50,3 +55,8 @@ Add select button #4
 Update smooth camera display method
 
 Update framework color
+
+## v0.4.1
+Fix Settings to load on start
+
+Update default config
