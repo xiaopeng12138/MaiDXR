@@ -59,6 +59,8 @@ HapticAmplitude: 0.0 - 1.0, 1.0 = max vibration
 - √ Add user-adjustable settings (controller position etc.)
 - √ Add non-VR window and camera smooth
 - Add button light
-- √ Add button vibration 
+- √ Add button vibration
+- Add 3rd person camera
+- Add 2p
 
 Huge thanks to HelloKS and derole1
