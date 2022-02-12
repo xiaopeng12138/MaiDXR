@@ -62,5 +62,6 @@ HapticAmplitude: 0.0 - 1.0, 1.0 = max vibration
 - √ Add button vibration
 - Add 3rd person camera
 - Add 2p
+- Add custom button
 
 Huge thanks to HelloKS and derole1
