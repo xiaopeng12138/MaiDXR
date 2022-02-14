@@ -3,43 +3,27 @@ using UnityEngine;
 using Newtonsoft.Json;
 using Unity.XR.CoreUtils;
 using uWindowCapture;
+using WindowsInput.Native;
+using System;
 public class SettingsManager : MonoBehaviour
 {
     string JsonPath;
     string JsonStr;
-    Settings Setting = new Settings();  
+    Settings Setting = new Settings();
+    bool FocusChecked = true;
+    public GameObject LHandObj;
+    public GameObject RHandObj;
+    public GameObject ScreenObj;
+    public GameObject SmoothCameraObj;
+    public Camera SmoothCamera;
+    public GameObject XROriginObj;
+    public GameObject Button1Obj;    
     void Start()
     {
-        JsonPath = Path.GetDirectoryName(Application.dataPath) + "/Settings.json";
-        Debug.Log(JsonPath);
-        if (!File.Exists (JsonPath))
-        {
-            Settings Setting = new Settings()
-            {
-                HandSize = 8f,
-                HandPositionX = 2f,
-                HandPositionY = -2f,
-                HandPositionZ = 7f,
-                PlayerHigh = 180f,
-                CaptureFrameRate = 90,
-                TouchRefreshRate = 90,
-                CameraSmooth = 0.1f,
-                CameraFOV = 85f,
-                HapticDuration = 0.15f,
-                HapticAmplitude = 1
-            };
-            JsonStr = JsonConvert.SerializeObject(Setting, Formatting.Indented);
-            Debug.Log(JsonStr);
-            File.AppendAllText(JsonPath, JsonStr);
-        }
-        else
-        {
-            JsonStr = File.ReadAllText(JsonPath);
-            Setting = JsonConvert.DeserializeObject<Settings>(JsonStr);
-        }
+        FirstStart();
         UpdateFromFile();
     }
-    bool FocusChecked = true;
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F5) | !FocusChecked)
@@ -56,13 +40,6 @@ public class SettingsManager : MonoBehaviour
         if (!Application.isFocused)
             FocusChecked=false;
     }
-    public GameObject LHandObj;
-    public GameObject RHandObj;
-    public GameObject ScreenObj;
-    public GameObject SmoothCameraObj;
-    public Camera SmoothCamera;
-    public GameObject XROriginObj;
-
     void UpdateFromFile()
     {
         LHandObj.transform.localScale = new Vector3(Setting.HandSize/100,Setting.HandSize/100,Setting.HandSize/100);
@@ -82,9 +59,41 @@ public class SettingsManager : MonoBehaviour
         RHandScp.amplitude = Setting.HapticAmplitude;
         XROriginScp.CameraYOffset = Setting.PlayerHigh/100;
         Time.fixedDeltaTime = 1/Setting.TouchRefreshRate;
+        ButtonToKey Button1Scp = Button1Obj.GetComponent<ButtonToKey>();
+        Button1Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button1);
     }
 
-    
+    void FirstStart()
+    {
+        JsonPath = Path.GetDirectoryName(Application.dataPath) + "/Settings.json";
+        Debug.Log(JsonPath);
+        if (!File.Exists (JsonPath))
+        {
+            Settings Setting = new Settings()
+            {
+                HandSize = 8f,
+                HandPositionX = 2f,
+                HandPositionY = -2f,
+                HandPositionZ = 7f,
+                PlayerHigh = 180f,
+                CaptureFrameRate = 90,
+                TouchRefreshRate = 90,
+                CameraSmooth = 0.1f,
+                CameraFOV = 85f,
+                HapticDuration = 0.15f,
+                HapticAmplitude = 1,
+                Button1 = "SCROLL"
+            };
+            JsonStr = JsonConvert.SerializeObject(Setting, Formatting.Indented);
+            Debug.Log(JsonStr);
+            File.AppendAllText(JsonPath, JsonStr);
+        }
+        else
+        {
+            JsonStr = File.ReadAllText(JsonPath);
+            Setting = JsonConvert.DeserializeObject<Settings>(JsonStr);
+        }
+    }
     
 }
 public class Settings
@@ -100,4 +109,9 @@ public class Settings
     public float CameraFOV { get; set; }
     public float HapticDuration { get; set; }
     public float HapticAmplitude { get; set; }
+    public string Button1 { get; set; }
+    //public string Button2 { get; set; }
+    //public string Button3 { get; set; }
+    //public string Button4 { get; set; }
+
 }

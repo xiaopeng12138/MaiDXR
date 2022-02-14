@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/unity,visualstudiocode,visualstudio
-# Edit at https://www.toptal.com/developers/gitignore?templates=unity,visualstudiocode,visualstudio
+# Created by https://www.toptal.com/developers/gitignore/api/unity,visualstudio,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=unity,visualstudio,visualstudiocode
 
 ### Unity ###
 # This .gitignore file should be placed at the root of your Unity project directory
@@ -75,12 +75,12 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 ### VisualStudioCode ###
-.vscode/*
-.vscode/settings.json
-.vscode/tasks.json
-.vscode/launch.json
-.vscode/extensions.json
-.vscode/*.code-snippets
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
 
 # Local History for Visual Studio Code
 .history/
@@ -183,6 +183,7 @@ StyleCopReport.xml
 *_wpftmp.csproj
 *.log
 *.tlog
+.vsconfig
 *.vspscc
 *.vssscc
 .builds
@@ -481,5 +482,5 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/unity,visualstudiocode,visualstudio
+# End of https://www.toptal.com/developers/gitignore/api/unity,visualstudio,visualstudiocode
 Settings.json
