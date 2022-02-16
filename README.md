@@ -31,6 +31,7 @@ Please see Changes.md
 - Download and install [com0com](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/powersdr-iq/setup_com0com_W7_x64_signed.exe)
 - Configure com0com to bind COM3 and COM5 (it must be these two ports), COM4 and COM6 is optional (bind them will make your startup process faster).
 - Disable somehow DummyTouchPanel.
+- If you need button light, pls disable somehow DummyLED and bind COM20 21 22 23 to COM50 51 52 53 (it must be these ports).
 - Run the game in window mode and make sure there is no black bar.
 - Start MaiDXR.
 - Enable somehow Test mod then exit Test mode.
@@ -52,16 +53,18 @@ HapticDuration: in second
 
 HapticAmplitude: 0.0 - 1.0, 1.0 = max vibration
 
+Button(1-4: top to bottom): Pls see [VK Code](https://docs.microsoft.com/de-de/windows/win32/inputdev/virtual-key-codes). Some keys do not require "VK_" at the beginning.
+
 ## Preview
 ![Image Capture](https://github.com/xiaopeng12138/MaiDXR/blob/main/PreviewImage/MaiDXR_PreviewImage.png?raw=true)
 
 ## ToDo
 - √ Add user-adjustable settings (controller position etc.)
 - √ Add non-VR window and camera smooth
-- Add button light
+- √ Add button light
 - √ Add button vibration
 - Add 3rd person camera
 - Add 2p
-- Add custom button
+- √ Add custom button
 
 Huge thanks to HelloKS and derole1
