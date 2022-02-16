@@ -17,7 +17,7 @@ public class SettingsManager : MonoBehaviour
     public GameObject SmoothCameraObj;
     public Camera SmoothCamera;
     public GameObject XROriginObj;
-    public GameObject Button1Obj;    
+    public GameObject[] ButtonObjs;    
     void Start()
     {
         FirstStart();
@@ -59,8 +59,14 @@ public class SettingsManager : MonoBehaviour
         RHandScp.amplitude = Setting.HapticAmplitude;
         XROriginScp.CameraYOffset = Setting.PlayerHigh/100;
         Time.fixedDeltaTime = 1/Setting.TouchRefreshRate;
-        ButtonToKey Button1Scp = Button1Obj.GetComponent<ButtonToKey>();
+        ButtonToKey Button1Scp = ButtonObjs[0].GetComponent<ButtonToKey>();
         Button1Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button1);
+        ButtonToKey Button2Scp = ButtonObjs[1].GetComponent<ButtonToKey>();
+        Button1Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button2);
+        ButtonToKey Button3Scp = ButtonObjs[2].GetComponent<ButtonToKey>();
+        Button1Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button3);
+        ButtonToKey Button4Scp = ButtonObjs[3].GetComponent<ButtonToKey>();
+        Button1Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button4);
     }
 
     void FirstStart()
@@ -82,7 +88,10 @@ public class SettingsManager : MonoBehaviour
                 CameraFOV = 85f,
                 HapticDuration = 0.15f,
                 HapticAmplitude = 1,
-                Button1 = "SCROLL"
+                Button1 = "SCROLL",
+                Button2 = "PAUSE",
+                Button3 = "VK_1",
+                Button4 = "VK_2"
             };
             JsonStr = JsonConvert.SerializeObject(Setting, Formatting.Indented);
             Debug.Log(JsonStr);
@@ -110,8 +119,8 @@ public class Settings
     public float HapticDuration { get; set; }
     public float HapticAmplitude { get; set; }
     public string Button1 { get; set; }
-    //public string Button2 { get; set; }
-    //public string Button3 { get; set; }
-    //public string Button4 { get; set; }
+    public string Button2 { get; set; }
+    public string Button3 { get; set; }
+    public string Button4 { get; set; }
 
 }
