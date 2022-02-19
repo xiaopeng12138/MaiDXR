@@ -7,7 +7,7 @@ Fix performance issue #12
 
 Adjust framework
 
-Bugs fix
+Custom button bugs fix
 
 # Old version
 
