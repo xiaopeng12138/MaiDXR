@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using System.IO.Ports;
 using System;
@@ -13,8 +12,10 @@ public class LedSerial : MonoBehaviour
     byte recivData;
     int packLeng = 0;
     public Light[] Lights;
+    public float LightIntensity = 1;
     Color32 PrevFadeColor;
     bool headState = false;
+    float t;
     void Start()
     {
         p1Serial.Open();
@@ -25,7 +26,15 @@ public class LedSerial : MonoBehaviour
     {
         //ReadPack();
         ReadData();
+        //FixLedPower();
         //UpdatePacks();
+    }
+    void FixLedPower()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            Lights[i].intensity = LightIntensity / (Lights[i].color.r + Lights[i].color.g + Lights[i].color.b);
+        }
     }
     private void ReadPack()
     {
@@ -77,27 +86,30 @@ public class LedSerial : MonoBehaviour
                 Lights[dataPacket[5]].color = new Color32(dataPacket[6], dataPacket[7], dataPacket[8], 255);
                 break;
             case 50:
+            case 51:
                 if (dataPacket[6] > 8)
                     dataPacket[6] = 8;
                 for (int i = dataPacket[5]; i < dataPacket[6]; i++)
                 {
                     Lights[i].color = new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255);
                 }
-                PrevFadeColor = new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255);
+                //PrevFadeColor = new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255);
                 break;
-
+            /*
             case 51:
                 if (dataPacket[6] > 8)
                     dataPacket[6] = 8;
-                for (int time = 0; time < dataPacket[11]; time++)
-                {
                     for (int i = dataPacket[5]; i < dataPacket[6]; i++)
                     {
-                        Lights[i].color = Color.Lerp(PrevFadeColor, new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255), time / 255);
+                        Lights[i].color = Color.Lerp(PrevFadeColor, new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255), t);
                     }
-                }
+                    if (t < 1)
+                    { 
+                        t += Time.deltaTime/1.5f;
+                    }
                 PrevFadeColor = new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255);
                 break;
+            */
         }
     }
 }

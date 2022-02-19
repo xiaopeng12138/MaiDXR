@@ -27,7 +27,7 @@ EditorSettings:
   m_GameObjectNamingDigits: 1
   m_GameObjectNamingScheme: 2
   m_AssetNamingUsesSpace: 1
-  m_UseLegacyProbeSampleCount: 0
+  m_UseLegacyProbeSampleCount: 1
   m_SerializeInlineMappingsOnOneLine: 1
   m_DisableCookiesInLightmapper: 0
   m_AssetPipelineMode: 1

@@ -62,11 +62,11 @@ public class SettingsManager : MonoBehaviour
         ButtonToKey Button1Scp = ButtonObjs[0].GetComponent<ButtonToKey>();
         Button1Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button1);
         ButtonToKey Button2Scp = ButtonObjs[1].GetComponent<ButtonToKey>();
-        Button1Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button2);
+        Button2Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button2);
         ButtonToKey Button3Scp = ButtonObjs[2].GetComponent<ButtonToKey>();
-        Button1Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button3);
+        Button3Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button3);
         ButtonToKey Button4Scp = ButtonObjs[3].GetComponent<ButtonToKey>();
-        Button1Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button4);
+        Button4Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button4);
     }
 
     void FirstStart()
