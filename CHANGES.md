@@ -2,15 +2,12 @@
 
 # Latest
 
-## v0.5
-Add local motion
+## v0.6.1
+Fix performance issue #12
 
-Add none-VR camera FOV configuration
+Adjust framework
 
-Add Serial2 (2p touch)
-
-Some small framework update/fix
-
+Bugs fix
 
 # Old version
 
@@ -60,3 +57,19 @@ Update framework color
 Fix Settings to load on start
 
 Update default config
+
+## v0.5
+Add local motion
+
+Add none-VR camera FOV configuration
+
+Add Serial2 (2p touch)
+
+Some small framework update/fix
+
+## v0.6
+Add more custom button #11
+
+Add button lights
+
+Adjust framework
