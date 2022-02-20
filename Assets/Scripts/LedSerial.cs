@@ -14,7 +14,7 @@ public class LedSerial : MonoBehaviour
     byte recivData;
     int packLeng = 0;
     public Light[] Lights;
-    public float LightIntensity = 1;
+    public float LightIntensity = 3f;
     Color32 PrevFadeColor;
     bool headState = false;
     void Start()
@@ -26,13 +26,14 @@ public class LedSerial : MonoBehaviour
     {
         //ReadPack();
         ReadData();
-        FixLedPower();
+        StartCoroutine(FixLedPower());
     }
-    void FixLedPower()
+    IEnumerator FixLedPower()
     {
         for (int i = 0; i < 8; i++)
         {
-            Lights[i].intensity = LightIntensity / 2 * ((Lights[i].color.r + Lights[i].color.g + Lights[i].color.b)/3);
+            Lights[i].intensity = LightIntensity / (Lights[i].color.r + Lights[i].color.g + Lights[i].color.b) +0.1f;
+            yield return null;
         }
     }
     private void ReadPack()
