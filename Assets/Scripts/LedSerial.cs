@@ -1,6 +1,8 @@
+
 using UnityEngine;
 using System.IO.Ports;
 using System;
+using System.Collections;
 
 public class LedSerial : MonoBehaviour
 {
@@ -15,31 +17,27 @@ public class LedSerial : MonoBehaviour
     public float LightIntensity = 1;
     Color32 PrevFadeColor;
     bool headState = false;
-    float t;
     void Start()
     {
         p1Serial.Open();
         Debug.Log("LED Serial Started");
-
     }
     void Update()
     {
         //ReadPack();
         ReadData();
-        //FixLedPower();
-        //UpdatePacks();
+        FixLedPower();
     }
     void FixLedPower()
     {
         for (int i = 0; i < 8; i++)
         {
-            Lights[i].intensity = LightIntensity / (Lights[i].color.r + Lights[i].color.g + Lights[i].color.b);
+            Lights[i].intensity = LightIntensity / 2 * ((Lights[i].color.r + Lights[i].color.g + Lights[i].color.b)/3);
         }
     }
     private void ReadPack()
     {
         ReadData();
-        //StartCoroutine(ReadData());
         Debug.Log("RX: "+dataPacket[0]+"-"+
                                     dataPacket[1]+"-"+
                                     dataPacket[2]+"-"+
@@ -64,8 +62,8 @@ public class LedSerial : MonoBehaviour
             {
                 do
                 {
-                        incomPacket[packLeng++] = recivData;
-                        recivData = Convert.ToByte(p1Serial.ReadByte());
+                    incomPacket[packLeng++] = recivData;
+                    recivData = Convert.ToByte(p1Serial.ReadByte());
                 }
                 while (recivData != 224 & p1Serial.BytesToRead >= 1);
                 headState = true;
@@ -86,30 +84,36 @@ public class LedSerial : MonoBehaviour
                 Lights[dataPacket[5]].color = new Color32(dataPacket[6], dataPacket[7], dataPacket[8], 255);
                 break;
             case 50:
-            case 51:
                 if (dataPacket[6] > 8)
                     dataPacket[6] = 8;
                 for (int i = dataPacket[5]; i < dataPacket[6]; i++)
                 {
                     Lights[i].color = new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255);
                 }
-                //PrevFadeColor = new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255);
+                PrevFadeColor = new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255);
                 break;
-            /*
             case 51:
                 if (dataPacket[6] > 8)
                     dataPacket[6] = 8;
-                    for (int i = dataPacket[5]; i < dataPacket[6]; i++)
-                    {
-                        Lights[i].color = Color.Lerp(PrevFadeColor, new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255), t);
-                    }
-                    if (t < 1)
-                    { 
-                        t += Time.deltaTime/1.5f;
-                    }
+                Color32 nowCorlor = new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255);
+                StartCoroutine(Fade(dataPacket[5], dataPacket[6], Lights,PrevFadeColor, nowCorlor, dataPacket[11]));
                 PrevFadeColor = new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255);
+                //Debug.Log("Fade");
                 break;
-            */
+        }
+    }
+    private IEnumerator Fade(byte start, byte end, Light[] Lights, Color32 prevColor, Color32 nowColor, float duration)
+    {
+        duration = 4095 / duration * 8 / 1000;
+        //Debug.Log(duration);
+        for (float time = 0f; time < duration; time += Time.deltaTime)
+        {
+            float progress = time / duration;
+            for (int i = start; i < end; i++)
+            {
+                Lights[i].color = Color.Lerp(prevColor, nowColor, progress);
+            }
+            yield return null;
         }
     }
 }
