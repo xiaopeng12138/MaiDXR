@@ -2,12 +2,14 @@
 
 # Latest
 
-## v0.6.1
-Fix performance issue #12
+## v0.6.2
+Fix button lighting issue
+
+Fix freez after start MaiDXR
 
 Adjust framework
 
-Custom button bugs fix
+
 
 # Old version
 
@@ -73,3 +75,10 @@ Add more custom button #11
 Add button lights
 
 Adjust framework
+
+## v0.6.1
+Fix performance issue #12
+
+Adjust framework
+
+Custom button bugs fix
