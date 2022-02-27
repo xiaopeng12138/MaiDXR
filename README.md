@@ -35,7 +35,7 @@ Please see Changes.md
 - Download and install [com0com](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/powersdr-iq/setup_com0com_W7_x64_signed.exe)
 - Configure com0com to bind COM3 and COM5 (it must be these two ports), COM4 and COM6 is optional (bind them will make your startup process faster).
 - Disable somehow DummyTouchPanel.
-- If you need button light, pls disable somehow DummyLED and bind COM20 21 22 23 to COM50 51 52 53 (it must be these ports).
+- If you need button light, pls bind COM21 to COM51 (it must be these two ports)(Do not disable DummyLED!).
 - Run the game in window mode and make sure there is no black bar.
 - Start MaiDXR.
 - Enable somehow Test mod then exit Test mode.
