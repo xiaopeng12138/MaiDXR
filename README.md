@@ -14,8 +14,8 @@ Open Source VR Arcade Simulator
 - https://github.com/Sucareto/Mai2Touch
 
 ## Requirements
-https://www.nuget.org/packages/InputSimulator
-https://github.com/hecomi/uWindowCapture
+- https://www.nuget.org/packages/InputSimulator
+- https://github.com/hecomi/uWindowCapture
 
 ## Supported platform
 - All SteamVR device
