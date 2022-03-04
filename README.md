@@ -63,7 +63,7 @@ HapticDuration: in second
 
 HapticAmplitude: 0.0 - 1.0, 1.0 = max vibration
 
-Button(1-4: top to bottom): Pls see [VK Code](https://docs.microsoft.com/windows/win32/inputdev/virtual-key-codes). Some keys do not require "VK_" at the beginning.
+SelectButton and Button(1-4: top to bottom): Pls see [VK Code](https://docs.microsoft.com/windows/win32/inputdev/virtual-key-codes). Some keys do not require "VK_" at the beginning.
 
 ## Preview
 ![Image Capture](https://github.com/xiaopeng12138/MaiDXR/blob/main/PreviewImage/MaiDXR_PreviewImage.png?raw=true)
