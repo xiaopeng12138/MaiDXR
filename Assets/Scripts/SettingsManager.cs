@@ -17,7 +17,8 @@ public class SettingsManager : MonoBehaviour
     public GameObject SmoothCameraObj;
     public Camera SmoothCamera;
     public GameObject XROriginObj;
-    public GameObject[] ButtonObjs;    
+    public GameObject[] ButtonObjs;
+    public GameObject SelectButton;    
     public GameObject HeadCube;
     void Start()
     {
@@ -63,6 +64,8 @@ public class SettingsManager : MonoBehaviour
         RHandScp.amplitude = Setting.HapticAmplitude;
         XROriginScp.CameraYOffset = Setting.PlayerHigh/100;
         Time.fixedDeltaTime = 1/Setting.TouchRefreshRate;
+        ButtonToKey SelectButtonScp = SelectButton.GetComponent<ButtonToKey>();
+        SelectButtonScp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.SelectButton);
         ButtonToKey Button1Scp = ButtonObjs[0].GetComponent<ButtonToKey>();
         Button1Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button1);
         ButtonToKey Button2Scp = ButtonObjs[1].GetComponent<ButtonToKey>();
@@ -92,6 +95,7 @@ public class SettingsManager : MonoBehaviour
                 ShowHeadCube = false,
                 HapticDuration = 0.2f,
                 HapticAmplitude = 1f,
+                SelectButton = "VK_3",
                 Button1 = "SCROLL",
                 Button2 = "PAUSE",
                 Button3 = "VK_1",
@@ -122,6 +126,7 @@ public class Settings
     public bool ShowHeadCube { get; set; }
     public float HapticDuration { get; set; }
     public float HapticAmplitude { get; set; }
+    public string SelectButton { get; set; }
     public string Button1 { get; set; }
     public string Button2 { get; set; }
     public string Button3 { get; set; }
