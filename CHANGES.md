@@ -2,13 +2,18 @@
 
 # Latest
 
-## v0.6.2
-Fix button lighting issue
+## v0.7
+Add 3rd person view
 
-Fix freez after start MaiDXR
+Add body light
+
+Fix bugs
 
 Adjust framework
 
+New setting format and default setting
+
+Some small changes
 
 
 # Old version
@@ -82,3 +87,10 @@ Fix performance issue #12
 Adjust framework
 
 Custom button bugs fix
+
+## v0.6.2
+Fix button lighting issue
+
+Fix freez after start MaiDXR
+
+Adjust framework
