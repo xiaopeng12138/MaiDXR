@@ -29,11 +29,12 @@ public class Serial : MonoBehaviour
         ReadPack();
         if (!failed)
             TouchSetUp(); 
+        SendTouch();
     }
     
     void FixedUpdate()
     {
-        SendTouch();
+        
     }
 
     private void TouchSetUp()
@@ -85,7 +86,6 @@ public class Serial : MonoBehaviour
 
     public static void ChangeTouch(int Area, bool State)
     {
-        if (startUp)
             ByteArrayExt.SetBit(touchPacket, Area+8, State);
     }
 }

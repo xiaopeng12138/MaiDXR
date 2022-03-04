@@ -18,6 +18,7 @@ public class SettingsManager : MonoBehaviour
     public Camera SmoothCamera;
     public GameObject XROriginObj;
     public GameObject[] ButtonObjs;    
+    public GameObject HeadCube;
     void Start()
     {
         FirstStart();
@@ -44,8 +45,8 @@ public class SettingsManager : MonoBehaviour
     {
         LHandObj.transform.localScale = new Vector3(Setting.HandSize/100,Setting.HandSize/100,Setting.HandSize/100);
         RHandObj.transform.localScale = new Vector3(Setting.HandSize/100,Setting.HandSize/100,Setting.HandSize/100);
-        LHandObj.transform.localPosition = new Vector3(Setting.HandPositionX/100,Setting.HandPositionY/100,Setting.HandPositionZ/100);
-        RHandObj.transform.localPosition = new Vector3(Setting.HandPositionX/-100,Setting.HandPositionY/100,Setting.HandPositionZ/100);
+        LHandObj.transform.localPosition = new Vector3(Setting.HandPosition[0]/100,Setting.HandPosition[1]/100,Setting.HandPosition[2]/100);
+        RHandObj.transform.localPosition = new Vector3(Setting.HandPosition[0]/-100,Setting.HandPosition[1]/100,Setting.HandPosition[2]/100);
         XROrigin XROriginScp = XROriginObj.GetComponent<XROrigin>();
         XROriginScp.CameraYOffset = Setting.PlayerHigh;
         UwcWindowTexture ScreenScp = ScreenObj.GetComponent<UwcWindowTexture>();
@@ -53,6 +54,9 @@ public class SettingsManager : MonoBehaviour
         CameraSmooth CameraSmoothScp = SmoothCameraObj.GetComponent<CameraSmooth>();
         CameraSmoothScp.smoothSpeed = Setting.CameraSmooth;
         SmoothCamera.fieldOfView = Setting.CameraFOV;
+        CameraSmoothScp.PositionOffset = new Vector3(Setting.CameraPosition[0],Setting.CameraPosition[1],Setting.CameraPosition[2]);
+        MeshRenderer HeadCubeMesh = HeadCube.GetComponent<MeshRenderer>();
+        HeadCubeMesh.enabled = Setting.ShowHeadCube;
         Controller LHandScp = LHandObj.GetComponent<Controller>();
         LHandScp.amplitude = Setting.HapticAmplitude;
         Controller RHandScp = RHandObj.GetComponent<Controller>();
@@ -78,16 +82,16 @@ public class SettingsManager : MonoBehaviour
             Settings Setting = new Settings()
             {
                 HandSize = 8f,
-                HandPositionX = 2f,
-                HandPositionY = -2f,
-                HandPositionZ = 7f,
+                HandPosition = new float[3]{2f, -2f, 7f},
                 PlayerHigh = 180f,
                 CaptureFrameRate = 90,
-                TouchRefreshRate = 90,
-                CameraSmooth = 0.1f,
-                CameraFOV = 85f,
-                HapticDuration = 0.15f,
-                HapticAmplitude = 1,
+                TouchRefreshRate = 120,
+                CameraSmooth = 0.05f,
+                CameraFOV = 80f,
+                CameraPosition = new float[3]{0f, 0f, 0f},
+                ShowHeadCube = false,
+                HapticDuration = 0.2f,
+                HapticAmplitude = 1f,
                 Button1 = "SCROLL",
                 Button2 = "PAUSE",
                 Button3 = "VK_1",
@@ -108,14 +112,14 @@ public class SettingsManager : MonoBehaviour
 public class Settings
 {
     public float HandSize { get; set; }
-    public float HandPositionX { get; set; }
-    public float HandPositionY { get; set; }
-    public float HandPositionZ { get; set; }
+    public float[] HandPosition { get; set; }
     public float PlayerHigh { get; set; }
     public int CaptureFrameRate { get; set; }
     public float TouchRefreshRate { get; set; }
     public float CameraSmooth { get; set; }
     public float CameraFOV { get; set; }
+    public float[] CameraPosition { get; set; }
+    public bool ShowHeadCube { get; set; }
     public float HapticDuration { get; set; }
     public float HapticAmplitude { get; set; }
     public string Button1 { get; set; }

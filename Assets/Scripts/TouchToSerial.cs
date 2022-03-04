@@ -28,7 +28,6 @@ public class TouchToSerial : MonoBehaviour
     {
         Serial.ChangeTouch((int)Area, false);
         Serial.SendTouch();
-        //Serial.ResetTouch();
     }
 
 }

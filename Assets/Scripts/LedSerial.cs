@@ -13,6 +13,8 @@ public class LedSerial : MonoBehaviour
     public List<byte> incomPacket = new List<byte>();
     byte recivData;
     public Light[] Lights;
+    public Light BodyLight;
+    public Light DisplayLight;
     public float LightIntensity = 3f;
     Color32 PrevFadeColor;
     Color32 nowCorlor;
@@ -63,7 +65,7 @@ public class LedSerial : MonoBehaviour
 
     void UpdateLED()
     {
-        if (dataPacket.Count < 9)
+        if (dataPacket.Count < 8)
             return;
         switch (dataPacket[4])
         { 
@@ -84,6 +86,10 @@ public class LedSerial : MonoBehaviour
                     StartCoroutine(Fade(dataPacket[5], dataPacket[6], Lights,PrevFadeColor, nowCorlor, dataPacket[11]));
                 PrevFadeColor = new Color32(dataPacket[8], dataPacket[9], dataPacket[10], 255);
                 dataPacket.Clear();
+                break;
+            case 57:
+                BodyLight.color = new Color32(dataPacket[5], dataPacket[5], dataPacket[5], 255);
+                DisplayLight.color = new Color32(dataPacket[6], dataPacket[6], dataPacket[6], 255);
                 break;
         }
     }
