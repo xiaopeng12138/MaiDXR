@@ -53,6 +53,12 @@ CameraSmooth: 0.0 - 1.0, 1.0 = no smoothing
 
 CameraFOV: in degree
 
+CameraPosition: in M
+
+To enable 3rd person mod: set CameraSmooth to 0 then move your headset to where your camera wants to be. Then focus/select MaiDXR window to lock position. You can show your head by enabling the setting below.
+
+ShowHeadCube: true or false
+
 HapticDuration: in second
 
 HapticAmplitude: 0.0 - 1.0, 1.0 = max vibration
@@ -67,7 +73,7 @@ Button(1-4: top to bottom): Pls see [VK Code](https://docs.microsoft.com/windows
 - √ Add non-VR window and camera smooth
 - √ Add button light
 - √ Add button vibration
-- Add 3rd person camera
+- √ Add 3rd person camera
 - Add 2p
 - √ Add custom button
 
