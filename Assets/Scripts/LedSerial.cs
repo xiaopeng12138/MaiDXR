@@ -26,7 +26,7 @@ public class LedSerial : MonoBehaviour
         //ReadPack();
         ReadData();
         UpdateLED();
-        FixLedPower();
+        //FixLedPower();
     }
     
     void ReadPack()
@@ -113,7 +113,7 @@ public class LedSerial : MonoBehaviour
     {
         for (int i = 0; i < 8; i++)
         {
-            Lights[i].intensity = LightIntensity / (Lights[i].color.r + Lights[i].color.g + Lights[i].color.b + 0.1f) ;
+            Lights[i].intensity = LightIntensity / (Lights[i].color.r / 2 + Lights[i].color.g / 2 + Lights[i].color.b / 2 + 0.1f) ;
         }
     }
 }
