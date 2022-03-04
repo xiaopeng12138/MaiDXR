@@ -36,7 +36,7 @@ Please see Changes.md
 - Configure com0com to bind COM3 and COM5 (it must be these two ports), COM4 and COM6 is optional (bind them will make your startup process faster).
 - Disable somehow DummyTouchPanel.
 - If you need button light, pls bind COM21 to COM51 (it must be these two ports)(Do not disable DummyLED!).
-- Run the game in window mode and make sure there is no black bar.
+- Run the game in window mode and make sure there is no black bar. Recommend setting for 1080p display: "xxxxxx.exe -screen-fullscreen 0 -screen-width 1170 -screen-height 1050"
 - Start MaiDXR.
 - Enable somehow Test mod then exit Test mode.
 
