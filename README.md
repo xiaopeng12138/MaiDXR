@@ -84,5 +84,6 @@ SelectButton and Button(1-4: top to bottom): Pls see [VK Code](https://docs.micr
 - √ Add 3rd person camera
 - Add 2p
 - √ Add custom button
+- support 1p only capture
 
 Huge thanks to HelloKS and derole1
