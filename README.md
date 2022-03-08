@@ -6,7 +6,7 @@ Open Source VR Arcade Simulator
 - Support DX version or above
 - The model is almost 1:1 to DX cabinet/framework
 - Native touch input and light outupt
-- 90hz or 120hz capture (Bitblt) (Thanks Thalesalex for the recommendation)
+- 90hz or 120hz capture (Bitblt) (Thanks @Thalesalex for the recommendation)
 - Customizable haptic feedback
 - 3rd person camera and smooth camera
 - 4 customizable buttons (+ 1 select button)
