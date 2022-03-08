@@ -3,6 +3,14 @@ Open Source VR Arcade Simulator
 
 ## About this project
 - This project is an update of https://github.com/xiaopeng12138/MaiMai-VR. 
+- Support DX version or above
+- The model is almost 1:1 to DX cabinet/framework
+- Native touch input and light outupt
+- 90hz or 120hz capture (Bitblt) (Thanks Thalesalex for the recommendation)
+- Customizable haptic feedback
+- 3rd person camera and smooth camera
+- 4 customizable buttons (+ 1 select button)
+- only 1 player
 
 ## Inspired by
 - https://github.com/derole1/MaiMai-VR
