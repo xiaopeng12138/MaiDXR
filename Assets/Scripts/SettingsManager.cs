@@ -14,18 +14,18 @@ public class SettingsManager : MonoBehaviour
     public GameObject LHandObj;
     public GameObject RHandObj;
     public GameObject ScreenObj;
+    public Material ScreenMaterial;
     public GameObject SmoothCameraObj;
     public Camera SmoothCamera;
     public GameObject XROriginObj;
     public GameObject[] ButtonObjs;
     public GameObject SelectButton;    
     public GameObject HeadCube;
-    void Start()
+    private void Awake()
     {
         FirstStart();
         UpdateFromFile();
     }
-    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F5) | !FocusChecked)
@@ -36,7 +36,6 @@ public class SettingsManager : MonoBehaviour
                 JsonStr = File.ReadAllText(JsonPath);
                 Setting = JsonConvert.DeserializeObject<Settings>(JsonStr); 
                 UpdateFromFile();
-                Debug.Log("Setting Updated");
             }  
         }
         if (!Application.isFocused)
@@ -52,6 +51,7 @@ public class SettingsManager : MonoBehaviour
         XROriginScp.CameraYOffset = Setting.PlayerHigh;
         UwcWindowTexture ScreenScp = ScreenObj.GetComponent<UwcWindowTexture>();
         ScreenScp.captureFrameRate = Setting.CaptureFrameRate;
+        ScreenMaterial.SetTextureScale("_MainTex",new Vector2(Setting.Capture1PlayerOnly ? 1f : 0.5f, 1));
         CameraSmooth CameraSmoothScp = SmoothCameraObj.GetComponent<CameraSmooth>();
         CameraSmoothScp.smoothSpeed = Setting.CameraSmooth;
         SmoothCamera.fieldOfView = Setting.CameraFOV;
@@ -74,10 +74,13 @@ public class SettingsManager : MonoBehaviour
         Button3Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button3);
         ButtonToKey Button4Scp = ButtonObjs[3].GetComponent<ButtonToKey>();
         Button4Scp.keyToPress = (VirtualKeyCode)Enum.Parse(typeof(VirtualKeyCode), Setting.Button4);
+        Debug.Log("Setting Updated");
     }
 
     void FirstStart()
     {
+        Debug.Log("FirstStart");
+        Debug.Log("Append Setting File");
         JsonPath = Path.GetDirectoryName(Application.dataPath) + "/Settings.json";
         Debug.Log(JsonPath);
         if (!File.Exists (JsonPath))
@@ -88,6 +91,7 @@ public class SettingsManager : MonoBehaviour
                 HandPosition = new float[3]{2f, -2f, 7f},
                 PlayerHigh = 180f,
                 CaptureFrameRate = 90,
+                Capture1PlayerOnly = false,
                 TouchRefreshRate = 120,
                 CameraSmooth = 0.05f,
                 CameraFOV = 80f,
@@ -104,12 +108,12 @@ public class SettingsManager : MonoBehaviour
             JsonStr = JsonConvert.SerializeObject(Setting, Formatting.Indented);
             Debug.Log(JsonStr);
             File.AppendAllText(JsonPath, JsonStr);
+            Debug.Log("Setting FileAppended");
         }
-        else
-        {
+            Debug.Log("Read Setting File");
             JsonStr = File.ReadAllText(JsonPath);
             Setting = JsonConvert.DeserializeObject<Settings>(JsonStr);
-        }
+            Debug.Log("Setting File Readed");
     }
     
 }
@@ -119,6 +123,7 @@ public class Settings
     public float[] HandPosition { get; set; }
     public float PlayerHigh { get; set; }
     public int CaptureFrameRate { get; set; }
+    public bool Capture1PlayerOnly { get; set; }
     public float TouchRefreshRate { get; set; }
     public float CameraSmooth { get; set; }
     public float CameraFOV { get; set; }

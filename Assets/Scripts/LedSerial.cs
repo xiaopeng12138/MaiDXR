@@ -15,36 +15,18 @@ public class LedSerial : MonoBehaviour
     public Light[] Lights;
     public Light BodyLight;
     public Light DisplayLight;
-    public float LightIntensity = 3f;
     Color32 PrevFadeColor;
     Color32 nowCorlor;
     void Start()
     {
+        Debug.Log("Started LED Serial");
         p1Serial.Open();
         Debug.Log("LED Serial Started");
     }
     void Update()
     {
-        //ReadPack();
         ReadData();
         UpdateLED();
-        //FixLedPower();
-    }
-    
-    void ReadPack()
-    {
-        ReadData();
-        Debug.Log("RX: "+dataPacket[0]+"-"+
-                                    dataPacket[1]+"-"+
-                                    dataPacket[2]+"-"+
-                                    dataPacket[3]+"-"+
-                                    dataPacket[4]+"-"+
-                                    dataPacket[5]+"-"+
-                                    dataPacket[6]+"-"+
-                                    dataPacket[7]+"-"+
-                                    dataPacket[8]+"-"+
-                                    dataPacket[9]+"-"+
-                                    dataPacket[10]);
     }
     void ReadData()
     {
@@ -59,8 +41,7 @@ public class LedSerial : MonoBehaviour
                 return;
             }
             incomPacket.Add(recivData);
-        }
-            
+        }    
     }
 
     void UpdateLED()
@@ -90,20 +71,19 @@ public class LedSerial : MonoBehaviour
             case 57:
                 BodyLight.color = new Color32(dataPacket[5], dataPacket[5], dataPacket[5], 255);
                 DisplayLight.color = new Color32(dataPacket[6], dataPacket[6], dataPacket[6], 255);
+                dataPacket.Clear();
                 break;
         }
     }
     IEnumerator Fade(byte start, byte end, Light[] Lights, Color32 prevColor, Color32 nowColor, float duration)
     {
         duration = 4095 / duration * 8 / 1000;
-        //Debug.Log(duration);
         for (float time = 0f; time < duration; time += Time.deltaTime)
         {
             float progress = time / duration;
             for (int i = start; i < end; i++)
             {
                 Lights[i].color = Color.Lerp(prevColor, nowColor, progress);
-                //yield return null;
             }
             yield return null;
         }
@@ -113,13 +93,6 @@ public class LedSerial : MonoBehaviour
         for (int i = start; i < end; i++)
         {
             Lights[i].color = Color;
-        }
-    }
-    void FixLedPower()
-    {
-        for (int i = 0; i < 8; i++)
-        {
-            Lights[i].intensity = LightIntensity / (Lights[i].color.r / 2 + Lights[i].color.g / 2 + Lights[i].color.b / 2 + 0.1f) ;
         }
     }
 }

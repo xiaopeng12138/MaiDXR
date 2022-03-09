@@ -1,7 +1,7 @@
-using System.Collections;
 using UnityEngine;
 using System.IO.Ports;
 using System;
+using System.Collections;
 public class Serial : MonoBehaviour
 {
     static SerialPort p1Serial = new SerialPort ("COM5", 9600);
@@ -20,24 +20,19 @@ public class Serial : MonoBehaviour
         settingPacket[5] = 41;
         touchPacket[0] = 40;
         touchPacket[8] = 41;
+        Debug.Log("Start Serial1");
         p1Serial.Open();
-        Debug.Log("Serial Started");
+        Debug.Log("Serial1 Started");
     }
 
     void Update()
     {
-        ReadPack();
+        ReadData();
         if (!failed)
             TouchSetUp(); 
         SendTouch();
     }
-    
-    void FixedUpdate()
-    {
-        
-    }
-
-    private void TouchSetUp()
+    void TouchSetUp()
     {
         switch (incomPacket[3])
         {
@@ -58,7 +53,7 @@ public class Serial : MonoBehaviour
         }
     }
 
-    private void ReadPack()
+    void ReadData()
     {
         timer = 0f;
         if (p1Serial.BytesToRead == 6)
@@ -75,7 +70,7 @@ public class Serial : MonoBehaviour
                 if(timer > 20f){ failed = true; break; }
                 timer += Time.deltaTime;
             }
-        }
+        }    
     }
 
     public static void SendTouch()
@@ -86,7 +81,7 @@ public class Serial : MonoBehaviour
 
     public static void ChangeTouch(int Area, bool State)
     {
-            ByteArrayExt.SetBit(touchPacket, Area+8, State);
+        ByteArrayExt.SetBit(touchPacket, Area+8, State);
     }
 }
 

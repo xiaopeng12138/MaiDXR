@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using System.IO.Ports;
 using System;
@@ -19,6 +18,7 @@ public class Serial2 : MonoBehaviour
         settingPacket[5] = 41;
         touchPacket[0] = 40;
         touchPacket[8] = 41;
+        Debug.Log("Start Serial2");
         p1Serial.Open();
         Debug.Log("Serial2 Started");
     }
@@ -28,10 +28,6 @@ public class Serial2 : MonoBehaviour
         ReadPack();
         if (!failed)
             TouchSetUp(); 
-    }
-    void FixedUpdate()
-    {
-        //SendTouch(); //Not send touch to p2 port
     }
 
     private void TouchSetUp()
@@ -73,17 +69,5 @@ public class Serial2 : MonoBehaviour
                 timer += Time.deltaTime;
             }
         }
-    }
-
-    static void SendTouch()
-    {
-        if (startUp)
-            p1Serial.Write(touchPacket, 0, 9);
-    }
-
-    static void ChangeTouch(int Area, bool State)
-    {
-        if (startUp)
-            ByteArrayExt.SetBit(touchPacket, Area+8, State);
     }
 }

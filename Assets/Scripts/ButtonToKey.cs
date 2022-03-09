@@ -10,10 +10,6 @@ public class ButtonToKey : MonoBehaviour
     static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, UIntPtr dwExtraInfo);
     public VirtualKeyCode keyToPress;
 
-    void Start()
-    {
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         keybd_event(System.Convert.ToByte(keyToPress), (byte)MapVirtualKey((uint)keyToPress, 0), 0, UIntPtr.Zero);  
