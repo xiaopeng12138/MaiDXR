@@ -3,6 +3,14 @@ Open Source VR Arcade Simulator
 
 ## About this project
 - This project is an update of https://github.com/xiaopeng12138/MaiMai-VR. 
+- Support DX version or above
+- The model is almost 1:1 to DX cabinet/framework
+- Native touch input and light outupt
+- 90hz or 120hz capture (Bitblt) (Thanks @Thalesalex for the recommendation)
+- Customizable haptic feedback
+- 3rd person camera and smooth camera
+- 4 customizable buttons (+ 1 select button)
+- only 1 player
 
 ## Inspired by
 - https://github.com/derole1/MaiMai-VR
@@ -63,7 +71,7 @@ HapticDuration: in second
 
 HapticAmplitude: 0.0 - 1.0, 1.0 = max vibration
 
-Button(1-4: top to bottom): Pls see [VK Code](https://docs.microsoft.com/windows/win32/inputdev/virtual-key-codes). Some keys do not require "VK_" at the beginning.
+SelectButton and Button(1-4: top to bottom): Pls see [VK Code](https://docs.microsoft.com/windows/win32/inputdev/virtual-key-codes). Some keys do not require "VK_" at the beginning.
 
 ## Preview
 ![Image Capture](https://github.com/xiaopeng12138/MaiDXR/blob/main/PreviewImage/MaiDXR_PreviewImage.png?raw=true)
@@ -76,5 +84,6 @@ Button(1-4: top to bottom): Pls see [VK Code](https://docs.microsoft.com/windows
 - √ Add 3rd person camera
 - Add 2p
 - √ Add custom button
+- support 1p only capture
 
 Huge thanks to HelloKS and derole1
