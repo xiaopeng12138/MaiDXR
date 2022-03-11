@@ -58,6 +58,8 @@ HandSize, HandPosition, PlayerHigh: in CM
 
 CaptureFrameRate, TouchRefreshRate: in FPS
 
+Capture1PlayerOnly: true (9:16 aspect ratio) or false (default) (2*9:16 aspect ratio)
+
 CameraSmooth: 0.0 - 1.0, 1.0 = no smoothing
 
 CameraFOV: in degree
