@@ -27,7 +27,6 @@ public class ButtonToKey : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         _insideColliderCount += 1;
-        
     }
 
     private void OnTriggerExit(Collider other)

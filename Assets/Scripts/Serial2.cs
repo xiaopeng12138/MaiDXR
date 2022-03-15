@@ -8,7 +8,6 @@ public class Serial2 : MonoBehaviour
     byte[] incomPacket = new byte[6];
     byte[] settingPacket = new byte[6];
     static byte[] touchPacket = new byte[9];
-    static bool startUp = true; //use ture for default start up state to prevent restart game
     float timer = 0; 
     bool failed = false;
     byte recivData;
@@ -36,7 +35,6 @@ public class Serial2 : MonoBehaviour
         {
             case 76:
             case 69:
-                startUp = false;
                 break;
             case 114:
             case 107:
@@ -46,7 +44,6 @@ public class Serial2 : MonoBehaviour
                 Array.Clear(incomPacket, 0, incomPacket.Length);
                 break;
             case 65:
-                startUp = true;
                 break;
         }
     }

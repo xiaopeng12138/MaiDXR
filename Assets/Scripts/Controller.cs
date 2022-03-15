@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.XR;
 public class Controller : MonoBehaviour
 {
-    // Start is called before the first frame update
     public XRNode Hand;
     InputDevice device;
     public float duration;
