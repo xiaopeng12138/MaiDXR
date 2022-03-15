@@ -232,7 +232,7 @@ QualitySettings:
     PS4: 5
     PS5: 5
     Stadia: 5
-    Standalone: 5
+    Standalone: 0
     WebGL: 3
     Windows Store Apps: 5
     XboxOne: 5
