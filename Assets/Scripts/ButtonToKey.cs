@@ -14,15 +14,15 @@ public class ButtonToKey : MonoBehaviour
     private bool triggered = true;
     private void OnTriggerEnter(Collider other)
     {
-        keybd_event(System.Convert.ToByte(keyToPress), (byte)MapVirtualKey((uint)keyToPress, 0), 0, UIntPtr.Zero);
         _insideColliderCount += 1;
+        keybd_event(System.Convert.ToByte(keyToPress), (byte)MapVirtualKey((uint)keyToPress, 0), 0, UIntPtr.Zero);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (_insideColliderCount == 0)
-            keybd_event(System.Convert.ToByte(keyToPress), (byte)MapVirtualKey((uint)keyToPress, 0), 2, UIntPtr.Zero);
         _insideColliderCount -= 1;
         _insideColliderCount = Mathf.Max(0, _insideColliderCount);
+        if (_insideColliderCount == 0)
+            keybd_event(System.Convert.ToByte(keyToPress), (byte)MapVirtualKey((uint)keyToPress, 0), 2, UIntPtr.Zero);
     }
 }
