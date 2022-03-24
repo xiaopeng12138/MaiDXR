@@ -21,7 +21,7 @@ Open Source VR Arcade Simulator
 - https://github.com/hecomi/uWindowCapture
 - https://github.com/Sucareto/Mai2Touch
 
-## Requirements
+## Build requirements
 - https://www.nuget.org/packages/InputSimulator
 - https://github.com/hecomi/uWindowCapture
 
@@ -90,3 +90,5 @@ SelectButton and Button(1-4: top to bottom): Pls see [VK Code](https://docs.micr
 - √ support 1p only capture
 
 Huge thanks to HelloKS and derole1
+
+If you want to add any function pls commit PR, I will accept it as soon as possible and make a new build/release.
