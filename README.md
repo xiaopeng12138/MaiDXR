@@ -1,6 +1,8 @@
 # MaiDXR
 Open Source VR Arcade Simulator
 
+[Chinese 中文 README](https://github.com/xiaopeng12138/MaiDXR/blob/main/README_zh)
+
 ## About this project
 - This project is an update of https://github.com/xiaopeng12138/MaiMai-VR. 
 - Support DX version or above
@@ -21,9 +23,10 @@ Open Source VR Arcade Simulator
 - https://github.com/hecomi/uWindowCapture
 - https://github.com/Sucareto/Mai2Touch
 
-## Requirements
-- https://www.nuget.org/packages/InputSimulator
-- https://github.com/hecomi/uWindowCapture
+## Build requirements
+- Current Unity version: 2020.3.30f1
+- [InputSimulator](https://www.nuget.org/packages/InputSimulator) (You need to extract the .dll file and put it in to assets folder)
+- [uWindowCapture](https://github.com/hecomi/uWindowCapture) (just import/install it on your unity project)
 
 ## Supported platform
 - All SteamVR device
@@ -39,13 +42,14 @@ Open Source VR Arcade Simulator
 Please see Changes.md
 
 ## How to use
+- Get game somehow and make sure it will run properly. (DO NOT ASK ANYTHING THAT IS DIRECTLY RELATED TO THE GAME IT SELF)
 - Download [latest version of MaiDXR](https://github.com/xiaopeng12138/MaiDXR/releases)
 - Download and install [com0com](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/powersdr-iq/setup_com0com_W7_x64_signed.exe)
 - Configure com0com to bind COM3 and COM5 (it must be these two ports), COM4 and COM6 is optional (bind them will make your startup process faster).
 - You must enable the enable buffer option in com2com on both ports of all pairs. Otherwise, your MaiDXR will crash after the Unity logo.
-- Disable somehow DummyTouchPanel.
+- Disable DummyTouchPanel in xxxx.ini.
 - If you need button light, pls bind COM21 to COM51 (it must be these two ports)(Do not disable DummyLED!).
-- Run the game in window mode and make sure there is no black bar. Recommend setting for 1080p display: "xxxxxx.exe -screen-fullscreen 0 -screen-width 1170 -screen-height 1050"
+- Run the game in window mode by adding [Unity Standalone Player command line arguments](https://docs.unity3d.com/Manual/PlayerCommandLineArguments.html) in xxxxx.bat and make sure there is no black bar. Recommend setting for 1080p display: "xxxxxx.exe -screen-fullscreen 0 -screen-width 1170 -screen-height 1050"
 - Start MaiDXR.
 - Enable somehow Test mod then exit Test mode.
 
@@ -90,3 +94,5 @@ SelectButton and Button(1-4: top to bottom): Pls see [VK Code](https://docs.micr
 - √ support 1p only capture
 
 Huge thanks to HelloKS and derole1
+
+If you want to add any function pls commit PR, I will accept it as soon as possible and make a new build/release.
