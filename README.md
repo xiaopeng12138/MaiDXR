@@ -1,7 +1,7 @@
 # MaiDXR
 Open Source VR Arcade Simulator
 
-[Chinese 中文 README](https://github.com/xiaopeng12138/MaiDXR/blob/main/README_zh)
+[Chinese 中文 README](https://github.com/xiaopeng12138/MaiDXR/blob/main/README_zh.md)
 
 ## About this project
 - This project is an update of https://github.com/xiaopeng12138/MaiMai-VR. 
