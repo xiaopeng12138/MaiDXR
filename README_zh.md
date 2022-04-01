@@ -16,7 +16,7 @@
 - https://github.com/derole1/MaiMai-VR
 - https://github.com/HelloKS/MaiMai-VR
 
-##使用的仓库
+## 使用的仓库
 - https://github.com/HelloKS/MaiMai-VR
 - https://github.com/hecomi/uWindowCapture
 - https://github.com/Sucareto/Mai2Touch
