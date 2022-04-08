@@ -93,6 +93,7 @@ SelectButton and Button(1-4: top to bottom): Pls see [VK Code](https://docs.micr
 - √ Add custom button
 - √ Support 1p only capture
 - Add visual touch and button feedback
+- Add in game setting panel 
 
 Huge thanks to HelloKS and derole1
 
