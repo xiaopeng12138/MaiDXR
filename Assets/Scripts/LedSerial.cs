@@ -9,8 +9,8 @@ public class LedSerial : MonoBehaviour
 {
     static SerialPort p1Serial = new SerialPort ("COM51", 115200);
     // Start is called before the first frame update
-    public List<byte> dataPacket = new List<byte>();
-    public List<byte> incomPacket = new List<byte>();
+    List<byte> dataPacket = new List<byte>();
+    List<byte> incomPacket = new List<byte>();
     byte recivData;
     public Light[] Lights;
     public Light BodyLight;
@@ -20,13 +20,25 @@ public class LedSerial : MonoBehaviour
     void Start()
     {
         Debug.Log("Started LED Serial");
-        p1Serial.Open();
+        try
+        {
+            p1Serial.Open();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to Open Serial Ports: {ex}");
+        }
         Debug.Log("LED Serial Started");
     }
     void Update()
     {
-        ReadData();
+        if (p1Serial.IsOpen)
+            ReadData();
         UpdateLED();
+    }
+    void OnDestroy()
+    {
+        p1Serial.Close();
     }
     void ReadData()
     {

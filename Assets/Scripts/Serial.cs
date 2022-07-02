@@ -5,36 +5,56 @@ using System.Collections;
 public class Serial : MonoBehaviour
 {
     static SerialPort p1Serial = new SerialPort ("COM5", 9600);
-    int packleng = 0;
-    byte[] incomPacket = new byte[6];
-    byte[] settingPacket = new byte[6];
-    static byte[] touchPacket = new byte[9];
-    static bool startUp = true; //use ture for default start up state to prevent restart game
-    float timer = 0; 
-    bool failed = false;
-    byte recivData;
+    static SerialPort p2Serial = new SerialPort ("COM6", 9600);
+    byte[] settingPacket = new byte[6] {40, 0, 0, 0, 0, 41};
+    static byte[] touchData = new byte[9] {40, 0, 0, 0, 0, 0, 0, 0, 41};
+    static byte[] touchData2 = new byte[9] {40, 0, 0, 0, 0, 0, 0, 0, 41};
+    static bool startUp = false; //use ture for default start up state to prevent restart game
+    public string recivData;
     
     void Start()
     {
-        settingPacket[0] = 40;
-        settingPacket[5] = 41;
-        touchPacket[0] = 40;
-        touchPacket[8] = 41;
-        Debug.Log("Start Serial1");
-        p1Serial.Open();
-        Debug.Log("Serial1 Started");
+        try
+        {
+            Debug.Log("Try start Serial");
+            p1Serial.Open();
+            p2Serial.Open();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to Open Serial Ports: {ex}");
+        }
+        Debug.Log("Serial Started");
+        TouchToSerial.touchDidChange += UpdateTouch;
     }
 
     void Update()
     {
-        ReadData();
-        if (!failed)
-            TouchSetUp(); 
-        SendTouch();
+        if(p1Serial.IsOpen)
+            ReadData(p1Serial);
+        if(p2Serial.IsOpen)
+            ReadData(p2Serial);
+        UpdateTouch();
+        if (Input.GetKeyDown(KeyCode.T))
+            startUp = !startUp;
     }
-    void TouchSetUp()
+    private void OnDestroy()
     {
-        switch (incomPacket[3])
+        p1Serial.Close();
+        p2Serial.Close();
+    }
+
+    void ReadData(SerialPort Serial)
+    {
+        if (Serial.BytesToRead == 6)
+        {
+            recivData = Serial.ReadExisting();
+            TouchSetUp(Serial, recivData); 
+        }
+    }
+    void TouchSetUp(SerialPort Serial, string data)
+    {
+        switch (Convert.ToByte(data[3]))
         {
             case 76:
             case 69:
@@ -43,9 +63,8 @@ public class Serial : MonoBehaviour
             case 114:
             case 107:
                 for (int i=1; i<5; i++)
-                    settingPacket[i] = incomPacket[i];    
-                p1Serial.Write(settingPacket, 0, settingPacket.Length);
-                Array.Clear(incomPacket, 0, incomPacket.Length);
+                    settingPacket[i] = Convert.ToByte(data[i]);    
+                Serial.Write(settingPacket, 0, settingPacket.Length);
                 break;
             case 65:
                 startUp = true;
@@ -53,35 +72,25 @@ public class Serial : MonoBehaviour
         }
     }
 
-    void ReadData()
-    {
-        timer = 0f;
-        if (p1Serial.BytesToRead == 6)
-        {
-            packleng = 0;
-            while (packleng < 6) 
-            {
-                recivData = Convert.ToByte(p1Serial.ReadByte());
-                if (recivData == 123) 
-                {
-                    packleng = 0;
-                }
-                incomPacket[packleng++] = recivData;
-                if(timer > 20f){ failed = true; break; }
-                timer += Time.deltaTime;
-            }
-        }    
-    }
-
-    public static void SendTouch()
+    public static void SendTouch(byte[] data)
     {
         if (startUp)
-            p1Serial.Write(touchPacket, 0, 9);
+            p1Serial.Write(data, 0, 9);
+    }
+    public static void UpdateTouch()
+    {
+        if (!startUp)
+            return;
+        SendTouch(touchData);
+        SendTouch(touchData2);
     }
 
-    public static void ChangeTouch(int Area, bool State)
+    public static void ChangeTouch(bool isP1, int Area, bool State)
     {
-        ByteArrayExt.SetBit(touchPacket, Area+8, State);
+        if (isP1)
+            ByteArrayExt.SetBit(touchData, Area+8, State);
+        else
+            ByteArrayExt.SetBit(touchData2, Area+8, State);
     }
 }
 

@@ -51,7 +51,7 @@ public class SettingsManager : MonoBehaviour
         XROriginScp.CameraYOffset = Setting.PlayerHigh;
         UwcWindowTexture ScreenScp = ScreenObj.GetComponent<UwcWindowTexture>();
         ScreenScp.captureFrameRate = Setting.CaptureFrameRate;
-        ScreenMaterial.SetTextureScale("_MainTex",new Vector2(Setting.Capture1PlayerOnly ? 1f : 0.5f, 1));
+        ScreenMaterial.SetTextureScale("_MainTex",new Vector2(Setting.Capture1PlayerOnly ? 1f : 0.5f, -1));
         CameraSmooth CameraSmoothScp = SmoothCameraObj.GetComponent<CameraSmooth>();
         CameraSmoothScp.smoothSpeed = Setting.CameraSmooth;
         SmoothCamera.fieldOfView = Setting.CameraFOV;
