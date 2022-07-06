@@ -9,7 +9,7 @@ public class Serial : MonoBehaviour
     byte[] settingPacket = new byte[6] {40, 0, 0, 0, 0, 41};
     static byte[] touchData = new byte[9] {40, 0, 0, 0, 0, 0, 0, 0, 41};
     static byte[] touchData2 = new byte[9] {40, 0, 0, 0, 0, 0, 0, 0, 41};
-    static bool startUp = false; //use ture for default start up state to prevent restart game
+    public static bool startUp = false; //use ture for default start up state to prevent restart game
     public string recivData;
     
     void Start()
