@@ -20,6 +20,7 @@ public class LedSerial : MonoBehaviour
     public float DisplayLedIntensity = 0.0f;
     Color32 PrevFadeColor;
     Color32 nowCorlor;
+    float FadeTime = 0.0f;
     void Start()
     {
         Debug.Log("Started LED Serial");
