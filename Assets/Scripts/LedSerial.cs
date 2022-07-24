@@ -20,7 +20,6 @@ public class LedSerial : MonoBehaviour
     public float DisplayLedIntensity = 0.0f;
     Color32 PrevFadeColor;
     Color32 nowCorlor;
-    float FadeTime = 0.0f;
     void Start()
     {
         Debug.Log("Started LED Serial");
@@ -74,20 +73,16 @@ public class LedSerial : MonoBehaviour
             }
         }
     }
+
     void SeperatData(List<byte> data)
     {
         if (data[0] == 57)
-        {
             dataListStreamP1.Add(data);
-        }
         else if (data[0] == 60)
-        {
             isUpdateCMD = true;
-        }
-        else if (!isUpdateCMD)
-        {
+
+        if (!isUpdateCMD)
             dataListInstantP1.Add(data);
-        }
     }
 
     List<byte> ReadData(SerialPort Serial)
@@ -102,7 +97,6 @@ public class LedSerial : MonoBehaviour
 
     void UpdateLedListStream(ref List<List<byte>> dataList, List<Light> ringLeds, Light bodyLed, Light displayLed)
     {
-        
         if (dataList.Count < 1)
             return;
         UpdateLED(dataList[0], ringLeds, bodyLed, displayLed);
@@ -110,11 +104,9 @@ public class LedSerial : MonoBehaviour
         if (dataList.Count > 64)
             dataList.Clear();
     }
+
     void UpdateLedListInstant(ref List<List<byte>> dataList, List<Light> ringLeds, Light bodyLed, Light displayLed)
     {
-        
-        if (dataList.Count < 1)
-            return;
         while (dataList.Count > 0)
         {
             UpdateLED(dataList[0], ringLeds, bodyLed, displayLed);
@@ -148,7 +140,10 @@ public class LedSerial : MonoBehaviour
                 if (data[0]==50)
                     Switch(data[1], data[2], ringLeds, nowCorlor);
                 else
+                {
+                    StopCoroutine(Fade(data[1], data[2], ringLeds, PrevFadeColor, nowCorlor, data[7]));
                     StartCoroutine(Fade(data[1], data[2], ringLeds, PrevFadeColor, nowCorlor, data[7]));
+                }
                 PrevFadeColor = nowCorlor;
                 break;
             case 57:
