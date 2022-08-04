@@ -6,10 +6,12 @@ public class CameraSmooth : MonoBehaviour {
 	public float smoothSpeed = 0.125f;
 	public Vector3 PositionOffset;
 	public int FPS = 60;
+	float elapsed;
+   Camera cam;
 	private void Start()
 	{
-		QualitySettings.vSyncCount = 0;
-		Application.targetFrameRate = FPS;
+		QualitySettings.vSyncCount = 1;
+		//Application.targetFrameRate = FPS;
 	}
 	void Update ()
 	{

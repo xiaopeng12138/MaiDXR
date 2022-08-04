@@ -11,7 +11,6 @@ public class ButtonToKey : MonoBehaviour
     public VirtualKeyCode keyToPress;
 
     private int _insideColliderCount = 0;
-    private bool triggered = true;
     private void OnTriggerEnter(Collider other)
     {
         _insideColliderCount += 1;

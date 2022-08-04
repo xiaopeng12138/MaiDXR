@@ -20,6 +20,7 @@ public class LedSerial : MonoBehaviour
     public float DisplayLedIntensity = 0.0f;
     Color32 PrevFadeColor;
     Color32 nowCorlor;
+    Thread thread;
     void Start()
     {
         Debug.Log("Started LED Serial");
@@ -32,7 +33,7 @@ public class LedSerial : MonoBehaviour
             Console.WriteLine($"Failed to Open Serial Ports: {ex}");
         }
         Debug.Log("LED Serial Started");
-        var thread = new Thread(new ParameterizedThreadStart(ReadDataList));
+        thread = new Thread(new ParameterizedThreadStart(ReadDataList));
         thread.Start(p1Serial);
     }
     void Update()
@@ -46,7 +47,7 @@ public class LedSerial : MonoBehaviour
     }
     void OnDestroy()
     {
-        Thread.Sleep(0);
+        thread.Abort();
         p1Serial.Close();
     }
 
@@ -60,7 +61,7 @@ public class LedSerial : MonoBehaviour
 
         while (true)
         {
-            if (!_serial.IsOpen)
+            if (!_serial.IsOpen && _serial.BytesToRead < 1)
                 continue;
             else if (!isUpdateCMD)
                 headbyte = (byte)_serial.ReadByte();
