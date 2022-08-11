@@ -301,7 +301,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: -7.562777e+31, z: 7.7e-44, w: 9e-44}
+  m_BoundingSphereOverride: {x: 5.51013e-40, y: 2.2e-44, z: 2.4405384e-30, w: 9.1858e-41}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -314,7 +314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314451219}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 12.902435, y: 3.454, z: 2.124}
+  m_LocalPosition: {x: 12.986, y: 3.4, z: 2.124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 747929426}
@@ -354,7 +354,7 @@ MonoBehaviour:
   target: {fileID: 371544748}
   smoothSpeed: 0.05
   PositionOffset: {x: 0, y: 0, z: 0}
-  FPS: 120
+  FPS: 60
 --- !u!20 &366364279
 Camera:
   m_ObjectHideFlags: 0
@@ -1228,7 +1228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4119,7 +4119,7 @@ MonoBehaviour:
   createChildWindows_: 0
   childWindowPrefab: {fileID: 0}
   childWindowZDistance: 0.02
-  partialWindowTitle_: Sinmai
+  partialWindowTitle_: Sinmai.exe
   desktopIndex_: 0
   captureMode: 1
   capturePriority: 0
@@ -5856,15 +5856,15 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297605543}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 0.4
-  m_SpotAngle: 152.3
-  m_InnerSpotAngle: 21.80208
+  m_Intensity: 0.05
+  m_Range: 0.56
+  m_SpotAngle: 179
+  m_InnerSpotAngle: 179
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -5906,7 +5906,7 @@ Light:
   m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 4.220403e+24, y: 0, z: 0, w: 1e-45}
+  m_BoundingSphereOverride: {x: 0, y: 4.0109246e-14, z: 3e-43, w: 9e-44}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -5918,13 +5918,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297605543}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0, y: 0.747, z: 0.485}
+  m_LocalRotation: {x: 0, y: 0.98146033, z: 0.19166562, w: 0}
+  m_LocalPosition: {x: -0, y: 0.747, z: 0.489}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1728812217}
   m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: -22.1, y: 180, z: 0}
 --- !u!108 &1320268950 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: -8699732548318090483, guid: ea6463ca199d52046962b69f2ab654ef, type: 3}
