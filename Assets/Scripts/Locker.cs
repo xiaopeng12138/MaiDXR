@@ -9,6 +9,7 @@ public class Locker : MonoBehaviour
     float targetTime;
     public List<GameObject> buttons;
     public GameObject LocalMotion;
+    public List<GameObject> RayObjects;
     bool isLocked = false;
     Material material;
     void Start()
@@ -22,12 +23,9 @@ public class Locker : MonoBehaviour
     // Update is called once per frame
     void ToggleLocker()
     {
-        for (int i = 0; i < buttons.Count; i++)
-            buttons[i].SetActive(!buttons[i].activeSelf);
-        
-        LocalMotion.GetComponent<ContinuousMoveProviderBase>().enabled = !LocalMotion.GetComponent<ContinuousMoveProviderBase>().enabled;
-        LocalMotion.GetComponent<ContinuousTurnProviderBase>().enabled = !LocalMotion.GetComponent<ContinuousTurnProviderBase>().enabled;
-        
+        ToggleButtons();
+        ToggleLocalmotion();
+        ToggleRay();
         isLocked = !isLocked;
         if (isLocked)
             material.color = Color.red;
@@ -42,5 +40,20 @@ public class Locker : MonoBehaviour
             ToggleLocker();
             targetTime = Delay;
         }
+    }
+    void ToggleLocalmotion()
+    {
+        LocalMotion.GetComponent<ContinuousMoveProviderBase>().enabled = !LocalMotion.GetComponent<ContinuousMoveProviderBase>().enabled;
+        LocalMotion.GetComponent<ContinuousTurnProviderBase>().enabled = !LocalMotion.GetComponent<ContinuousTurnProviderBase>().enabled;
+    }
+    void ToggleButtons()
+    {
+        for (int i = 0; i < buttons.Count; i++)
+            buttons[i].SetActive(!buttons[i].activeSelf);
+    }
+    void ToggleRay()
+    {
+        for (int i = 0; i < RayObjects.Count; i++)
+            RayObjects[i].GetComponent<RayManager>().RaySwitch= !RayObjects[i].GetComponent<RayManager>().RaySwitch;
     }
 }

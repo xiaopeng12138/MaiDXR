@@ -2,15 +2,18 @@ using UnityEngine;
 using System.IO.Ports;
 using System;
 using System.Collections;
+using System.Threading;
 public class SerialManager : MonoBehaviour
 {
     static SerialPort p1Serial = new SerialPort ("COM5", 9600);
     static SerialPort p2Serial = new SerialPort ("COM6", 9600);
-    byte[] settingPacket = new byte[6] {40, 0, 0, 0, 0, 41};
+    static byte[] settingPacket = new byte[6] {40, 0, 0, 0, 0, 41};
     static byte[] touchData = new byte[9] {40, 0, 0, 0, 0, 0, 0, 0, 41};
     static byte[] touchData2 = new byte[9] {40, 0, 0, 0, 0, 0, 0, 0, 41};
     public static bool startUp = false; //use ture for default start up state to prevent restart game
-    public string recivData;
+    static string recivData;
+    private Thread touchThread;
+    private Queue touchQueue;
     
     void Start()
     {
@@ -24,27 +27,46 @@ public class SerialManager : MonoBehaviour
         {
             Console.WriteLine($"Failed to Open Serial Ports: {ex}");
         }
+        touchQueue = Queue.Synchronized(new Queue());
+        touchThread = new Thread(TouchThread);
+        InvokeRepeating("PingTouchThread", 0, 1);
+        TouchPanelManager.touchDidChange += PingTouchThread;
+        touchThread.Start();
         Debug.Log("Serial Started");
-        TouchPanelManager.touchDidChange += UpdateTouch;
     }
 
     void Update()
     {
-        if(p1Serial.IsOpen)
-            ReadData(p1Serial);
-        if(p2Serial.IsOpen)
-            ReadData(p2Serial);
-        UpdateTouch();
         if (Input.GetKeyDown(KeyCode.T))
             startUp = !startUp;
     }
+    private void PingTouchThread()
+    {
+        touchQueue.Enqueue(1);
+    }
+    private void TouchThread()
+    {
+        while(true)
+        {
+            if(p1Serial.IsOpen)
+                ReadData(p1Serial);
+            if(p2Serial.IsOpen)
+                ReadData(p2Serial);
+            if(touchQueue.Count > 0)
+            {
+                touchQueue.Dequeue();
+                UpdateTouch();
+            }
+        }
+    }
     private void OnDestroy()
     {
+        touchThread.Abort();
         p1Serial.Close();
         p2Serial.Close();
     }
 
-    void ReadData(SerialPort Serial)
+    private void ReadData(SerialPort Serial)
     {
         if (Serial.BytesToRead == 6)
         {
@@ -52,7 +74,7 @@ public class SerialManager : MonoBehaviour
             TouchSetUp(Serial, recivData); 
         }
     }
-    void TouchSetUp(SerialPort Serial, string data)
+    private void TouchSetUp(SerialPort Serial, string data)
     {
         switch (Convert.ToByte(data[3]))
         {
@@ -72,17 +94,17 @@ public class SerialManager : MonoBehaviour
         }
     }
 
-    public static void SendTouch(byte[] data)
+    public static void SendTouch(SerialPort Serial, byte[] data)
     {
         if (startUp)
-            p1Serial.Write(data, 0, 9);
+            Serial.Write(data, 0, 9);
     }
     public static void UpdateTouch()
     {
         if (!startUp)
             return;
-        SendTouch(touchData);
-        SendTouch(touchData2);
+        SendTouch(p1Serial, touchData);
+        SendTouch(p2Serial, touchData2);
     }
 
     public static void ChangeTouch(bool isP1, int Area, bool State)

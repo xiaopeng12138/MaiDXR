@@ -10,8 +10,8 @@ public class CameraSmooth : MonoBehaviour {
    Camera cam;
 	private void Start()
 	{
-		QualitySettings.vSyncCount = 1;
-		//Application.targetFrameRate = FPS;
+		QualitySettings.vSyncCount = 0;
+		Application.targetFrameRate = FPS;
 	}
 	void Update ()
 	{
