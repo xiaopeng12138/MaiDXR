@@ -4,29 +4,32 @@ using UnityEngine.UI;
 
 public class NoneVRSettingManager : MonoBehaviour
 {
-    public Camera FPCamera;
-    public Camera TPCamera;
-    private CameraSmooth CameraSmooth;
+    public GameObject NVRCameraObj;
+    public Camera NVRCamera;
+    public Transform NVRCameraTargetFP;
+    public Transform NVRCameraTargetTP;
+    public CameraSmooth CameraSmooth;
     private TMP_Dropdown Dropdown;
     private Slider Slider;
     void Start()
     {
-        CameraSmooth = FPCamera.GetComponent<CameraSmooth>();
         Dropdown = GetComponent<TMP_Dropdown>();
         Slider = GetComponent<Slider>();
         switch (gameObject.name)
         {
             case "NVRModeDropdown":
-
+                GetNVRMode();
                 break;
             case "NVRFOV":
-
+                GetNVRFOV();
                 break;
             case "NVRFPSDropdown":
-
+                GetNVRFPS();
+                break;
+            case "TPCameraCube":
+                GetTPCamTransform();
                 break;
         }
-        
     }
 
     public void GetNVRMode()
@@ -39,13 +42,22 @@ public class NoneVRSettingManager : MonoBehaviour
     {
         if (JsonConfig.HasKey("NVRFOV"))
             Slider.value = (float)JsonConfig.GetDouble("NVRFOV");
-        SetNVRFOV();
+        SetNVRFOV(Slider.value);
     }
-    public void GetNVRFPSDropdown()
+    public void GetNVRFPS()
     {
         if (JsonConfig.HasKey("NVRFPS"))
             Dropdown.value = JsonConfig.GetInt("NVRFPS");
-        SetNVRFPSDropdown();
+        SetNVRFPS();
+    }
+    public void GetTPCamTransform()
+    {
+        if (JsonConfig.HasKey("TPCamPosition"))
+            gameObject.transform.position = JsonConfig.GetVector3("TPCamPosition");
+        if (JsonConfig.HasKey("TPCamRotation"))
+            gameObject.transform.rotation = JsonConfig.GetQuaternion("TPCamRotation");
+            
+        SetTPCamTransform();
     }
     
     public void SetNVRMode()
@@ -53,27 +65,25 @@ public class NoneVRSettingManager : MonoBehaviour
         switch (Dropdown.value)
         {
             case 0:
-                FPCamera.enabled = false;
-                TPCamera.enabled = false;
+                NVRCameraObj.SetActive(false);
                 break;
             case 1:
-                FPCamera.enabled = true;
-                TPCamera.enabled = false;
+                NVRCameraObj.SetActive(true);
+                CameraSmooth.target = NVRCameraTargetFP;
                 break;
             case 2:
-                FPCamera.enabled = false;
-                TPCamera.enabled = true;
+                NVRCameraObj.SetActive(true);
+                CameraSmooth.target = NVRCameraTargetTP;
                 break;
         }
         JsonConfig.SetInt("NVRMode", Dropdown.value);
     }
-    public void SetNVRFOV()
+    public void SetNVRFOV(float fov)
     {
-        FPCamera.fieldOfView = Slider.value;
-        TPCamera.fieldOfView = Slider.value;
-        JsonConfig.SetDouble("NVRFOV", Slider.value);
+        NVRCamera.fieldOfView = fov;
+        JsonConfig.SetDouble("NVRFOV", fov);
     }
-    public void SetNVRFPSDropdown()
+    public void SetNVRFPS()
     {
         switch (Dropdown.value)
         {
@@ -100,5 +110,10 @@ public class NoneVRSettingManager : MonoBehaviour
                 break;
         }
         JsonConfig.SetInt("NVRFPS", Dropdown.value);
+    }
+    public void SetTPCamTransform()
+    {
+        JsonConfig.SetVector3("TPCamPosition", gameObject.transform.position);
+        JsonConfig.SetQuaternion("TPCamRotation", gameObject.transform.rotation);
     }
 }

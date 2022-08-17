@@ -75,6 +75,12 @@ public static class JsonConfig {
         config[key] = JArray.FromObject(numbers);
         saveFile();
     }
+    public static void SetVector3(string key, Vector3 vector) {
+        SetFloatArray(key, new float[] { vector.x, vector.y, vector.z });
+    }
+    public static void SetQuaternion(string key, Quaternion quaternion) {
+        SetFloatArray(key, new float[] { quaternion.x, quaternion.y, quaternion.z, quaternion.w });
+    }
 
     public static bool GetBoolean(string key) {
         ensureInitialization();
@@ -95,5 +101,11 @@ public static class JsonConfig {
     public static float[] GetFloatArray(string key) {
         ensureInitialization();
         return config.Value<JArray>(key).ToObject<float[]>();
+    }
+    public static Vector3 GetVector3(string key) {
+        return new Vector3(GetFloatArray(key)[0], GetFloatArray(key)[1], GetFloatArray(key)[2]);
+    }
+    public static Quaternion GetQuaternion(string key) {
+        return new Quaternion(GetFloatArray(key)[0], GetFloatArray(key)[1], GetFloatArray(key)[2], GetFloatArray(key)[3]);
     }
 }

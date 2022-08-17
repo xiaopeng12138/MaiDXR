@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 1016472457}
   m_ItemImage: {fileID: 0}
-  m_Value: 3
+  m_Value: 2
   m_Options:
     m_Options:
     - m_Text: 30
@@ -1370,7 +1370,7 @@ GameObject:
   - component: {fileID: 357334432}
   - component: {fileID: 357334436}
   m_Layer: 0
-  m_Name: 3rdPersonCamera
+  m_Name: NVRCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1434,7 +1434,7 @@ Camera:
     height: 1
   near clip plane: 0.2
   far clip plane: 5
-  field of view: 60
+  field of view: 65
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -1459,13 +1459,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357334431}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalRotation: {x: 0.28006452, y: 0.40193385, z: -0.13059622, w: 0.86195}
+  m_LocalPosition: {x: -1.137, y: 1.998, z: 0.2993}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1585482469}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 36, y: 50, z: 0}
 --- !u!114 &357334436
 MonoBehaviour:
@@ -1479,8 +1479,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a77fb6315a47e44a6824affd415238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1249534342}
-  smoothSpeed: 0
+  target: {fileID: 0}
+  smoothSpeed: 0.1
   PositionOffset: {x: 0, y: 0, z: 0}
   FPS: 60
 --- !u!1 &358458036
@@ -3433,7 +3433,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &595031216
 MonoBehaviour:
@@ -4005,7 +4005,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
@@ -4090,7 +4090,7 @@ PrefabInstance:
     - target: {fileID: -8256158229178198027, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8256158229178198027, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
@@ -4164,6 +4164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7502872840139380679, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7502872840139380679, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
+        type: 3}
       propertyPath: m_Intensity
       value: 0.015
       objectReference: {fileID: 0}
@@ -4171,6 +4176,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpotAngle
       value: 178.99998
+      objectReference: {fileID: 0}
+    - target: {fileID: -7502872840139380679, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -7502872840139380679, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
@@ -8296,7 +8306,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 1000
+  far clip plane: 10
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -8861,7 +8871,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: None
+  m_text: BitBlt
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8948,7 +8958,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4557494e9d4b8ab47b2842d4bf045f25,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4557494e9d4b8ab47b2842d4bf045f25,
         type: 3}
@@ -9397,6 +9407,7 @@ GameObject:
   - component: {fileID: 1365934246}
   - component: {fileID: 1365934245}
   - component: {fileID: 1365934244}
+  - component: {fileID: 1365934247}
   m_Layer: 5
   m_Name: NVRFPSDropdown
   m_TagString: Untagged
@@ -9493,7 +9504,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1365934247}
+        m_TargetAssemblyTypeName: NoneVRSettingManager, Assembly-CSharp
+        m_MethodName: SetNVRFPS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1365934245
 MonoBehaviour:
@@ -9533,6 +9556,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1365934242}
   m_CullTransparentMesh: 1
+--- !u!114 &1365934247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365934242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1888887182d434fbccfdab834b0fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NVRCameraObj: {fileID: 357334431}
+  NVRCamera: {fileID: 357334434}
+  NVRCameraTargetFP: {fileID: 1249534342}
+  NVRCameraTargetTP: {fileID: 1585482469}
 --- !u!1 &1378887735
 GameObject:
   m_ObjectHideFlags: 0
@@ -10272,7 +10311,7 @@ MonoBehaviour:
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 1457747674}
   m_ItemImage: {fileID: 0}
-  m_Value: 0
+  m_Value: 2
   m_Options:
     m_Options:
     - m_Text: None
@@ -11326,7 +11365,7 @@ RectTransform:
   - {fileID: 1266541163}
   - {fileID: 418365313}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11493,8 +11532,9 @@ GameObject:
   - component: {fileID: 1585482474}
   - component: {fileID: 1585482473}
   - component: {fileID: 1585482472}
+  - component: {fileID: 1585482475}
   m_Layer: 6
-  m_Name: 3rdPersonCameraCube
+  m_Name: TPCameraCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11511,8 +11551,7 @@ Transform:
   m_LocalPosition: {x: -1.137, y: 1.998, z: 0.2993}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.10000001}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 357334435}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11611,7 +11650,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1585482475}
+        m_TargetAssemblyTypeName: NoneVRSettingManager, Assembly-CSharp
+        m_MethodName: SetTPCamTransform
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -11715,6 +11766,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 1, z: 1}
   m_Center: {x: 0, y: -0.0000009536743, z: 0}
+--- !u!114 &1585482475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585482468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1888887182d434fbccfdab834b0fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NVRCameraObj: {fileID: 0}
+  NVRCamera: {fileID: 0}
+  NVRCameraTargetFP: {fileID: 0}
+  NVRCameraTargetTP: {fileID: 0}
 --- !u!1 &1612026918 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5048151436394606877, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
@@ -11892,7 +11959,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1634811399 stripped
 GameObject:
@@ -12618,6 +12685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1780461005}
   - component: {fileID: 1780461006}
+  - component: {fileID: 1780461007}
   m_Layer: 5
   m_Name: NVRFOV
   m_TagString: Untagged
@@ -12698,7 +12766,35 @@ MonoBehaviour:
   m_Value: 65
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1780461007}
+        m_TargetAssemblyTypeName: NoneVRSettingManager, Assembly-CSharp
+        m_MethodName: SetNVRFOV
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &1780461007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780461004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1888887182d434fbccfdab834b0fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NVRCameraObj: {fileID: 357334431}
+  NVRCamera: {fileID: 357334434}
+  NVRCameraTargetFP: {fileID: 1249534342}
+  NVRCameraTargetTP: {fileID: 1585482469}
 --- !u!1 &1793844388
 GameObject:
   m_ObjectHideFlags: 0
@@ -12783,7 +12879,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1793933669
 MonoBehaviour:
@@ -12988,6 +13084,7 @@ GameObject:
   - component: {fileID: 1880181386}
   - component: {fileID: 1880181385}
   - component: {fileID: 1880181384}
+  - component: {fileID: 1880181387}
   m_Layer: 5
   m_Name: NVRModeDropdown
   m_TagString: Untagged
@@ -13076,7 +13173,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1880181387}
+        m_TargetAssemblyTypeName: NoneVRSettingManager, Assembly-CSharp
+        m_MethodName: SetNVRMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1880181385
 MonoBehaviour:
@@ -13116,6 +13225,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880181382}
   m_CullTransparentMesh: 1
+--- !u!114 &1880181387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880181382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1888887182d434fbccfdab834b0fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NVRCameraObj: {fileID: 357334431}
+  NVRCamera: {fileID: 357334434}
+  NVRCameraTargetFP: {fileID: 1249534342}
+  NVRCameraTargetTP: {fileID: 1585482469}
 --- !u!1 &1892076584
 GameObject:
   m_ObjectHideFlags: 0
@@ -13478,7 +13603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 120
+  m_text: 90
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14552,7 +14677,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2132224331
 MonoBehaviour:
