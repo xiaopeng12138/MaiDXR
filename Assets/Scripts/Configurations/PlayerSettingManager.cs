@@ -99,6 +99,4 @@ public class PlayerSettingManager : MonoBehaviour
         LHandTransform.localPosition = new Vector3(LHandTransform.localPosition.x, LHandTransform.localPosition.y, value);
         RHandTransform.localPosition = new Vector3(RHandTransform.localPosition.x, RHandTransform.localPosition.y, value);
     }
-
-
 }
