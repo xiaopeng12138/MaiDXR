@@ -7,7 +7,7 @@ using TMPro;
 public class ValueManager : MonoBehaviour
 {
     TMP_Text tmp;
-    float Value;
+    public float Value;
     float tempValue;
     public bool isPointerDown = false;
     void Start()
@@ -18,11 +18,11 @@ public class ValueManager : MonoBehaviour
     {
         if (isPointerDown)
         {
-            ChangeValue(tempValue);
+            ChangeValueContinue(tempValue);
         }
     }
 
-    public void ChangeValue(float value)
+    public void ChangeValueContinue(float value)
     {
         tempValue = value;
         Value += value;
@@ -32,5 +32,10 @@ public class ValueManager : MonoBehaviour
     public void PointerState(bool state)
     {
         isPointerDown = state;
+    }
+    public void ChangeValue(float value)
+    {
+        Value += value;
+        tmp.text = String.Format("{0:F2}", Value);
     }
 }

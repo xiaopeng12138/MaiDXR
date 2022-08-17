@@ -693,6 +693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 130317052}
   - component: {fileID: 130317053}
+  - component: {fileID: 130317054}
   m_Layer: 5
   m_Name: HandX
   m_TagString: Untagged
@@ -720,7 +721,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 830, y: -141}
+  m_AnchoredPosition: {x: 810, y: -141}
   m_SizeDelta: {x: 300, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130317053
@@ -773,7 +774,34 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 130317054}
+        m_TargetAssemblyTypeName: PlayerSettingManager, Assembly-CSharp
+        m_MethodName: SetHandPositionX
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &130317054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130317051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4b84873f4a3b447a498596e8ce2421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LHandTransform: {fileID: 475555733}
+  RHandTransform: {fileID: 437658497}
+  PlayerTransform: {fileID: 0}
 --- !u!1 &133412884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,18 +1710,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418365312}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000040978193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2100912094}
-  m_Father: {fileID: 1540630982}
-  m_RootOrder: 14
+  m_Father: {fileID: 918550814}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 873.2, y: -268}
+  m_AnchoredPosition: {x: 193.20007, y: -15.000015}
   m_SizeDelta: {x: 60, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &418365314
@@ -1797,7 +1825,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 918550817}
           m_TargetAssemblyTypeName: ValueManager, Assembly-CSharp
-          m_MethodName: ChangeValue
+          m_MethodName: ChangeValueContinue
           m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1820,6 +1848,18 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0.05
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+        - m_Target: {fileID: 918550818}
+          m_TargetAssemblyTypeName: PlayerSettingManager, Assembly-CSharp
+          m_MethodName: SetPlayerHeight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
@@ -1852,7 +1892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437658496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01, z: -0.03}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2045,6 +2085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 446435367}
   - component: {fileID: 446435368}
+  - component: {fileID: 446435369}
   m_Layer: 5
   m_Name: HandZ
   m_TagString: Untagged
@@ -2072,7 +2113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 830, y: -225}
+  m_AnchoredPosition: {x: 810, y: -225}
   m_SizeDelta: {x: 300, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &446435368
@@ -2125,7 +2166,34 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 446435369}
+        m_TargetAssemblyTypeName: PlayerSettingManager, Assembly-CSharp
+        m_MethodName: SetHandPositionZ
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &446435369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446435366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4b84873f4a3b447a498596e8ce2421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LHandTransform: {fileID: 475555733}
+  RHandTransform: {fileID: 437658497}
+  PlayerTransform: {fileID: 0}
 --- !u!1 &452961286 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2009740602367058978, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
@@ -2224,7 +2292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475555729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01, z: -0.03}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -6217,8 +6285,9 @@ GameObject:
   - component: {fileID: 918550816}
   - component: {fileID: 918550815}
   - component: {fileID: 918550817}
+  - component: {fileID: 918550818}
   m_Layer: 5
-  m_Name: PlayerHVar
+  m_Name: PlayerH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6235,7 +6304,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1266541163}
+  - {fileID: 418365313}
   m_Father: {fileID: 1540630982}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6353,7 +6424,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2741c97e96d043044b88f783f1f16738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Value: 0
   isPointerDown: 0
+--- !u!114 &918550818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918550813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4b84873f4a3b447a498596e8ce2421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LHandTransform: {fileID: 0}
+  RHandTransform: {fileID: 0}
+  PlayerTransform: {fileID: 1270359727}
 --- !u!108 &934521994 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: -8256158229178198027, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
@@ -6445,6 +6532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 958357356}
   - component: {fileID: 958357357}
+  - component: {fileID: 958357358}
   m_Layer: 5
   m_Name: HandS
   m_TagString: Untagged
@@ -6472,7 +6560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 830, y: -100}
+  m_AnchoredPosition: {x: 810, y: -100}
   m_SizeDelta: {x: 300, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &958357357
@@ -6525,7 +6613,34 @@ MonoBehaviour:
   m_Value: 8
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 958357358}
+        m_TargetAssemblyTypeName: PlayerSettingManager, Assembly-CSharp
+        m_MethodName: SetHandSize
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &958357358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958357355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4b84873f4a3b447a498596e8ce2421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LHandTransform: {fileID: 475555733}
+  RHandTransform: {fileID: 437658497}
+  PlayerTransform: {fileID: 0}
 --- !u!1 &965250220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5910539533559942829, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
@@ -8389,18 +8504,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266541162}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000040978193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2107091651}
-  m_Father: {fileID: 1540630982}
-  m_RootOrder: 13
+  m_Father: {fileID: 918550814}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 790, y: -268}
+  m_AnchoredPosition: {x: 110, y: -15.000015}
   m_SizeDelta: {x: 60, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1266541164
@@ -8504,7 +8619,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 918550817}
           m_TargetAssemblyTypeName: ValueManager, Assembly-CSharp
-          m_MethodName: ChangeValue
+          m_MethodName: ChangeValueContinue
           m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -8527,6 +8642,18 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0.05
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+        - m_Target: {fileID: 918550818}
+          m_TargetAssemblyTypeName: PlayerSettingManager, Assembly-CSharp
+          m_MethodName: SetPlayerHeight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
@@ -9572,6 +9699,7 @@ MonoBehaviour:
   NVRCamera: {fileID: 357334434}
   NVRCameraTargetFP: {fileID: 1249534342}
   NVRCameraTargetTP: {fileID: 1585482469}
+  CameraSmooth: {fileID: 357334436}
 --- !u!1 &1378887735
 GameObject:
   m_ObjectHideFlags: 0
@@ -11362,8 +11490,6 @@ RectTransform:
   - {fileID: 1652186533}
   - {fileID: 446435367}
   - {fileID: 918550814}
-  - {fileID: 1266541163}
-  - {fileID: 418365313}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
@@ -11782,6 +11908,7 @@ MonoBehaviour:
   NVRCamera: {fileID: 0}
   NVRCameraTargetFP: {fileID: 0}
   NVRCameraTargetTP: {fileID: 0}
+  CameraSmooth: {fileID: 0}
 --- !u!1 &1612026918 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5048151436394606877, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
@@ -12003,6 +12130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1652186533}
   - component: {fileID: 1652186534}
+  - component: {fileID: 1652186535}
   m_Layer: 5
   m_Name: HandY
   m_TagString: Untagged
@@ -12030,7 +12158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 830, y: -182}
+  m_AnchoredPosition: {x: 810, y: -182}
   m_SizeDelta: {x: 300, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652186534
@@ -12083,7 +12211,34 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1652186535}
+        m_TargetAssemblyTypeName: PlayerSettingManager, Assembly-CSharp
+        m_MethodName: SetHandPositionY
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+--- !u!114 &1652186535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652186532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f4b84873f4a3b447a498596e8ce2421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LHandTransform: {fileID: 475555733}
+  RHandTransform: {fileID: 437658497}
+  PlayerTransform: {fileID: 0}
 --- !u!1 &1668787586 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2679881929026633987, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
@@ -12795,6 +12950,7 @@ MonoBehaviour:
   NVRCamera: {fileID: 357334434}
   NVRCameraTargetFP: {fileID: 1249534342}
   NVRCameraTargetTP: {fileID: 1585482469}
+  CameraSmooth: {fileID: 357334436}
 --- !u!1 &1793844388
 GameObject:
   m_ObjectHideFlags: 0
@@ -13241,6 +13397,7 @@ MonoBehaviour:
   NVRCamera: {fileID: 357334434}
   NVRCameraTargetFP: {fileID: 1249534342}
   NVRCameraTargetTP: {fileID: 1585482469}
+  CameraSmooth: {fileID: 357334436}
 --- !u!1 &1892076584
 GameObject:
   m_ObjectHideFlags: 0
