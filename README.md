@@ -24,9 +24,7 @@ Open Source VR Arcade Simulator
 - https://github.com/Sucareto/Mai2Touch
 
 ## Build requirements
-- Current Unity version: 2020.3.30f1
-- [InputSimulator](https://www.nuget.org/packages/InputSimulator) (You need to extract the .dll file and put it in to assets folder)
-- [uWindowCapture](https://github.com/hecomi/uWindowCapture) (just import/install it on your unity project)
+- Current Unity version: 2021.3.2f1
 
 ## Supported platform
 - All SteamVR device
@@ -62,7 +60,7 @@ HandSize, HandPosition, PlayerHigh: in CM
 
 CaptureFrameRate, TouchRefreshRate: in FPS
 
-Capture1PlayerOnly: true (9:16 aspect ratio) or false (default) (2*9:16 aspect ratio)
+Capture1P: true (9:16 aspect ratio) or false (default) (2*9:16 aspect ratio)
 
 CameraSmooth: 0.0 - 1.0, 1.0 = no smoothing
 
@@ -71,8 +69,6 @@ CameraFOV: in degree
 CameraPosition: in M
 
 To enable 3rd person mod: set CameraSmooth to 0 then move your headset to where your camera wants to be. Then focus/select MaiDXR window to lock position. You can show your head by enabling the setting below.
-
-ShowHeadCube: true or false
 
 HapticDuration: in second
 
@@ -89,11 +85,12 @@ SelectButton and Button(1-4: top to bottom): Pls see [VK Code](https://docs.micr
 - √ Add button light
 - √ Add button vibration
 - √ Add 3rd person camera
-- Add 2p
+- √ Add 2p
+- Add Multiplay
 - √ Add custom button
 - √ Support 1p only capture
 - Add visual touch and button feedback
-- Add in game setting panel 
+- √ Add in game setting panel 
 
 Huge thanks to HelloKS and derole1
 

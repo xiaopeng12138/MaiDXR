@@ -46,6 +46,7 @@ public class NoneVRSettingManager : MonoBehaviour
     }
     public void GetNVRFPS()
     {
+        QualitySettings.vSyncCount = 0;
         if (JsonConfig.HasKey("NVRFPS"))
             Dropdown.value = JsonConfig.GetInt("NVRFPS");
         SetNVRFPS();
@@ -65,14 +66,17 @@ public class NoneVRSettingManager : MonoBehaviour
         switch (Dropdown.value)
         {
             case 0:
-                NVRCameraObj.SetActive(false);
+                if (NVRCameraObj.activeSelf)
+                    NVRCameraObj.SetActive(false);
                 break;
             case 1:
-                NVRCameraObj.SetActive(true);
+                if (!NVRCameraObj.activeSelf)
+                    NVRCameraObj.SetActive(true);
                 CameraSmooth.target = NVRCameraTargetFP;
                 break;
             case 2:
-                NVRCameraObj.SetActive(true);
+                if (!NVRCameraObj.activeSelf)
+                    NVRCameraObj.SetActive(true);
                 CameraSmooth.target = NVRCameraTargetTP;
                 break;
         }
@@ -88,25 +92,25 @@ public class NoneVRSettingManager : MonoBehaviour
         switch (Dropdown.value)
         {
             case 0:
-                CameraSmooth.FPS = 15;
+                Application.targetFrameRate = 15;
                 break;
             case 1:
-                CameraSmooth.FPS = 30;
+                Application.targetFrameRate = 30;
                 break; 
             case 2:
-                CameraSmooth.FPS = 45;
+                Application.targetFrameRate = 45;
                 break;
             case 3:
-                CameraSmooth.FPS = 60;
+                Application.targetFrameRate = 60;
                 break;
             case 4:
-                CameraSmooth.FPS = 90;
+                Application.targetFrameRate = 90;
                 break;
             case 5:
-                CameraSmooth.FPS = 120;
+                Application.targetFrameRate = 120;
                 break;
             case 6:
-                CameraSmooth.FPS = 144;
+                Application.targetFrameRate = 144;
                 break;
         }
         JsonConfig.SetInt("NVRFPS", Dropdown.value);
