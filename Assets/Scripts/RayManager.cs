@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class RayManager : MonoBehaviour
 {
     public bool RaySwitch = true;
+    public float Distance = 0.3f;
     XRRayInteractor interactor;
     XRInteractorLineVisual lineVisual;
     LineRenderer lineRenderer;
@@ -19,7 +20,7 @@ public class RayManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.transform.position.z > 0.2 || !RaySwitch)
+        if (gameObject.transform.position.z > Distance || !RaySwitch)
         {
             interactor.enabled = false;
             lineRenderer.enabled = false;

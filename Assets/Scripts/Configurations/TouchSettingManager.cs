@@ -22,28 +22,28 @@ public class TouchSettingManager : MonoBehaviour
         switch (Dropdown.value)
         {
             case 0:
-                Time.fixedDeltaTime = 1 / 30;
+                Time.fixedDeltaTime = 1 / 30f;
                 break;
             case 1:
-                Time.fixedDeltaTime = 1 / 60;
+                Time.fixedDeltaTime = 1 / 60f;
                 break; 
             case 2:
-                Time.fixedDeltaTime = 1 / 90;
+                Time.fixedDeltaTime = 1 / 90f;
                 break;
             case 3:
-                Time.fixedDeltaTime = 1 / 120;
+                Time.fixedDeltaTime = 1 / 120f;
                 break;
             case 4:
-                Time.fixedDeltaTime = 1 / 140;
+                Time.fixedDeltaTime = 1 / 140f;
                 break;
             case 5:
-                Time.fixedDeltaTime = 1 / 160;
+                Time.fixedDeltaTime = 1 / 160f;
                 break;
             case 6:
-                Time.fixedDeltaTime = 1 / 180;
+                Time.fixedDeltaTime = 1 / 180f;
                 break;
             case 7:
-                Time.fixedDeltaTime = 1 / 200;
+                Time.fixedDeltaTime = 1 / 200f;
                 break;
         }
         JsonConfig.SetInt("TouchFPS", Dropdown.value);

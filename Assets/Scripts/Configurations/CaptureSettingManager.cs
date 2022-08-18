@@ -60,7 +60,7 @@ public class CaptureSettingManager : MonoBehaviour
 
     public void SetCPMode()
     {
-        WindowTexture.captureMode = (CaptureMode)Dropdown.value;
+        WindowTexture.captureMode = (CaptureMode)Dropdown.value - 1;
         JsonConfig.SetInt("CaptureMode", Dropdown.value);
     }
     
