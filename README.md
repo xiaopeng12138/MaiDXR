@@ -25,7 +25,7 @@ Discord: Coming Soon
 - https://github.com/Sucareto/Mai2Touch
 - https://github.com/xiaopeng12138/WACVR
 
-**Special thanks to @V17AMax for the beautiful logo and designs**
+**Special thanks to [@V17AMax](https://github.com/V17AMax) for the beautiful logo and designs**
 
 
 ## Build requirements
