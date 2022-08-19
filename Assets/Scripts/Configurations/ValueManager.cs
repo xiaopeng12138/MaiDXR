@@ -25,7 +25,7 @@ public class ValueManager : MonoBehaviour
     public void ChangeValueContinue(float value)
     {
         tempValue = value;
-        Value += value;
+        Value += Time.deltaTime * value;
         tmp.text = String.Format("{0:F2}", Value);
         isPointerDown = true;
     }
