@@ -75,8 +75,8 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 ### VisualStudioCode ###
-.vscode/
-!.vscode/settings.json
+.vscode/*
+.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
@@ -94,6 +94,10 @@ crashlytics-build.properties
 .ionide
 
 # Support for Project snippet scope
+.vscode/*.code-snippets
+
+# Ignore code-workspaces
+*.code-workspace
 
 ### VisualStudio ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -183,7 +187,6 @@ StyleCopReport.xml
 *_wpftmp.csproj
 *.log
 *.tlog
-.vsconfig
 *.vspscc
 *.vssscc
 .builds
@@ -286,8 +289,6 @@ PublishScripts/
 *.nupkg
 # NuGet Symbol Packages
 *.snupkg
-# The packages folder can be ignored because of Package Restore
-**/[Pp]ackages/*
 # except build/, which is used as an MSBuild target.
 !**/[Pp]ackages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
@@ -465,7 +466,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
-*.code-workspace
 
 # Local History for Visual Studio Code
 
