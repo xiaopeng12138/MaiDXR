@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class LightSettingManager : MonoBehaviour
 {
-    public List<Light> Lights;
+    public List<GameObject> Lights;
     public void OnStateChanges(bool isOn)
     {
         foreach (var light in Lights)
         {
-            light.enabled = isOn;
+            light.SetActive(isOn);
         }
     }
 }

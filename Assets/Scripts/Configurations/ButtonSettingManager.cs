@@ -24,6 +24,7 @@ public class ButtonSettingManager : MonoBehaviour
     public void OnValueChanged(int value)
     {
         Button.keyToPress = (VirtualKeyCode)Enum.GetValues(typeof(VirtualKeyCode)).GetValue(value);
+        JsonConfig.SetInt(gameObject.name, value);
     }
     void PopulateList()
     {
