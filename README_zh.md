@@ -22,7 +22,7 @@
 - https://github.com/hecomi/uWindowCapture
 - https://github.com/Sucareto/Mai2Touch
 
-**特别感谢V17AMax设计的Logo以及风格设计**
+**特别感谢[@V17AMax](https://github.com/V17AMax)设计的Logo以及风格设计**
 
 ## 编译要求
 - 当前Unity版本：2021.3.2f1
