@@ -17961,7 +17961,7 @@ MonoBehaviour:
   _disableStandardAssets: 0
   _spectatorLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   _excludeBehaviours:
   - AudioListener
   - Collider
