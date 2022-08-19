@@ -2,10 +2,20 @@
 
 # Latest
 
-## v0.7.2
-Possible to switch hand during hold #16
+## v0.8
+Switch to Unity2021 and URP
 
-Fix display position
+New enviroment and logo 
+
+Add 2P cabinet
+
+Add controll panel
+
+Add lock to buttons and other stuff
+
+Possible to adjust 3rd person camera via controller pointer in game
+
+Touch backend is now in different thread
 
 
 # Old version
@@ -122,3 +132,19 @@ Add 1p only setting (reboot MaiDXR require)
 Update readme to fix #14
 
 Some small adjust
+
+
+## v0.7.2
+Possible to switch hand during hold #16
+
+Fix display position
+
+
+## v0.7.3
+update touch and led serial backend
+
+change the light type to spotlights
+
+enable display light
+
+add frame rate limit to none vr view
