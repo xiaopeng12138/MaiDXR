@@ -1,6 +1,8 @@
 # ＃MaiDXR
 一个开源的VR街机模拟器框体
+
 交流QQ群：261946477
+
 交流Discord：Coming Soon
 
 ## 关于这个项目
