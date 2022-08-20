@@ -21,6 +21,8 @@
 - https://github.com/HelloKS/MaiMai-VR
 - https://github.com/hecomi/uWindowCapture
 - https://github.com/Sucareto/Mai2Touch
+- https://github.com/xiaopeng12138/WACVR
+- https://github.com/TonyViT/MrcXrtHelpers
 
 **特别感谢[@V17AMax](https://github.com/V17AMax)设计的Logo以及风格设计**
 
