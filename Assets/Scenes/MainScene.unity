@@ -5279,7 +5279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RaySwitch: 1
-  Distance: 0.3
+  Distance: 0.35
 --- !u!1 &580914738
 GameObject:
   m_ObjectHideFlags: 0
@@ -16000,7 +16000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RaySwitch: 1
-  Distance: 0.3
+  Distance: 0.35
 --- !u!1 &1481035871
 GameObject:
   m_ObjectHideFlags: 0
