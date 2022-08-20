@@ -45,7 +45,7 @@
 - 下载[MaiDXR的最新版本](https://github.com/xiaopeng12138/MaiDXR/releases)
 - 下载并安装[com0com](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/powersdr-iq/setup_com0com_W7_x64_signed.exe)
 - 配置com0com，绑定COM3和COM5（必须是这两个端口），COM4和COM6是可选的（绑定会让启动变快）
-- 必须在com2com的两个端口上启用缓冲区选项（enable buffer），不然，MaiDXR会在显示完Logo后崩溃
+- 必须在com0com的两个端口上启用缓冲区选项（enable buffer），不然，MaiDXR会在显示完Logo后崩溃
 - 在 mai2.ini中禁用DummyTouchPanel
 - 如果你想要灯效，请将COM21和COM51绑定（必须是这两个端口，并且不要禁用DummyLED！）
 - 通过在xxxx.bat中添加[Unity Standalone Player command line arguments](https://docs.unity3d.com/Manual/PlayerCommandLineArguments.html)使本体在窗口模式下运行，并且确保没有任何黑边。1080p显示屏推荐的设置："xxxxx.exe -screen-fullscreen 0 -screen-width 1170 -screen-height 1050"
