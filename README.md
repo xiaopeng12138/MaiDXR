@@ -24,6 +24,7 @@ Discord: Coming Soon
 - https://github.com/hecomi/uWindowCapture
 - https://github.com/Sucareto/Mai2Touch
 - https://github.com/xiaopeng12138/WACVR
+- https://github.com/TonyViT/MrcXrtHelpers
 
 **Special thanks to [@V17AMax](https://github.com/V17AMax) for the beautiful logo and designs**
 
