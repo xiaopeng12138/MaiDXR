@@ -49,19 +49,19 @@ public class PlayerSettingManager : MonoBehaviour
     }
     public void GetHandPositionX()
     {
-        if (JsonConfig.HasKey("HandPosition"))
+        if (JsonConfig.HasKey("HandPositionX"))
             Slider.value = (float)JsonConfig.GetDouble("HandPositionX");
         SetHandPositionX(Slider.value);
     }
     public void GetHandPositionY()
     {
-        if (JsonConfig.HasKey("HandPosition"))
+        if (JsonConfig.HasKey("HandPositionY"))
             Slider.value = (float)JsonConfig.GetDouble("HandPositionY");
         SetHandPositionY(Slider.value);
     }
     public void GetHandPositionZ()
     {
-        if (JsonConfig.HasKey("HandPosition"))
+        if (JsonConfig.HasKey("HandPositionZ"))
             Slider.value = (float)JsonConfig.GetDouble("HandPositionZ");
         SetHandPositionZ(Slider.value);
     }
