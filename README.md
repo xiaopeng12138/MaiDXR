@@ -1,6 +1,8 @@
 # MaiDXR
 Open Source VR Arcade Simulator
+
 QQ Group: 261946477
+
 Discord: Coming Soon
 
 [Chinese 中文 README](https://github.com/xiaopeng12138/MaiDXR/blob/main/README_zh.md)
