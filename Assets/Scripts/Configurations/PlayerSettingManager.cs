@@ -1,75 +1,118 @@
 using UnityEngine.UI;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerSettingManager : MonoBehaviour
 {
-    public Transform LHandTransform;
-    public Transform RHandTransform;
-    public Transform PlayerTransform;
-    private ValueManager PlayerHeightValue;
-    private Slider Slider;
+    private Transform LHandTransform = null;
+    private Transform RHandTransform = null;
+    private Transform PlayerTransform = null;
+    private ControllerHapticManager[] HapticManagers = null;
+
+    public ValueManager PlayerHeightManager;
+    public float HandSize = 8;
+    public float HandPositionX = 0;
+    public float HandPositionY = 0;
+    public float HandPositionZ = 0;
+    public List<Slider> Sliders;
+    
     void Start()
     {
-        Slider = GetComponent<Slider>();
-        PlayerHeightValue = GetComponent<ValueManager>();
-        switch (gameObject.name)
+        SetTarget(gameObject);
+        SetSliders();
+    }
+    public void SetTarget(GameObject XRObj)
+    {
+        LHandTransform = XRObj.transform.Find("Camera Offset").Find("LeftHand Controller").Find("LHand");
+        RHandTransform = XRObj.transform.Find("Camera Offset").Find("RightHand Controller").Find("RHand");
+        PlayerTransform = XRObj.transform;
+        HapticManagers = GetComponentsInChildren<ControllerHapticManager>();
+        GetSetConfigs();
+    }
+    private void GetSetConfigs()
+    {
+        GetPlayerHeight();
+        GetHandSize();
+        GetHandPositionX();
+        GetHandPositionY();
+        GetHandPositionZ();
+        GetHapticDuration();
+        GetHapticAmplitude();
+    }
+    private void SetSliders()
+    {
+        foreach (Slider slider in Sliders)
         {
-            case "PlayerHAdd":
-            case "PlayerHSub":
-                GetPlayerHeight();
-                break;
-            case "HandS":
-                GetHandSize();
-                break;
-            case "HandX":
-                GetHandPositionX();
-                SetHandPositionX(Slider.value);
-                break;
-            case "HandY":
-                GetHandPositionY();
-                SetHandPositionY(Slider.value);
-                break;
-            case "HandZ":
-                GetHandPositionZ();
-                SetHandPositionZ(Slider.value);
-                break;
+            switch (slider.gameObject.name)
+            {
+                case "HandS":
+                    slider.value = HandSize;
+                    break;
+                case "HandX":
+                    slider.value = HandPositionX;
+                    break;
+                case "HandY":
+                    slider.value = HandPositionY;
+                    break;
+                case "HandZ":
+                    slider.value = HandPositionZ;
+                    break;
+                case "HpDuration":
+                    slider.value = HapticManagers[0].duration;
+                    break;
+                case "HpAmplitude":
+                    slider.value = HapticManagers[0].amplitude;
+                    break;
+            }
         }
     }
-    public void GetPlayerHeight()
+    private void GetPlayerHeight()
     {
         if (JsonConfig.HasKey("PlayerHeight"))
-            PlayerHeightValue.Value = (float)JsonConfig.GetDouble("PlayerHeight");
+            PlayerHeightManager.Value = (float)JsonConfig.GetDouble("PlayerHeight");
         SetPlayerHeight();
     }
-    public void GetHandSize()
+    private void GetHandSize()
     {
         if (JsonConfig.HasKey("HandSize"))
-            Slider.value = (float)JsonConfig.GetDouble("HandSize");
-        SetHandSize(Slider.value);
+            HandSize = (float)JsonConfig.GetDouble("HandSize");
+        SetHandSize(HandSize);
     }
-    public void GetHandPositionX()
+    private void GetHandPositionX()
     {
         if (JsonConfig.HasKey("HandPositionX"))
-            Slider.value = (float)JsonConfig.GetDouble("HandPositionX");
-        SetHandPositionX(Slider.value);
+            HandPositionX = (float)JsonConfig.GetDouble("HandPositionX");
+        SetHandPositionX(HandPositionX);
     }
-    public void GetHandPositionY()
+    private void GetHandPositionY()
     {
         if (JsonConfig.HasKey("HandPositionY"))
-            Slider.value = (float)JsonConfig.GetDouble("HandPositionY");
-        SetHandPositionY(Slider.value);
+            HandPositionY = (float)JsonConfig.GetDouble("HandPositionY");
+        SetHandPositionY(HandPositionY);
     }
-    public void GetHandPositionZ()
+    private void GetHandPositionZ()
     {
         if (JsonConfig.HasKey("HandPositionZ"))
-            Slider.value = (float)JsonConfig.GetDouble("HandPositionZ");
-        SetHandPositionZ(Slider.value);
+            HandPositionZ = (float)JsonConfig.GetDouble("HandPositionZ");
+        SetHandPositionZ(HandPositionZ);
     }
-    
+    void GetHapticDuration()
+    {
+        if (JsonConfig.HasKey("HapticDuration"))
+            HapticManagers[0].duration = (float)JsonConfig.GetDouble("HapticDuration");
+        SetHapticDuration(HapticManagers[0].duration);
+    }
+    void GetHapticAmplitude()
+    {
+        if (JsonConfig.HasKey("HapticAmplitude"))
+            HapticManagers[0].amplitude = (float)JsonConfig.GetDouble("HapticAmplitude") * 10;
+        SetHapticAmplitude(HapticManagers[0].amplitude);
+    }
+
     public void SetPlayerHeight()
     {
-        PlayerTransform.position = new Vector3(PlayerTransform.position.x, PlayerHeightValue.Value, PlayerTransform.position.z);
-        JsonConfig.SetDouble("PlayerHeight", PlayerHeightValue.Value);
+        PlayerTransform.position = new Vector3(PlayerTransform.position.x, PlayerHeightManager.Value, PlayerTransform.position.z);
+        JsonConfig.SetDouble("PlayerHeight", PlayerHeightManager.Value);
     }
     public void SetHandSize(float value)
     {
@@ -98,5 +141,22 @@ public class PlayerSettingManager : MonoBehaviour
         value = value / 100;
         LHandTransform.localPosition = new Vector3(LHandTransform.localPosition.x, LHandTransform.localPosition.y, value);
         RHandTransform.localPosition = new Vector3(RHandTransform.localPosition.x, RHandTransform.localPosition.y, value);
+    }
+    public void SetHapticDuration(float duration)
+    {
+        foreach (var controller in HapticManagers)
+        {
+            controller.duration = duration;
+        }
+        JsonConfig.SetDouble("HapticDuration", duration);
+    }
+    public void SetHapticAmplitude(float amplitude)
+    {
+        amplitude /= 10;
+        foreach (var controller in HapticManagers)
+        {
+            controller.amplitude = amplitude;
+        }
+        JsonConfig.SetDouble("HapticAmplitude", amplitude);
     }
 }

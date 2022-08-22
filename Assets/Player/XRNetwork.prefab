@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 149481172096803373}
   - component: {fileID: 149481172096803370}
   - component: {fileID: 149481172096803371}
-  - component: {fileID: 149481172096803375}
   - component: {fileID: 5785614773386781349}
+  - component: {fileID: 4318516477145814445}
   m_Layer: 0
   m_Name: RHand
   m_TagString: Untagged
@@ -116,21 +116,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &149481172096803375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149481172096803369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 828061e9d3280bc40804b0d0dae1f04e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hand: 5
-  duration: 0.1
-  amplitude: 1
 --- !u!114 &5785614773386781349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +142,21 @@ MonoBehaviour:
   ScaleThreshold: 0.005
   InLocalSpace: 0
   Interpolate: 1
+--- !u!114 &4318516477145814445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149481172096803369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 901c50071db1c3f4fb9f655e0daeb979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hand: 0
+  duration: 0.1
+  amplitude: 1
 --- !u!1 &149481172127065656
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,8 +170,8 @@ GameObject:
   - component: {fileID: 149481172127065658}
   - component: {fileID: 149481172127065659}
   - component: {fileID: 149481172127065663}
-  - component: {fileID: 149481172127065662}
   - component: {fileID: 4540214490382732089}
+  - component: {fileID: 3587797900279830793}
   m_Layer: 0
   m_Name: LHand
   m_TagString: Untagged
@@ -273,21 +273,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &149481172127065662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149481172127065656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 828061e9d3280bc40804b0d0dae1f04e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Hand: 4
-  duration: 0.1
-  amplitude: 1
 --- !u!114 &4540214490382732089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +299,21 @@ MonoBehaviour:
   ScaleThreshold: 0.005
   InLocalSpace: 0
   Interpolate: 1
+--- !u!114 &3587797900279830793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149481172127065656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 901c50071db1c3f4fb9f655e0daeb979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hand: 0
+  duration: 0.1
+  amplitude: 1
 --- !u!1 &149481173032254467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,7 +1480,7 @@ GameObject:
   - component: {fileID: 6166462342570134929}
   - component: {fileID: 6918064188570338137}
   m_Layer: 0
-  m_Name: XR Origin
+  m_Name: XRNetwork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

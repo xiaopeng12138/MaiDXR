@@ -5,8 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class NetworkPlayer : NetworkBehaviour
 {
-    public Vector2 Player1Position = new Vector2(-1f, 0);
-    public Vector2 Player2Position = new Vector2(1f, 0);
+    public Vector2 Player1Position = new Vector2(-0.75f, 0);
+    public Vector2 Player2Position = new Vector2(0.75f, 0);
     public override void OnNetworkSpawn()
     {
         //base.OnNetworkSpawn();
@@ -21,6 +21,7 @@ public class NetworkPlayer : NetworkBehaviour
             var clientTurnProvider = GetComponent<ActionBasedContinuousTurnProvider>();
             var clientControllers = GetComponentsInChildren<ActionBasedController>();
             var clientRays = GetComponentsInChildren<RayManager>();
+            var clientHaptics = GetComponentsInChildren<ControllerHapticManager>();
             var clientHead = GetComponentInChildren<TrackedPoseDriver>();
             var clientCamera = GetComponentInChildren<Camera>();
             var clientAudioListener = GetComponentInChildren<AudioListener>();
@@ -39,6 +40,10 @@ public class NetworkPlayer : NetworkBehaviour
             foreach (var controller in clientControllers)
             {
                 controller.enabled = false;
+            }
+            foreach (var haptic in clientHaptics)
+            {
+                haptic.enabled = false;
             }
             clientLIV.enabled = false;
             //clientOVRManager.SetActive(false);

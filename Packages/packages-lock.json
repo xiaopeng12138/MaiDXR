@@ -1,5 +1,19 @@
 {
   "dependencies": {
+    "com.community.netcode.transport.enet": {
+      "version": "https://github.com/Unity-Technologies/multiplayer-community-contributions.git?path=/Transports/com.community.netcode.transport.enet",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "095d1c78b77f405b44c9ff4ae20c3a01f6d3cddc"
+    },
+    "com.community.netcode.transport.websocket": {
+      "version": "https://github.com/Unity-Technologies/multiplayer-community-contributions.git?path=/Transports/com.community.netcode.transport.websocket",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "095d1c78b77f405b44c9ff4ae20c3a01f6d3cddc"
+    },
     "com.hecomi.uwindowcapture": {
       "version": "https://github.com/hecomi/uWindowCapture.git#upm",
       "depth": 0,
