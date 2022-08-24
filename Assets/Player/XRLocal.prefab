@@ -1551,6 +1551,7 @@ MonoBehaviour:
   HandPositionX: 0
   HandPositionY: 0
   HandPositionZ: 0
+  Sliders: []
 --- !u!1 &149481173433458732
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,27 @@
       "dependencies": {},
       "hash": "095d1c78b77f405b44c9ff4ae20c3a01f6d3cddc"
     },
+    "com.hecomi.unvencoder": {
+      "version": "https://github.com/hecomi/uNvEncoder.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3568c3fa3a4f9880ff18da515281950a0d646ab9"
+    },
+    "com.hecomi.unvpipe": {
+      "version": "https://github.com/hecomi/uNvPipe.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "106bcc1a49d8ed573021e63bb07d1969b09880f3"
+    },
+    "com.hecomi.upacketdivision": {
+      "version": "https://github.com/hecomi/uPacketDivision.git#upm",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "0c302e237b3d42f501aab1d3d0ea3ca049fea001"
+    },
     "com.hecomi.uwindowcapture": {
       "version": "https://github.com/hecomi/uWindowCapture.git#upm",
       "depth": 0,

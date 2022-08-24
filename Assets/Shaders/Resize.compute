@@ -1,0 +1,11 @@
+#pragma kernel Resize
+
+int divideSize;
+Texture2D inputTexture;
+RWTexture2D <float4> outputTexture;
+
+[numthreads(8, 8, 1)]
+void Resize(uint3 id : SV_DispatchThreadID) 
+{
+	outputTexture[id.xy / divideSize] = inputTexture[id.xy];
+}

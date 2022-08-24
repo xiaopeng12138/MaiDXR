@@ -1479,6 +1479,8 @@ GameObject:
   - component: {fileID: 7954102358903816433}
   - component: {fileID: 6166462342570134929}
   - component: {fileID: 6918064188570338137}
+  - component: {fileID: 5523943268535035658}
+  - component: {fileID: 8812900737838453218}
   m_Layer: 0
   m_Name: XRNetwork
   m_TagString: Untagged
@@ -1698,8 +1700,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be4365f045c3264ea500128c655fae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1Position: {x: -1, y: 0}
-  Player2Position: {x: 1, y: 0}
+  Player1Position: {x: -0.75, y: 0}
+  Player2Position: {x: 0.75, y: 0}
+--- !u!114 &5523943268535035658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149481173429413636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50a416b20df1fe4e95e9982b82c084b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Encoder: {fileID: 8812900737838453218}
+  Decoder: {fileID: 0}
+  DecoderTexture: {fileID: 0}
+  maxPacketSize: 4096
+  timeout: 100
+--- !u!114 &8812900737838453218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149481173429413636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1beb3ca2d3590d64aaa6e95c89db59aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texture: {fileID: 0}
+  encoder:
+    onEncoded:
+      m_PersistentCalls:
+        m_Calls: []
+    outputError: 0
+  setting:
+    width: 1920
+    height: 1080
+    frameRate: 24
+    bitRate: 98304
+    maxFrameSize: 4096
+    format: 87
+  idrFrameIntervalFrame: 24
+  ResolutionDivider: 2
+  sTexture: {fileID: 0}
+  ResizeShader: {fileID: 0}
 --- !u!1 &149481173433458732
 GameObject:
   m_ObjectHideFlags: 0

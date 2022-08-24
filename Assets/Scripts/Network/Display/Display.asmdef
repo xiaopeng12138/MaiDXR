@@ -1,0 +1,20 @@
+{
+    "name": "Display",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1491147abca9d7d4bb7105af628b223e",
+        "GUID:335e60c3f2584c947bb2dd55d449ab18",
+        "GUID:4d14b15ded5e3ac4499a81ec3fc340fc",
+        "GUID:56dd35f9b6f21364494ed8365264cbf6",
+        "GUID:ec8e026973d4d094882a84e64338c685"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

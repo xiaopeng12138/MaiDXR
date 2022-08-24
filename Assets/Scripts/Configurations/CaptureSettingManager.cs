@@ -98,7 +98,7 @@ public class CaptureSettingManager : MonoBehaviour
     
     public void SetCP1P()
     {
-        WindowMaterial.SetTextureScale("_MainTex",new Vector2(Toggle.isOn ? 1f : 0.5f, 1));
+        WindowMaterial.SetTextureScale("_MainTex",new Vector2(Toggle.isOn ? 1f : 0.5f, -1));
         JsonConfig.SetBoolean("Capture1P", Toggle.isOn);
     }
 }
