@@ -1,6 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 
 public class PlayerSettingManager : MonoBehaviour
 {
@@ -68,76 +69,76 @@ public class PlayerSettingManager : MonoBehaviour
     }
     private void GetPlayerHeight()
     {
-        if (JsonConfig.HasKey("PlayerHeight"))
-            PlayerHeightManager.Value = (float)JsonConfig.GetDouble("PlayerHeight");
+        if (PlayerConfig.HasKey("PlayerHeight"))
+            PlayerHeightManager.Value = (float)PlayerConfig.GetDouble("PlayerHeight");
         SetPlayerHeight();
     }
     private void GetHandSize()
     {
-        if (JsonConfig.HasKey("HandSize"))
-            HandSize = (float)JsonConfig.GetDouble("HandSize");
+        if (PlayerConfig.HasKey("HandSize"))
+            HandSize = (float)PlayerConfig.GetDouble("HandSize");
         SetHandSize(HandSize);
     }
     private void GetHandPositionX()
     {
-        if (JsonConfig.HasKey("HandPositionX"))
-            HandPositionX = (float)JsonConfig.GetDouble("HandPositionX");
+        if (PlayerConfig.HasKey("HandPositionX"))
+            HandPositionX = (float)PlayerConfig.GetDouble("HandPositionX");
         SetHandPositionX(HandPositionX);
     }
     private void GetHandPositionY()
     {
-        if (JsonConfig.HasKey("HandPositionY"))
-            HandPositionY = (float)JsonConfig.GetDouble("HandPositionY");
+        if (PlayerConfig.HasKey("HandPositionY"))
+            HandPositionY = (float)PlayerConfig.GetDouble("HandPositionY");
         SetHandPositionY(HandPositionY);
     }
     private void GetHandPositionZ()
     {
-        if (JsonConfig.HasKey("HandPositionZ"))
-            HandPositionZ = (float)JsonConfig.GetDouble("HandPositionZ");
+        if (PlayerConfig.HasKey("HandPositionZ"))
+            HandPositionZ = (float)PlayerConfig.GetDouble("HandPositionZ");
         SetHandPositionZ(HandPositionZ);
     }
     void GetHapticDuration()
     {
-        if (JsonConfig.HasKey("HapticDuration"))
-            HapticManagers[0].duration = (float)JsonConfig.GetDouble("HapticDuration");
+        if (PlayerConfig.HasKey("HapticDuration"))
+            HapticManagers[0].duration = (float)PlayerConfig.GetDouble("HapticDuration");
         SetHapticDuration(HapticManagers[0].duration);
     }
     void GetHapticAmplitude()
     {
-        if (JsonConfig.HasKey("HapticAmplitude"))
-            HapticManagers[0].amplitude = (float)JsonConfig.GetDouble("HapticAmplitude") * 10;
+        if (PlayerConfig.HasKey("HapticAmplitude"))
+            HapticManagers[0].amplitude = (float)PlayerConfig.GetDouble("HapticAmplitude") * 10;
         SetHapticAmplitude(HapticManagers[0].amplitude);
     }
 
     public void SetPlayerHeight()
     {
         PlayerTransform.position = new Vector3(PlayerTransform.position.x, PlayerHeightManager.Value, PlayerTransform.position.z);
-        JsonConfig.SetDouble("PlayerHeight", PlayerHeightManager.Value);
+        PlayerConfig.SetDouble("PlayerHeight", PlayerHeightManager.Value);
     }
     public void SetHandSize(float value)
     {
-        JsonConfig.SetDouble("HandSize", value);
+        PlayerConfig.SetDouble("HandSize", value);
         value = value / 100;
         LHandTransform.localScale = new Vector3(value, value, value);
         RHandTransform.localScale = new Vector3(value, value, value);
     }
     public void SetHandPositionX(float value)
     {
-        JsonConfig.SetDouble("HandPositionX", value);
+        PlayerConfig.SetDouble("HandPositionX", value);
         value = value / 100;
         LHandTransform.localPosition = new Vector3(value, LHandTransform.localPosition.y, LHandTransform.localPosition.z);
         RHandTransform.localPosition = new Vector3(-value, RHandTransform.localPosition.y, RHandTransform.localPosition.z);
     }
     public void SetHandPositionY(float value)
     {
-        JsonConfig.SetDouble("HandPositionY", value);
+        PlayerConfig.SetDouble("HandPositionY", value);
         value = value / 100;
         LHandTransform.localPosition = new Vector3(LHandTransform.localPosition.x, value, LHandTransform.localPosition.z);
         RHandTransform.localPosition = new Vector3(RHandTransform.localPosition.x, value, RHandTransform.localPosition.z);
     }
     public void SetHandPositionZ(float value)
     {
-        JsonConfig.SetDouble("HandPositionZ", value);
+        PlayerConfig.SetDouble("HandPositionZ", value);
         value = value / 100;
         LHandTransform.localPosition = new Vector3(LHandTransform.localPosition.x, LHandTransform.localPosition.y, value);
         RHandTransform.localPosition = new Vector3(RHandTransform.localPosition.x, RHandTransform.localPosition.y, value);
@@ -148,7 +149,7 @@ public class PlayerSettingManager : MonoBehaviour
         {
             controller.duration = duration;
         }
-        JsonConfig.SetDouble("HapticDuration", duration);
+        PlayerConfig.SetDouble("HapticDuration", duration);
     }
     public void SetHapticAmplitude(float amplitude)
     {
@@ -157,6 +158,40 @@ public class PlayerSettingManager : MonoBehaviour
         {
             controller.amplitude = amplitude;
         }
-        JsonConfig.SetDouble("HapticAmplitude", amplitude);
+        PlayerConfig.SetDouble("HapticAmplitude", amplitude);
+    }
+    private static class PlayerConfig
+    {
+        static JObject playerConfig;
+        public static bool hasInitialized = false;
+        private static void ensureInitialization() {
+            if (hasInitialized) 
+                return;
+            GetPlayerConfig();
+            hasInitialized = true;
+        }
+        public static bool HasKey(string key) {
+            ensureInitialization();
+            return playerConfig.ContainsKey(key);
+        }
+        public static void SetDouble(string key, double number) {
+            ensureInitialization();
+            playerConfig[key] = number;
+            SetPlayerConfig();
+        }
+        public static double GetDouble(string key) {
+            ensureInitialization();
+            return playerConfig.Value<double>(key);
+        }
+
+        public static void SetPlayerConfig() {
+            JsonConfig.SetJObject("PlayerConfig", playerConfig);
+        }
+        public static void GetPlayerConfig() {
+            if (JsonConfig.HasKey("PlayerConfig"))
+                playerConfig = JsonConfig.GetJObject("PlayerConfig");
+            else
+                playerConfig = new JObject();
+        }
     }
 }

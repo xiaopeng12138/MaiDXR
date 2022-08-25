@@ -5,10 +5,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Linq;
+using System;
 
 public static class JsonConfig {
     public static bool hasInitialized = false;
-    private static JObject config;
+    public static JObject config;
 
     private static void ensureInitialization() {
         if (hasInitialized) 
@@ -20,8 +21,14 @@ public static class JsonConfig {
     private static string getFileName() {
         return Application.dataPath + "/../config.json";
     }
-
     private static void saveFile() {
+        if (JsonConfigBehavior.instance != null)
+            JsonConfigBehavior.saveFile();
+    }
+
+    public static IEnumerator saveFileWait() {
+        yield return new WaitForSeconds(1.5f); //
+        sort(config);
         File.WriteAllText(getFileName(), config.ToString());
     }
 
@@ -31,6 +38,21 @@ public static class JsonConfig {
         else {
             config = new JObject();
             saveFile();
+        }
+    }
+    private static void sort(JObject jObj)
+    {
+        var props = jObj.Properties().ToList();
+        foreach (var prop in props)
+        {
+            prop.Remove();
+        }
+
+        foreach (var prop in props.OrderBy(p=>p.Name))
+        {
+            jObj.Add(prop);
+            if(prop.Value is JObject)
+                sort((JObject)prop.Value);
         }
     }
 
@@ -81,6 +103,11 @@ public static class JsonConfig {
     public static void SetQuaternion(string key, Quaternion quaternion) {
         SetFloatArray(key, new float[] { quaternion.x, quaternion.y, quaternion.z, quaternion.w });
     }
+    public static void SetJObject(string key, JObject value) {
+        ensureInitialization();
+        config[key] = JObject.FromObject(value);
+        saveFile();
+    }
 
     public static bool GetBoolean(string key) {
         ensureInitialization();
@@ -107,5 +134,9 @@ public static class JsonConfig {
     }
     public static Quaternion GetQuaternion(string key) {
         return new Quaternion(GetFloatArray(key)[0], GetFloatArray(key)[1], GetFloatArray(key)[2], GetFloatArray(key)[3]);
+    }
+    public static JObject GetJObject(string key) {
+        ensureInitialization();
+        return config.Value<JObject>(key);
     }
 }

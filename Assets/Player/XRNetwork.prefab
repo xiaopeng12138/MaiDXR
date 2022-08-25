@@ -141,7 +141,7 @@ MonoBehaviour:
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.005
   InLocalSpace: 0
-  Interpolate: 1
+  Interpolate: 0
 --- !u!114 &4318516477145814445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901c50071db1c3f4fb9f655e0daeb979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hand: 0
+  Hand: 5
   duration: 0.1
   amplitude: 1
 --- !u!1 &149481172127065656
@@ -298,7 +298,7 @@ MonoBehaviour:
   RotAngleThreshold: 0.01
   ScaleThreshold: 0.005
   InLocalSpace: 0
-  Interpolate: 1
+  Interpolate: 0
 --- !u!114 &3587797900279830793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901c50071db1c3f4fb9f655e0daeb979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hand: 0
+  Hand: 4
   duration: 0.1
   amplitude: 1
 --- !u!1 &149481173032254467
@@ -1741,13 +1741,11 @@ MonoBehaviour:
     width: 1920
     height: 1080
     frameRate: 24
-    bitRate: 98304
-    maxFrameSize: 4096
+    bitRate: 196608
+    maxFrameSize: 8192
     format: 87
   idrFrameIntervalFrame: 24
   ResolutionDivider: 2
-  sTexture: {fileID: 0}
-  ResizeShader: {fileID: 0}
 --- !u!1 &149481173433458732
 GameObject:
   m_ObjectHideFlags: 0

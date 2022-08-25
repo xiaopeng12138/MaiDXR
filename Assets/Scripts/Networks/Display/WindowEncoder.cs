@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using uWindowCapture;
 using Unity.Netcode;
+using Newtonsoft.Json.Linq;
 
 public class WindowEncoder : NetworkBehaviour
 {
@@ -18,19 +19,19 @@ public class WindowEncoder : NetworkBehaviour
         height = 1080,
         frameRate = 24,
         format = uNvEncoder.Format.B8G8R8A8_UNORM,
-        bitRate = 98304,
-        maxFrameSize = 4096,
+        bitRate = 196608,
+        maxFrameSize = 8192,
     };
 
     public int idrFrameIntervalFrame = 24;
     int idrFrameCounter_ = 0;
     public int ResolutionDivider = 2;
-    public Texture2D sTexture;
-    
+    Texture2D sTexture;
 
     void Start()
     {
         if (!IsOwner) return;
+        GetSetting();
         StartCoroutine(EncodeLoop());
     }
 
@@ -40,6 +41,25 @@ public class WindowEncoder : NetworkBehaviour
         StopAllCoroutines();
         encoder.Destroy();
     }
+    void GetSetting()
+    {
+        if (JsonConfig.HasKey("EncoderSetting"))
+        {
+            var _setting = JsonConfig.GetJObject("EncoderSetting");
+            ResolutionDivider = _setting.Value<int>("ResolutionDivider");
+            _setting.Remove("ResolutionDivider");
+            setting = _setting.ToObject<uNvEncoder.EncoderDesc>();
+        }
+            
+        SetSetting(setting, ResolutionDivider);
+    }
+    void SetSetting(uNvEncoder.EncoderDesc _setting, int resolutionDivider)
+    {
+        var JObj= JObject.FromObject(_setting);
+        JObj.Remove("width"); JObj.Remove("height");
+        JObj["ResolutionDivider"] = resolutionDivider;
+        JsonConfig.SetJObject("EncoderSetting", JObj);
+    }   
 
     RenderTexture rt;
     void Resize()
@@ -83,17 +103,5 @@ public class WindowEncoder : NetworkBehaviour
     {
         if (encoder == null) return;
         encoder.Reconfigure(setting);
-    }
-    
-    public ComputeShader ResizeShader;
-    Texture2D Resize(ComputeShader shader, Texture2D inputTexture, int divideSize) 
-    {
-        Texture2D t = new Texture2D(inputTexture.width/divideSize, inputTexture.height/divideSize, TextureFormat.BGRA32, false);
-        int k = shader.FindKernel("Resize");
-        shader.SetInt("divideSize", divideSize);        
-        shader.SetTexture(k, "inputTexture", inputTexture);
-        shader.SetTexture(k, "outputTexture", t);
-        shader.Dispatch(k, inputTexture.width / 8, inputTexture.height / 8, 1);
-        return t;
     }
 }

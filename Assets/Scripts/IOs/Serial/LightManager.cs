@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using System.IO.Ports;
 using System;
 using System.Collections;
@@ -14,6 +13,7 @@ public class LightManager : MonoBehaviour
     public List<List<byte>> dataListInstantP1 = new List<List<byte>>();
     static bool isUpdateCMD = false;
     public List<Light> RingLeds = new List<Light>();
+    public byte RingLedsWhitePointSubtractor = 130;
     public Light BodyLed;
     public Light DisplayLed;
     public float BodyLedIntensity = 0.0f;
@@ -126,7 +126,7 @@ public class LightManager : MonoBehaviour
             case 49:
                 //Debug.Log($"CMD49: {string.Join(", ", data)}");
                 int index = data[1];
-                mp = Convert.ToByte(127 * ((data[2]+data[3]+data[4]) / 765));
+                mp = Convert.ToByte(RingLedsWhitePointSubtractor * ((data[2]+data[3]+data[4]) / 765));
                 ringLeds[index].color = new Color32((byte)(data[2] - mp), (byte)(data[3] - mp), (byte)(data[4] - mp), 255);
                 if (!SerialManager.startUp)
                     SerialManager.startUp = true;
@@ -136,7 +136,7 @@ public class LightManager : MonoBehaviour
                 //Debug.Log($"CMD50/51: {string.Join(", ", data)}");
                 if (data[2] > 8)
                     data[2] = 8;
-                mp = Convert.ToByte(127 * ((data[4]+data[5]+data[6]) / 765));
+                mp = Convert.ToByte(RingLedsWhitePointSubtractor * ((data[4]+data[5]+data[6]) / 765));
                 nowCorlor = new Color32((byte)(data[4] - mp), (byte)(data[5] - mp), (byte)(data[6] - mp), 255);
                 if (data[0]==50)
                     Switch(data[1], data[2], ringLeds, nowCorlor);

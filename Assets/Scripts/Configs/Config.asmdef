@@ -1,0 +1,22 @@
+{
+    "name": "Config",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:56dd35f9b6f21364494ed8365264cbf6",
+        "GUID:fe685ec1767f73d42b749ea8045bfe43",
+        "GUID:fdf862963556fe149b106be8cc0e538b",
+        "GUID:94a65d39be45e8a4c8edded492e0f093",
+        "GUID:1491147abca9d7d4bb7105af628b223e",
+        "GUID:6ef0fb8c83edbc44e80b129fa07fe90b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
