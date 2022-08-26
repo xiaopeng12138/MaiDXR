@@ -7,7 +7,9 @@ Discord: Coming Soon
 
 [Chinese 中文 README](https://github.com/xiaopeng12138/MaiDXR/blob/main/README_zh.md)
 
+
 ## About this project
+---
 - This project is an update of https://github.com/xiaopeng12138/MaiMai-VR. 
 - Support DX version or above
 - The model is almost 1:1 to DX cabinet/framework
@@ -17,37 +19,57 @@ Discord: Coming Soon
 - 3rd person camera and smooth camera
 - 3 customizable buttons
 
+
+## Preview
+---
+<img src="https://github.com/xiaopeng12138/MaiDXR/blob/main/PreviewImage/MaiDXR_PreviewImage.png?raw=true" width="250" />
+
+
 ## Inspired by
+---
 - https://github.com/derole1/MaiMai-VR
 - https://github.com/HelloKS/MaiMai-VR
 
+
 ## Used repository
-- https://github.com/HelloKS/MaiMai-VR
-- https://github.com/hecomi/uWindowCapture
-- https://github.com/Sucareto/Mai2Touch
-- https://github.com/xiaopeng12138/WACVR
-- https://github.com/TonyViT/MrcXrtHelpers
+---
+- [MaiMai-VR](https://github.com/HelloKS/MaiMai-VR)
+- [Mai2Touch](https://github.com/Sucareto/Mai2Touch)
+- [MrcXrtHelpers](https://github.com/TonyViT/MrcXrtHelpers)
+- [uWindowCapture](https://github.com/hecomi/uWindowCapture)
+- [uNvEncoder](https://github.com/hecomi/uNvEncoder)
+- [uNvPipe](https://github.com/hecomi/uNvPipe)
+- [uPacketDivision](https://github.com/hecomi/uPacketDivision)
+- [WACVR](https://github.com/xiaopeng12138/WACVR)
 
 **Special thanks to [@V17AMax](https://github.com/V17AMax) for the beautiful logo and designs**
 
 
 ## Build requirements
-- Current Unity version: 2021.3.2f1
+---
+- Current Unity version: 2021.3.8f1
+
 
 ## Supported platform
-- All SteamVR device
-- All Oculus device
+---
+- All SteamVR device (Index，HTC，Oculus)
+- All Oculus device (Oculus Desktop App)
 - Tested on Quest 2 through Oculus link (Native and via SteamVR) and ALVR (via SteamVR). The Hand Balls position is by default adjusted for the Quest 2 controller.
 
 ## Declaimer
+---
 - This project is non-profit and some resources came from Internet!
 - Although this is under the MIT license, do not use this in commercial/profitable scenarios!
 - Please support your local arcade if you can!
 
+
 ## Changelog
+---
 Please see Changes.md
 
+
 ## How to use
+---
 - Get game somehow and make sure it will run properly. (DO NOT ASK ANYTHING THAT IS DIRECTLY RELATED TO THE GAME IT SELF)
 - Download [latest version of MaiDXR](https://github.com/xiaopeng12138/MaiDXR/releases)
 - Download and install [com0com](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/powersdr-iq/setup_com0com_W7_x64_signed.exe)
@@ -59,7 +81,9 @@ Please see Changes.md
 - Start MaiDXR first then start the game.
 - If your touch is not working, try to enable somehow Test mod then exit Test mode.
 
+
 ## Configuration
+---
 The green button on the bottom of the cabinet is lock button. Long press it will disable all unnecessary buttons, controller pointer, and the config panel.
 
 You can adjust all settings in the config panel or via config.json. The changes of config.json will only apply after the MaiDXR reboot. 
@@ -71,10 +95,8 @@ Some configs in config.json are only the index of the dropdown.
 You can use the pointer to point the third-person camera and grab it to the position where you want to be.
 
 
-## Preview
-![Image Capture](https://github.com/xiaopeng12138/MaiDXR/blob/main/PreviewImage/MaiDXR_PreviewImage.png?raw=true)
-
 ## ToDo
+---
 - √ Add user-adjustable settings (controller position etc.)
 - √ Add non-VR window and camera smooth
 - √ Add button light
@@ -87,6 +109,6 @@ You can use the pointer to point the third-person camera and grab it to the posi
 - Add Multiplay
 - Add visual touch and button feedback
 
-Huge thanks to HelloKS, derole1, and every one in BSAH
+Huge thanks to HelloKS, derole1, hecomi, V17AMax, and every one in BSAH
 
 If you want to add any function pls commit PR, I will accept it as soon as possible and make a new build/release.
