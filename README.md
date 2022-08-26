@@ -8,7 +8,7 @@ Discord: Coming Soon
 [Chinese 中文 README](https://github.com/xiaopeng12138/MaiDXR/blob/main/README_zh.md)
 
 
-## About this project
+**About this project**
 ---
 - This project is an update of https://github.com/xiaopeng12138/MaiMai-VR. 
 - Support DX version or above
@@ -20,18 +20,18 @@ Discord: Coming Soon
 - 3 customizable buttons
 
 
-## Preview
+**Preview**
 ---
 <img src="https://github.com/xiaopeng12138/MaiDXR/blob/main/PreviewImage/MaiDXR_PreviewImage.png?raw=true" width="250" />
 
 
-## Inspired by
+**Inspired by**
 ---
 - https://github.com/derole1/MaiMai-VR
 - https://github.com/HelloKS/MaiMai-VR
 
 
-## Used repository
+**Used repository**
 ---
 - [MaiMai-VR](https://github.com/HelloKS/MaiMai-VR)
 - [Mai2Touch](https://github.com/Sucareto/Mai2Touch)
@@ -45,30 +45,30 @@ Discord: Coming Soon
 **Special thanks to [@V17AMax](https://github.com/V17AMax) for the beautiful logo and designs**
 
 
-## Build requirements
+**Build requirements**
 ---
 - Current Unity version: 2021.3.8f1
 
 
-## Supported platform
+**Supported platform**
 ---
 - All SteamVR device (Index，HTC，Oculus)
 - All Oculus device (Oculus Desktop App)
 - Tested on Quest 2 through Oculus link (Native and via SteamVR) and ALVR (via SteamVR). The Hand Balls position is by default adjusted for the Quest 2 controller.
 
-## Declaimer
+**Declaimer**
 ---
 - This project is non-profit and some resources came from Internet!
 - Although this is under the MIT license, do not use this in commercial/profitable scenarios!
 - Please support your local arcade if you can!
 
 
-## Changelog
+**Changelog**
 ---
 Please see Changes.md
 
 
-## How to use
+**How to use**
 ---
 - Get game somehow and make sure it will run properly. (DO NOT ASK ANYTHING THAT IS DIRECTLY RELATED TO THE GAME IT SELF)
 - Download [latest version of MaiDXR](https://github.com/xiaopeng12138/MaiDXR/releases)
@@ -82,7 +82,7 @@ Please see Changes.md
 - If your touch is not working, try to enable somehow Test mod then exit Test mode.
 
 
-## Configuration
+**Configuration**
 ---
 The green button on the bottom of the cabinet is lock button. Long press it will disable all unnecessary buttons, controller pointer, and the config panel.
 
@@ -94,7 +94,7 @@ Some configs in config.json are only the index of the dropdown.
 
 You can use the pointer to point the third-person camera and grab it to the position where you want to be.
 
-## Multiplayer Configuration
+**Multiplayer Configuration**
 ---
 All the settings related to multiplayer are inside config.json.
 
@@ -110,7 +110,7 @@ All the settings related to multiplayer are inside config.json.
 
 **Too high bit rate and resolution will cause all kinds of lag and issues, it is recommended to divide the resolution by 3 and adjust the frame rate to less than 20 fps, which can solve the problem of compression mosaic and encoding lag to some extent.**
 
-## ToDo
+ToDo
 ---
 - √ Add user-adjustable settings (controller position etc.)
 - √ Add non-VR window and camera smooth
