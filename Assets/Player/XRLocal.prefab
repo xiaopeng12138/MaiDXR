@@ -1552,6 +1552,8 @@ MonoBehaviour:
   HandPositionY: 0
   HandPositionZ: 0
   Sliders: []
+  Locker: {fileID: 0}
+  NVRManager: {fileID: 0}
 --- !u!1 &149481173433458732
 GameObject:
   m_ObjectHideFlags: 0

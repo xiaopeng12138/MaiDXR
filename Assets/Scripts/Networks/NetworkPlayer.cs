@@ -15,7 +15,7 @@ public class NetworkPlayer : NetworkBehaviour
 
     private void DisableClientInput()
     {
-        if (!IsOwner && IsClient)
+        if (!IsOwner)
         {
             var clientMoveProvider = GetComponent<ActionBasedContinuousMoveProvider>();
             var clientTurnProvider = GetComponent<ActionBasedContinuousTurnProvider>();
@@ -43,7 +43,7 @@ public class NetworkPlayer : NetworkBehaviour
             }
             foreach (var haptic in clientHaptics)
             {
-                haptic.enabled = false;
+                Destroy(haptic);
             }
             clientLIV.enabled = false;
             //clientOVRManager.SetActive(false);

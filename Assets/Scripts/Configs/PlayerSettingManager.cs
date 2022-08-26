@@ -16,7 +16,8 @@ public class PlayerSettingManager : MonoBehaviour
     public float HandPositionY = 0;
     public float HandPositionZ = 0;
     public List<Slider> Sliders;
-    
+    public Locker Locker;
+    public NoneVRSettingManager NVRManager;
     void Start()
     {
         SetTarget(gameObject);
@@ -27,7 +28,10 @@ public class PlayerSettingManager : MonoBehaviour
         LHandTransform = XRObj.transform.Find("Camera Offset").Find("LeftHand Controller").Find("LHand");
         RHandTransform = XRObj.transform.Find("Camera Offset").Find("RightHand Controller").Find("RHand");
         PlayerTransform = XRObj.transform;
-        HapticManagers = GetComponentsInChildren<ControllerHapticManager>();
+        HapticManagers = XRObj.GetComponentsInChildren<ControllerHapticManager>();
+        Locker.LocalMotion = XRObj;
+        NVRManager.NVRCameraTargetFP = XRObj.transform.Find("Camera Offset").Find("Main Camera");
+        NVRManager.GetNVRMode();
         GetSetConfigs();
     }
     private void GetSetConfigs()

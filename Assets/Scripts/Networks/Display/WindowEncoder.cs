@@ -28,7 +28,7 @@ public class WindowEncoder : NetworkBehaviour
     public int ResolutionDivider = 2;
     Texture2D sTexture;
 
-    void Start()
+    public override void OnNetworkSpawn()
     {
         if (!IsOwner) return;
         GetSetting();
@@ -48,6 +48,7 @@ public class WindowEncoder : NetworkBehaviour
             var _setting = JsonConfig.GetJObject("EncoderSetting");
             ResolutionDivider = _setting.Value<int>("ResolutionDivider");
             _setting.Remove("ResolutionDivider");
+            _setting["format"] = (int)uNvEncoder.Format.B8G8R8A8_UNORM;
             setting = _setting.ToObject<uNvEncoder.EncoderDesc>();
         }
             

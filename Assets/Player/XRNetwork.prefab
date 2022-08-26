@@ -123,7 +123,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149481172096803369}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
   m_Name: 
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 149481172127065659}
   - component: {fileID: 149481172127065663}
   - component: {fileID: 4540214490382732089}
-  - component: {fileID: 3587797900279830793}
+  - component: {fileID: 2613443299298391039}
   m_Layer: 0
   m_Name: LHand
   m_TagString: Untagged
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149481172127065656}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
   m_Name: 
@@ -299,7 +299,7 @@ MonoBehaviour:
   ScaleThreshold: 0.005
   InLocalSpace: 0
   Interpolate: 0
---- !u!114 &3587797900279830793
+--- !u!114 &2613443299298391039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

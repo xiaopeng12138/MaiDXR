@@ -19,7 +19,7 @@ public class DisplaySync : NetworkBehaviour
     public uint timeout = 100;
     Assembler assembler = new Assembler();
     bool isInitialized = false;
-    void Start()
+    public override void OnNetworkSpawn()
     {
         NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectedCallback;
 
@@ -41,6 +41,7 @@ public class DisplaySync : NetworkBehaviour
             Encoder.encoder.onEncoded.AddListener(OnEncoded);
         }
     }
+    
     void Update()
     {
 

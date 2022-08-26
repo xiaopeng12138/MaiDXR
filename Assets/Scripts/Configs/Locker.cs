@@ -25,7 +25,7 @@ public class Locker : MonoBehaviour
     {
         ToggleButtons();
         ToggleLocalmotion();
-        ToggleRay();
+        //ToggleRay();
         isLocked = !isLocked;
         if (isLocked)
             material.color = Color.red;
