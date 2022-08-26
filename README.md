@@ -98,7 +98,7 @@ You can use the pointer to point the third-person camera and grab it to the posi
 ---
 All the settings related to multiplayer are inside config.json.
 
-- **HostIP:** IP address of the host to be connected by the client, supports IPV4/6.IPV6 format: **HostIP: "[fe80::1145:1400:1919:8100]"** 
+- **HostIP:** IP address of the host to be connected by the client, supports IPV4/6. IPV6 format: **HostIP: "[fe80::1145:1400:1919:8100]"** 
 - **HostPort:** the port of the host, also the port to which the client will connect. The protocol is UDP.
 - If you need to forward the port on top of the router, you only need to forward one of the above UDP ports.
 
