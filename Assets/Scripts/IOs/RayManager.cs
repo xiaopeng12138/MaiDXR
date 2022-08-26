@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class RayManager : MonoBehaviour
 {
     public bool RaySwitch = true;
-    public float Distance = 0.3f;
+    public float Distance = 0.4f;
     XRRayInteractor interactor;
     XRInteractorLineVisual lineVisual;
     LineRenderer lineRenderer;

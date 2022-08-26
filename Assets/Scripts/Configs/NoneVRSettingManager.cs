@@ -74,11 +74,15 @@ public class NoneVRSettingManager : MonoBehaviour
                 if (!NVRCameraObj.activeSelf)
                     NVRCameraObj.SetActive(true);
                 CameraSmooth.target = NVRCameraTargetFP;
+                NVRCamera.cullingMask |= 1 << LayerMask.NameToLayer("FPSBlock"); // Enable FPBlock
+                NVRCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("TPSBlock")); // Disable TPBlock
                 break;
             case 2:
                 if (!NVRCameraObj.activeSelf)
                     NVRCameraObj.SetActive(true);
                 CameraSmooth.target = NVRCameraTargetTP;
+                NVRCamera.cullingMask |= 1 << LayerMask.NameToLayer("TPSBlock"); // Enable TPBlock
+                NVRCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("FPSBlock")); // Disable FPBlock
                 break;
         }
         JsonConfig.SetInt("NVRMode", Dropdown.value);

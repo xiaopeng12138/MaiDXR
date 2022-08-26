@@ -21,7 +21,7 @@ public class Locker : MonoBehaviour
     }
 
     // Update is called once per frame
-    void ToggleLocker()
+    public void ToggleLocker()
     {
         ToggleButtons();
         ToggleLocalmotion();
