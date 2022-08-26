@@ -94,6 +94,21 @@ Some configs in config.json are only the index of the dropdown.
 
 You can use the pointer to point the third-person camera and grab it to the position where you want to be.
 
+## Multiplayer Configuration
+---
+All the settings related to multiplayer are inside config.json.
+
+- **HostIP:** IP address of the host to be connected by the client, supports IPV4/6.IPV6 format: **HostIP: "[fe80::1145:1400:1919:8100]"** 
+- **HostPort:** the port of the host, also the port to which the client will connect. The protocol is UDP.
+- If you need to forward the port on top of the router, you only need to forward one of the above UDP ports.
+
+**EncoderSetting:**
+- **bitRate:** bit rate (unit: bit; default: 196608)
+- **frameRate:** frame rate (in FPS; default: 24)
+- **maxFrameSize:** maximum single frame size (unit: bit; default: 8192)
+- **ResolutionDivider:** Reduce the encoding resolution, i.e. the input window screen resolution. Does not affect the local display. Inputting 2 will divide the window's width and height by 2. (default: 2)
+
+**Too high bit rate and resolution will cause all kinds of lag and issues, it is recommended to divide the resolution by 3 and adjust the frame rate to less than 20 fps, which can solve the problem of compression mosaic and encoding lag to some extent.**
 
 ## ToDo
 ---

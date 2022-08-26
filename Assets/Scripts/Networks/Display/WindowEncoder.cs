@@ -56,7 +56,7 @@ public class WindowEncoder : NetworkBehaviour
     void SetSetting(uNvEncoder.EncoderDesc _setting, int resolutionDivider)
     {
         var JObj= JObject.FromObject(_setting);
-        JObj.Remove("width"); JObj.Remove("height");
+        JObj.Remove("width"); JObj.Remove("height"); JObj.Remove("format");
         JObj["ResolutionDivider"] = resolutionDivider;
         JsonConfig.SetJObject("EncoderSetting", JObj);
     }   
