@@ -88,7 +88,7 @@ public class NoneVRSettingManager : MonoBehaviour
                 break;
         }
         JsonConfig.SetInt("NVRMode", Dropdown.value);
-        JsonConfig.SetDouble("NVRCameraSmooth", Dropdown.value);
+        JsonConfig.SetDouble("NVRCameraSmooth", CameraSmooth.smoothSpeed);
     }
     public void SetNVRFOV(float fov)
     {
