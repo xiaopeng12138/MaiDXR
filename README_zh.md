@@ -99,7 +99,7 @@ config.json 中的一些配置的参数只是下拉列表选项的顺序。
 - **HostPort:** 主机的端口，也是客户端要连接的端口。协议为UDP。
 - 如果你需要在路由器上面转发端口，只需要转发上述的一个UDP端口即可。
 
-EncoderSettin（编码设置）：
+EncoderSetting（编码设置）：
 
 - **bitRate:** 比特率（单位：bit；默认：196608）
 - **frameRate:** 帧率（单位：FPS；默认：24）
