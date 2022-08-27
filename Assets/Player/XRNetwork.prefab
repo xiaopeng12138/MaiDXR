@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 149481172096803373}
   - component: {fileID: 149481172096803370}
   - component: {fileID: 149481172096803371}
-  - component: {fileID: 5785614773386781349}
   - component: {fileID: 4318516477145814445}
   m_Layer: 0
   m_Name: RHand
@@ -116,32 +115,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5785614773386781349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149481172096803369}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncPositionX: 0
-  SyncPositionY: 0
-  SyncPositionZ: 0
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.005
-  InLocalSpace: 0
-  Interpolate: 0
 --- !u!114 &4318516477145814445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +143,6 @@ GameObject:
   - component: {fileID: 149481172127065658}
   - component: {fileID: 149481172127065659}
   - component: {fileID: 149481172127065663}
-  - component: {fileID: 4540214490382732089}
   - component: {fileID: 2613443299298391039}
   m_Layer: 0
   m_Name: LHand
@@ -273,32 +245,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4540214490382732089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149481172127065656}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncPositionX: 0
-  SyncPositionY: 0
-  SyncPositionZ: 0
-  SyncRotAngleX: 0
-  SyncRotAngleY: 0
-  SyncRotAngleZ: 0
-  SyncScaleX: 1
-  SyncScaleY: 1
-  SyncScaleZ: 1
-  PositionThreshold: 0.001
-  RotAngleThreshold: 0.01
-  ScaleThreshold: 0.005
-  InLocalSpace: 0
-  Interpolate: 0
 --- !u!114 &2613443299298391039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,8 +1646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be4365f045c3264ea500128c655fae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player1Position: {x: -0.75, y: 0}
-  Player2Position: {x: 0.75, y: 0}
+  Player1Position: {x: -0.5, y: 0.5}
+  Player2Position: {x: 0.5, y: 0.5}
+  MaterialP1: {fileID: 2100000, guid: 7ce3a6249153af844bf867530900838d, type: 2}
+  MaterialP2: {fileID: 2100000, guid: 0775247bf24b95f4daae8a5090a4697e, type: 2}
+  HandHueShift: -0.05
 --- !u!114 &5523943268535035658
 MonoBehaviour:
   m_ObjectHideFlags: 0

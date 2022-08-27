@@ -261,8 +261,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13422699}
   m_LocalRotation: {x: -0.8196523, y: 0, z: 0, w: 0.57286143}
-  m_LocalPosition: {x: 0.5110072, y: 1.429, z: 0.073}
-  m_LocalScale: {x: 102.49999, y: 102.475494, z: 102.475494}
+  m_LocalPosition: {x: 0.5110072, y: 1.4269, z: 0.0687}
+  m_LocalScale: {x: 102.77, y: 102.74543, z: 102.74543}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1775131856}
@@ -803,12 +803,14 @@ MonoBehaviour:
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 1016472457}
   m_ItemImage: {fileID: 0}
-  m_Value: 2
+  m_Value: 3
   m_Options:
     m_Options:
     - m_Text: 30
       m_Image: {fileID: 0}
     - m_Text: 60
+      m_Image: {fileID: 0}
+    - m_Text: 72
       m_Image: {fileID: 0}
     - m_Text: 90
       m_Image: {fileID: 0}
@@ -3266,6 +3268,7 @@ GameObject:
   - component: {fileID: 357334434}
   - component: {fileID: 357334432}
   - component: {fileID: 357334436}
+  - component: {fileID: 357334437}
   m_Layer: 0
   m_Name: NVRCamera
   m_TagString: Untagged
@@ -3377,8 +3380,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  smoothSpeed: 0.0125
+  smoothSpeed: 0.03
   PositionOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &357334437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357334431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1888887182d434fbccfdab834b0fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NVRCameraObj: {fileID: 0}
+  NVRCamera: {fileID: 0}
+  NVRCameraTargetFP: {fileID: 0}
+  NVRCameraTargetTP: {fileID: 0}
+  CameraSmooth: {fileID: 357334436}
 --- !u!1 &358458036
 GameObject:
   m_ObjectHideFlags: 0
@@ -8072,12 +8092,12 @@ PrefabInstance:
     - target: {fileID: 795547410136657018, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4279
+      value: 1.425
       objectReference: {fileID: 0}
     - target: {fileID: 795547410136657018, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0691
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 795547410136657018, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
@@ -10211,7 +10231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 60
+  m_text: 90
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16087,7 +16107,7 @@ MonoBehaviour:
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 822698504}
   m_ItemImage: {fileID: 0}
-  m_Value: 3
+  m_Value: 5
   m_Options:
     m_Options:
     - m_Text: 15
@@ -16098,43 +16118,11 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: 60
       m_Image: {fileID: 0}
+    - m_Text: 72
+      m_Image: {fileID: 0}
     - m_Text: 90
       m_Image: {fileID: 0}
     - m_Text: 120
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
-      m_Image: {fileID: 0}
-    - m_Text: 144
       m_Image: {fileID: 0}
     - m_Text: 144
       m_Image: {fileID: 0}
@@ -25007,13 +24995,13 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2062235788}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 2062235792}
+        m_TargetAssemblyTypeName: Locker, Config
+        m_MethodName: ToggleLocker
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

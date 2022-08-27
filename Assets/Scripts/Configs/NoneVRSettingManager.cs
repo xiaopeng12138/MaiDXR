@@ -30,6 +30,9 @@ public class NoneVRSettingManager : MonoBehaviour
             case "TPCameraCube":
                 GetTPCamTransform();
                 break;
+            case "NVRCamera":
+                GetNVRSmoothSpeed();
+                break;  
         }
     }
 
@@ -37,9 +40,13 @@ public class NoneVRSettingManager : MonoBehaviour
     {
         if (JsonConfig.HasKey("NVRMode"))
             Dropdown.value = JsonConfig.GetInt("NVRMode");
+        SetNVRMode();
+    }
+    void GetNVRSmoothSpeed()
+    {
         if (JsonConfig.HasKey("NVRCameraSmooth"))
             CameraSmooth.smoothSpeed = (float)JsonConfig.GetDouble("NVRCameraSmooth");
-        SetNVRMode();
+        SetNVRSmoothSpeed();
     }
     public void GetNVRFOV()
     {
@@ -76,18 +83,23 @@ public class NoneVRSettingManager : MonoBehaviour
                 if (!NVRCameraObj.activeSelf)
                     NVRCameraObj.SetActive(true);
                 CameraSmooth.target = NVRCameraTargetFP;
-                NVRCamera.cullingMask |= 1 << LayerMask.NameToLayer("FPSBlock"); // Enable FPBlock
-                NVRCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("TPSBlock")); // Disable TPBlock
+                NVRCamera.cullingMask |= 1 << LayerMask.NameToLayer("TPSBlock"); // Enable TPBlock Layer Mask
+                NVRCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("FPSBlock")); // Disable FPBlock Layer Mask
                 break;
             case 2:
                 if (!NVRCameraObj.activeSelf)
                     NVRCameraObj.SetActive(true);
                 CameraSmooth.target = NVRCameraTargetTP;
-                NVRCamera.cullingMask |= 1 << LayerMask.NameToLayer("TPSBlock"); // Enable TPBlock
-                NVRCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("FPSBlock")); // Disable FPBlock
+                NVRCamera.cullingMask |= 1 << LayerMask.NameToLayer("FPSBlock"); // Enable FPBlock Layer Mask
+                NVRCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer("TPSBlock")); // Disable TPBlock Layer Mask
+                
                 break;
         }
         JsonConfig.SetInt("NVRMode", Dropdown.value);
+        
+    }
+    void SetNVRSmoothSpeed()
+    {
         JsonConfig.SetDouble("NVRCameraSmooth", CameraSmooth.smoothSpeed);
     }
     public void SetNVRFOV(float fov)
@@ -112,12 +124,15 @@ public class NoneVRSettingManager : MonoBehaviour
                 Application.targetFrameRate = 60;
                 break;
             case 4:
-                Application.targetFrameRate = 90;
+                Application.targetFrameRate = 72;
                 break;
             case 5:
-                Application.targetFrameRate = 120;
+                Application.targetFrameRate = 90;
                 break;
             case 6:
+                Application.targetFrameRate = 120;
+                break;
+            case 7:
                 Application.targetFrameRate = 144;
                 break;
         }

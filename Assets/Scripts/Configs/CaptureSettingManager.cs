@@ -84,12 +84,15 @@ public class CaptureSettingManager : MonoBehaviour
                 WindowTexture.captureFrameRate = 60;
                 break; 
             case 2:
-                WindowTexture.captureFrameRate = 90;
+                WindowTexture.captureFrameRate = 72;
                 break;
             case 3:
-                WindowTexture.captureFrameRate = 120;
+                WindowTexture.captureFrameRate = 90;
                 break;
             case 4:
+                WindowTexture.captureFrameRate = 120;
+                break;
+            case 5:
                 WindowTexture.captureFrameRate = 144;
                 break;
         }
