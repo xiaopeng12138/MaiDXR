@@ -71,7 +71,7 @@ public class StartManager : MonoBehaviour
             StartHostButton.interactable = false;
             Debug.Log("Start Host Success");
         }
-        else if (NetworkManager.Singleton.IsClient)
+        else if (NetworkManager.Singleton.IsConnectedClient)
         {
             foreach (var IO in PlayerIOs)
                 IO.position = new Vector3(Player2Anchor.position.x, IO.position.y, IO.position.z);
@@ -88,12 +88,10 @@ public class StartManager : MonoBehaviour
     public void StartHost()
     {
         Debug.Log("Start Host");
-        if (NetworkManager.Singleton.IsClient)
-        {
-            NetworkManager.Singleton.Shutdown();
-            PlayerSettingManager.SetTarget(XRLocal);
-            XRLocal.SetActive(true);
-        }
+        NetworkManager.Singleton.Shutdown();
+        //PlayerSettingManager.SetTarget(XRLocal);
+        //XRLocal.SetActive(true);
+        
         if (!NetworkManager.Singleton.StartHost())
         {
             Debug.Log("Start Host Failed");
@@ -103,12 +101,10 @@ public class StartManager : MonoBehaviour
     public void StartClient()
     {
         Debug.Log("Start Client");
-        if (NetworkManager.Singleton.IsHost)
-        {
-            NetworkManager.Singleton.Shutdown();
-            PlayerSettingManager.SetTarget(XRLocal);
-            XRLocal.SetActive(true);
-        }
+        NetworkManager.Singleton.Shutdown();
+        //PlayerSettingManager.SetTarget(XRLocal);
+        //XRLocal.SetActive(true);
+
         if (!NetworkManager.Singleton.StartClient())
         {
             Debug.Log("Start Client Failed");
@@ -118,7 +114,7 @@ public class StartManager : MonoBehaviour
     }
     public void StopAll()
     {
-        if (NetworkManager.Singleton.IsClient || NetworkManager.Singleton.IsHost)
+        if (NetworkManager.Singleton.IsClient || NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsConnectedClient)
             NetworkManager.Singleton.Shutdown();
         PlayerSettingManager.SetTarget(XRLocal);
         XRLocal.SetActive(true);

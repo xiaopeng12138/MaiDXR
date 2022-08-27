@@ -7,7 +7,8 @@ using Newtonsoft.Json.Linq;
 public class WindowEncoder : NetworkBehaviour
 {
     [SerializeField]
-    public UwcWindowTexture texture = null;
+    public Renderer texture = null;
+    public UwcWindowTexture window = null;
 
     [SerializeField]
     public uNvEncoder.Encoder encoder = null;
@@ -26,7 +27,8 @@ public class WindowEncoder : NetworkBehaviour
     public int idrFrameIntervalFrame = 24;
     int idrFrameCounter_ = 0;
     public int ResolutionDivider = 2;
-    Texture2D sTexture;
+    public Texture2D IdleTexture = null;
+    public Texture2D sTexture;
 
     public override void OnNetworkSpawn()
     {
@@ -65,26 +67,32 @@ public class WindowEncoder : NetworkBehaviour
     RenderTexture rt;
     void Resize()
     {
-        Graphics.Blit(texture.window.texture, rt);
+        if (texture.material.mainTexture == null)
+            Graphics.Blit(IdleTexture, rt);
+        else
+            Graphics.Blit(texture.material.mainTexture, rt);
         sTexture.ReadPixels(new Rect(0,0,setting.width, setting.height),0,0);
         sTexture.Apply();
     }
     IEnumerator EncodeLoop()
     {
+        Debug.Log("EncodeLoop");
         for (;;)
         {
-            if (texture.window != null) break;
+            if (texture.material.mainTexture != null) break;
+            Debug.Log("Wait for texture");
             yield return new WaitForEndOfFrame();
         }
-
-        setting.width = texture.window.width / ResolutionDivider;
-        setting.height = texture.window.height / ResolutionDivider;
+        Debug.Log("EncodeLoop SetSetting");
+        
+        setting.width = window.window.width / ResolutionDivider;
+        setting.height = window.window.height / ResolutionDivider;
         encoder.Create(setting);
 
         rt = new RenderTexture(setting.width, setting.height, 24);
         sTexture = new Texture2D(setting.width, setting.height, TextureFormat.BGRA32, false);
         RenderTexture.active = rt;
-
+        Debug.Log("EncodeLoop Start");
         for (;;)
         {
             if (setting.frameRate < 60)

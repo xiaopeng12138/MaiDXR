@@ -25,8 +25,9 @@ public class DisplaySync : NetworkBehaviour
 
         var DisplayP1 = GameObject.FindGameObjectWithTag("DisplayP1");
         var DisplayP2 = GameObject.FindGameObjectWithTag("DisplayP2");
+        if (DisplayP1 == null)
+            Debug.LogError("DisplayP1 is not found");
 
-        Encoder.texture = DisplayP1.GetComponent<UwcWindowTexture>();
         Decoder = DisplayP2.GetComponent<uNvPipeDecoder>();
         DecoderTexture = DisplayP2.GetComponent<uNvPipeDecodedTexture>();
         Decoder.enabled = false;
@@ -37,6 +38,8 @@ public class DisplaySync : NetworkBehaviour
 
         if (IsOwner)
         {
+            Encoder.texture = DisplayP1.GetComponent<Renderer>();
+            Encoder.window = DisplayP1.GetComponent<UwcWindowTexture>();
             Debug.Log("Add Listener");
             Encoder.encoder.onEncoded.AddListener(OnEncoded);
         }

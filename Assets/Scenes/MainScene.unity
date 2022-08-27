@@ -247,8 +247,8 @@ GameObject:
   - component: {fileID: 13422702}
   - component: {fileID: 13422701}
   m_Layer: 0
-  m_Name: Display P1 BG
-  m_TagString: DisplayP1
+  m_Name: BG
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -288,7 +288,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fa661e697a9d4dd4aa3938d314e10626, type: 2}
+  - {fileID: 2100000, guid: 69d936cecc5357c40841d907893b9874, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8139,6 +8139,36 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 1018638153358675470, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 31.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018638153358675470, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 31.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018638153358675470, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 31.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018638153358675470, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.191
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018638153358675470, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018638153358675470, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1597228139911881735, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
       propertyPath: m_Enabled
@@ -8197,7 +8227,7 @@ PrefabInstance:
     - target: {fileID: 1995990277796536632, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2009740602367058978, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
@@ -8588,6 +8618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LightProbeUsage
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484653850034527598, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4484653850034527598, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
@@ -9022,7 +9057,7 @@ PrefabInstance:
     - target: {fileID: 8110296352969589220, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8123848027915441045, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
@@ -12785,6 +12820,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125575213}
   m_CullTransparentMesh: 1
+--- !u!4 &1137462979 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 149481173433458735, guid: e2d99f1c1f1e9c54c9115c9697ecf165,
+    type: 3}
+  m_PrefabInstance: {fileID: 2035566383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1139038999
 GameObject:
   m_ObjectHideFlags: 0
@@ -22554,7 +22595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NVRCameraObj: {fileID: 357334431}
   NVRCamera: {fileID: 357334434}
-  NVRCameraTargetFP: {fileID: 0}
+  NVRCameraTargetFP: {fileID: 1137462979}
   NVRCameraTargetTP: {fileID: 1585482469}
   CameraSmooth: {fileID: 357334436}
 --- !u!1 &1883867033
@@ -25157,7 +25198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   searchTiming_: 0
   type_: 0
-  altTabWindow_: 0
+  altTabWindow_: 1
   createChildWindows_: 0
   childWindowPrefab: {fileID: 0}
   childWindowZDistance: 0.02
@@ -25165,7 +25206,7 @@ MonoBehaviour:
   desktopIndex_: 0
   captureMode: 1
   capturePriority: 0
-  captureRequestTiming: 1
+  captureRequestTiming: 0
   captureFrameRate: 90
   drawCursor: 0
   updateTitle: 1

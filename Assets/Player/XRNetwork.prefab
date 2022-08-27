@@ -1427,6 +1427,7 @@ GameObject:
   - component: {fileID: 6918064188570338137}
   - component: {fileID: 5523943268535035658}
   - component: {fileID: 8812900737838453218}
+  - component: {fileID: 5550084698236563949}
   m_Layer: 0
   m_Name: XRNetwork
   m_TagString: Untagged
@@ -1681,11 +1682,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texture: {fileID: 0}
+  window: {fileID: 0}
   encoder:
     onEncoded:
       m_PersistentCalls:
-        m_Calls: []
-    outputError: 0
+        m_Calls:
+        - m_Target: {fileID: 5550084698236563949}
+          m_TargetAssemblyTypeName: uNvEncoder.Examples.OutputEncodedDataToFile,
+            Display
+          m_MethodName: OnData
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    outputError: 1
   setting:
     width: 1920
     height: 1080
@@ -1695,6 +1710,20 @@ MonoBehaviour:
     format: 87
   idrFrameIntervalFrame: 24
   ResolutionDivider: 2
+  IdleTexture: {fileID: 2800000, guid: a025c23fceb7d4966b603419f551ce99, type: 3}
+--- !u!114 &5550084698236563949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149481173429413636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd43cfe121bf2b046995caf4e7930a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filePath: test.h264
 --- !u!1 &149481173433458732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,7 +1784,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
+  near clip plane: 0.1
   far clip plane: 10
   field of view: 60
   orthographic: 0
@@ -1763,7 +1792,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 503
+    m_Bits: 2147483647
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

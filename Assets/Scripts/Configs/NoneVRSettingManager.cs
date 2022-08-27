@@ -38,6 +38,7 @@ public class NoneVRSettingManager : MonoBehaviour
 
     public void GetNVRMode()
     {
+        if (Dropdown == null) return;
         if (JsonConfig.HasKey("NVRMode"))
             Dropdown.value = JsonConfig.GetInt("NVRMode");
         SetNVRMode();
@@ -73,6 +74,8 @@ public class NoneVRSettingManager : MonoBehaviour
     
     public void SetNVRMode()
     {
+        if (NVRCameraObj == null || NVRCamera == null || CameraSmooth == null || NVRCameraTargetFP == null || NVRCameraTargetTP == null) 
+            return;
         switch (Dropdown.value)
         {
             case 0:
