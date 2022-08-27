@@ -68,14 +68,15 @@ public class NetworkPlayer : NetworkBehaviour
             float LH, LS, LV; float RH, RS, RV;
             Color.RGBToHSV(LHandMat.color, out LH, out LS, out LV);
             Color.RGBToHSV(RHandMat.color, out RH, out RS, out RV);
-            LH += HandHueShift; RH += HandHueShift;
-            LHandMat.color = Color.HSVToRGB(LH, RS, RV);
-            RHandMat.color = Color.HSVToRGB(RH, RS, RV);
+            var LColor = Color.HSVToRGB(LH + HandHueShift, RS, RV);
+            var RColor = Color.HSVToRGB(RH + HandHueShift, RS, RV);
+            LColor.a = LHandMat.color.a; RColor.a = RHandMat.color.a;
+            LHandMat.color = LColor;
+            RHandMat.color = RColor;
         }
     }
     private void Start()
     {
-        
         if (IsHost)
         {
             transform.position = new Vector3(Player1Position.x, transform.position.y, transform.position.z + Player1Position.y);
