@@ -131,12 +131,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 757793526}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &393682 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -1125379421861928946, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
-    type: 3}
-  m_PrefabInstance: {fileID: 757793526}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6649868
 GameObject:
   m_ObjectHideFlags: 0
@@ -5422,7 +5416,8 @@ GameObject:
   - component: {fileID: 566188386}
   - component: {fileID: 566188385}
   - component: {fileID: 566188389}
-  - component: {fileID: 566188390}
+  - component: {fileID: 566188392}
+  - component: {fileID: 566188391}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -5456,18 +5451,18 @@ MonoBehaviour:
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
-    TickRate: 45
+    TickRate: 60
     ClientConnectionBufferTimeout: 10
-    ConnectionApproval: 0
+    ConnectionApproval: 1
     ConnectionData: 
     EnableTimeResync: 0
     TimeResyncInterval: 30
     EnsureNetworkVariableLengthSafety: 0
     EnableSceneManagement: 1
-    ForceSamePrefabs: 1
+    ForceSamePrefabs: 0
     RecycleNetworkIds: 1
     NetworkIdRecycleDelay: 120
-    RpcHashSize: 0
+    RpcHashSize: 1
     LoadSceneTimeOut: 120
     SpawnTimeout: 1
     EnableNetworkLogs: 1
@@ -5501,12 +5496,24 @@ MonoBehaviour:
   Port: 7777
   Address: 127.0.0.1
   MaxClients: 2
-  MessageBufferSize: 20480
+  MessageBufferSize: 51200
   PingInterval: 500
   TimeoutLimit: 32
   TimeoutMinimum: 5000
   TimeoutMaximum: 30000
---- !u!114 &566188390
+--- !u!114 &566188391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566188383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab730412f5aeef41975dbad7c8be685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &566188392
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5522,9 +5529,9 @@ MonoBehaviour:
   - {fileID: 2079759568}
   - {fileID: 1006346016}
   - {fileID: 2069467403}
-  - {fileID: 393682}
   - {fileID: 1716582342}
   - {fileID: 934521997}
+  - {fileID: 13422700}
   PlayerIOsOpposite:
   - {fileID: 1390826961}
   - {fileID: 1023774752}
@@ -8142,17 +8149,17 @@ PrefabInstance:
     - target: {fileID: 1018638153358675470, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 31.7
+      value: 32.3
       objectReference: {fileID: 0}
     - target: {fileID: 1018638153358675470, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 31.7
+      value: 32.3
       objectReference: {fileID: 0}
     - target: {fileID: 1018638153358675470, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 31.7
+      value: 32.3
       objectReference: {fileID: 0}
     - target: {fileID: 1018638153358675470, guid: 4cbf0dbca1ca1a5499c4b7806ab6aac5,
         type: 3}
@@ -10060,7 +10067,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 566188390}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StartManager, Assembly-CSharp
         m_MethodName: StartClient
         m_Mode: 1
@@ -11052,7 +11059,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 566188390}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StartManager, Assembly-CSharp
         m_MethodName: StartHost
         m_Mode: 1
@@ -18562,7 +18569,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 566188390}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: StartManager, Assembly-CSharp
         m_MethodName: StopAll
         m_Mode: 1
@@ -23279,9 +23286,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 802710991}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
-  m_WholeNumbers: 1
-  m_Value: 10
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -24643,6 +24650,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 149481173512535360, guid: e2d99f1c1f1e9c54c9115c9697ecf165,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 149481173512535360, guid: e2d99f1c1f1e9c54c9115c9697ecf165,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7ce3a6249153af844bf867530900838d, type: 2}
     - target: {fileID: 1486532002687246983, guid: e2d99f1c1f1e9c54c9115c9697ecf165,
         type: 3}
       propertyPath: Locker

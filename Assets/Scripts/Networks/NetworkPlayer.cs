@@ -2,6 +2,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit;
+using Unity.XR.CoreUtils;
 
 public class NetworkPlayer : NetworkBehaviour
 {
@@ -21,6 +22,8 @@ public class NetworkPlayer : NetworkBehaviour
         
         if (!IsOwner)
         {
+            var clientXROrigin = GetComponent<XROrigin>();
+            var clientLocomotion = GetComponent<LocomotionSystem>();
             var clientMoveProvider = GetComponent<ActionBasedContinuousMoveProvider>();
             var clientTurnProvider = GetComponent<ActionBasedContinuousTurnProvider>();
             var clientControllers = GetComponentsInChildren<ActionBasedController>();
@@ -30,13 +33,18 @@ public class NetworkPlayer : NetworkBehaviour
             var clientCamera = GetComponentInChildren<Camera>();
             var clientAudioListener = GetComponentInChildren<AudioListener>();
             var clientLIV = GetComponent<LIV.SDK.Unity.LIV>();
+            var clientWindowEncoder = GetComponent<WindowEncoder>();
             //var clientOVRManager = gameObject.transform.Find("OVRManager").gameObject;
 
+            clientXROrigin.enabled = false;
+            clientLocomotion.enabled = false;
             clientCamera.enabled = false; 
             clientAudioListener.enabled = false;
             clientMoveProvider.enabled = false;
             clientTurnProvider.enabled = false;
             clientHead.enabled = false;
+            clientLIV.enabled = false;
+            clientWindowEncoder.enabled = false;
             foreach (var ray in clientRays)
             {
                 ray.RaySwitch = false;
@@ -55,16 +63,16 @@ public class NetworkPlayer : NetworkBehaviour
     }
     private void SetMaterials()
     {
-        var HeadMat = transform.Find("Camera Offset").Find("Main Camera").Find("HeadCube").gameObject.GetComponent<Renderer>().material;
+        var HeadRenderer = transform.Find("Camera Offset").Find("Main Camera").Find("HeadCube").gameObject.GetComponent<Renderer>();
         var LHandMat = transform.Find("Camera Offset").Find("LeftHand Controller").Find("LHand").GetComponent<Renderer>().material;
         var RHandMat = transform.Find("Camera Offset").Find("RightHand Controller").Find("RHand").GetComponent<Renderer>().material;
         if (IsOwnedByServer)
         {
-            HeadMat = MaterialP1;
+            HeadRenderer.material = MaterialP1;
         }
         else 
         {
-            HeadMat = MaterialP2;
+            HeadRenderer.material = MaterialP2;
             float LH, LS, LV; float RH, RS, RV;
             Color.RGBToHSV(LHandMat.color, out LH, out LS, out LV);
             Color.RGBToHSV(RHandMat.color, out RH, out RS, out RV);
@@ -79,8 +87,7 @@ public class NetworkPlayer : NetworkBehaviour
     {
         if (IsHost)
         {
-            transform.position = new Vector3(Player1Position.x, transform.position.y, transform.position.z + Player1Position.y);
-            
+            transform.position = new Vector3(Player1Position.x, transform.position.y, transform.position.z + Player1Position.y); 
         }
         else
         {

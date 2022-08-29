@@ -110,7 +110,7 @@ public class PlayerSettingManager : MonoBehaviour
     void GetHapticAmplitude()
     {
         if (PlayerConfig.HasKey("HapticAmplitude"))
-            HapticManagers[0].amplitude = (float)PlayerConfig.GetDouble("HapticAmplitude") * 10;
+            HapticManagers[0].amplitude = (float)PlayerConfig.GetDouble("HapticAmplitude");
         SetHapticAmplitude(HapticManagers[0].amplitude);
     }
 
@@ -157,7 +157,6 @@ public class PlayerSettingManager : MonoBehaviour
     }
     public void SetHapticAmplitude(float amplitude)
     {
-        amplitude /= 10;
         foreach (var controller in HapticManagers)
         {
             controller.amplitude = amplitude;

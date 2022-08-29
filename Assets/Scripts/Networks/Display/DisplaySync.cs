@@ -21,6 +21,7 @@ public class DisplaySync : NetworkBehaviour
     bool isInitialized = false;
     public override void OnNetworkSpawn()
     {
+        Debug.Log("DisplaySync.OnNetworkSpawn");
         NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectedCallback;
 
         var DisplayP1 = GameObject.FindGameObjectWithTag("DisplayP1");

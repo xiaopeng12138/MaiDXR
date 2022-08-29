@@ -18,13 +18,13 @@ public class WindowEncoder : NetworkBehaviour
     {
         width = 1920,
         height = 1080,
-        frameRate = 24,
+        frameRate = 30,
         format = uNvEncoder.Format.B8G8R8A8_UNORM,
-        bitRate = 196608,
-        maxFrameSize = 8192,
+        bitRate = 1228800,
+        maxFrameSize = 40960,
     };
 
-    public int idrFrameIntervalFrame = 24;
+    public int idrFrameIntervalFrame = 30;
     int idrFrameCounter_ = 0;
     public int ResolutionDivider = 2;
     public Texture2D IdleTexture = null;
@@ -87,6 +87,7 @@ public class WindowEncoder : NetworkBehaviour
         
         setting.width = window.window.width / ResolutionDivider;
         setting.height = window.window.height / ResolutionDivider;
+        idrFrameIntervalFrame = setting.frameRate;
         encoder.Create(setting);
 
         rt = new RenderTexture(setting.width, setting.height, 24);

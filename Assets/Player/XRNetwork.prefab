@@ -1427,7 +1427,6 @@ GameObject:
   - component: {fileID: 6918064188570338137}
   - component: {fileID: 5523943268535035658}
   - component: {fileID: 8812900737838453218}
-  - component: {fileID: 5550084698236563949}
   m_Layer: 0
   m_Name: XRNetwork
   m_TagString: Untagged
@@ -1667,7 +1666,7 @@ MonoBehaviour:
   Encoder: {fileID: 8812900737838453218}
   Decoder: {fileID: 0}
   DecoderTexture: {fileID: 0}
-  maxPacketSize: 4096
+  maxPacketSize: 2048
   timeout: 100
 --- !u!114 &8812900737838453218
 MonoBehaviour:
@@ -1687,7 +1686,7 @@ MonoBehaviour:
     onEncoded:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5550084698236563949}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: uNvEncoder.Examples.OutputEncodedDataToFile,
             Display
           m_MethodName: OnData
@@ -1704,26 +1703,14 @@ MonoBehaviour:
   setting:
     width: 1920
     height: 1080
-    frameRate: 24
-    bitRate: 196608
-    maxFrameSize: 8192
+    frameRate: 30
+    bitRate: 614400
+    maxFrameSize: 20480
     format: 87
-  idrFrameIntervalFrame: 24
+  idrFrameIntervalFrame: 30
   ResolutionDivider: 2
   IdleTexture: {fileID: 2800000, guid: a025c23fceb7d4966b603419f551ce99, type: 3}
---- !u!114 &5550084698236563949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149481173429413636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd43cfe121bf2b046995caf4e7930a8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  filePath: test.h264
+  sTexture: {fileID: 0}
 --- !u!1 &149481173433458732
 GameObject:
   m_ObjectHideFlags: 0
