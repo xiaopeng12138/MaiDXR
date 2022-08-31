@@ -10067,8 +10067,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartManager, Assembly-CSharp
+      - m_Target: {fileID: 566188392}
+        m_TargetAssemblyTypeName: StartManager, Config
         m_MethodName: StartClient
         m_Mode: 1
         m_Arguments:
@@ -11059,8 +11059,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartManager, Assembly-CSharp
+      - m_Target: {fileID: 566188392}
+        m_TargetAssemblyTypeName: StartManager, Config
         m_MethodName: StartHost
         m_Mode: 1
         m_Arguments:
@@ -18569,8 +18569,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartManager, Assembly-CSharp
+      - m_Target: {fileID: 566188392}
+        m_TargetAssemblyTypeName: StartManager, Config
         m_MethodName: StopAll
         m_Mode: 1
         m_Arguments:
