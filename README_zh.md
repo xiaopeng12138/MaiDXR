@@ -75,7 +75,7 @@
 - 如果你想要灯效，请将COM21和COM51绑定（必须是这两个端口，并且不要禁用DummyLED！）
 - 通过在xxxx.bat中添加[Unity Standalone Player command line arguments](https://docs.unity3d.com/Manual/PlayerCommandLineArguments.html)使本体在窗口模式下运行，并且确保没有任何黑边。1080p显示屏推荐的设置："xxxxx.exe -screen-fullscreen 0 -screen-width 1170 -screen-height 1050"
 - 启动MaiDXR后启动游戏本体。
-- 如果你的触摸不起作用，请尝试以某种方式启用维护模式，然后退出维护模式。
+- 如果你的触摸不起作用，请保持MaiMai处于最顶层并用鼠标点击MaiMai窗口。
 
 
 设置
