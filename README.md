@@ -13,7 +13,7 @@ Discord: Coming Soon
 - This project is an update of https://github.com/xiaopeng12138/MaiMai-VR. 
 - Support DX version or above
 - The model is almost 1:1 to DX cabinet/framework
-- Using naative touch input and light outupt
+- Using native touch input and light outupt
 - 90hz or 120hz capture (Bitblt) (Thanks @Thalesalex for the recommendation)
 - Customizable haptic feedback
 - 3rd person camera and smooth camera
