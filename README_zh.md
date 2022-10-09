@@ -3,8 +3,7 @@
 
 交流QQ群：261946477
 
-交流Discord：Coming Soon
-
+交流Discord: [Discord](https://discord.gg/4aFV5QJWN5)
 
 关于这个项目
 ---
