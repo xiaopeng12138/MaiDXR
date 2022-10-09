@@ -3,7 +3,7 @@
 
 交流QQ群：261946477
 
-交流Discord: [Discord](https://discord.gg/4aFV5QJWN5)
+交流Discord: [Discord](https://discord.gg/pGBA5HygSf)
 
 关于这个项目
 ---
